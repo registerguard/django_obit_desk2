@@ -57,7 +57,7 @@
 	</table>
 	
 	{% if form.is_multipart %}
-	<form enctype="multipart/form-data" action="/obituary2/obituaries/" method="post">{% csrf_token %}
+	<form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
 	{% else %}
 	<form action="" method="post">{% csrf_token %}
 	{% endif %}
@@ -67,7 +67,7 @@
 		
 		<tr>
 			<th colspan="2" class="required">
-			{% if form.errors or formset.errors or bei_formset.errors or os_formset.errors or child_formset.errors or sib_formset.errors or wed_formset.errors %}
+			{% if form.errors or formset.errors %}
 				
 				Please address the error(s) below.
 				
@@ -253,26 +253,6 @@
   });
 
   $(function(){
-    $("#id_visitation-0-visitation_start_date_time").datetimepicker({
-      stepMinute: 5,
-      hourMin: 6,
-      hourMax: 23,
-      dateFormat: 'yy-mm-dd',
-      timeFormat: 'hh:mm:ss'
-    });
-  });
-
-  $(function(){
-    $("#id_visitation-0-visitation_end_date_time").datetimepicker({
-      stepMinute: 5,
-      hourMin: 6,
-      hourMax: 23,
-      dateFormat: 'yy-mm-dd',
-      timeFormat: 'hh:mm:ss'
-    });
-  });
-
-  $(function(){
     $(".marriage_date_picker").datepicker({
             changeMonth: true,
             changeYear: true,
@@ -290,28 +270,6 @@
             dateFormat: 'yy-mm-dd',
             constrainInput: false
         });
-  });
-
-  $(function(){
-    $("#id_bei-0-bei_date_time").datetimepicker({
-      stepMinute: 5,
-      hourMin: 6,
-      hourMax: 23,
-      dateFormat: 'yy-mm-dd',
-      timeFormat: 'hh:mm:ss',
-      constrainInput: false
-    });
-  });
-
-  // http://trentrichardson.com/examples/timepicker/
-  $(function(){
-    $("#id_other_services-0-other_services_date_time").datetimepicker({
-      stepMinute: 5,
-      hourMin: 6,
-      hourMax: 23,
-      dateFormat: 'yy-mm-dd',
-      timeFormat: 'hh:mm:ss'
-    });
   });
 
   document.getElementById('id_death_notice').focus()

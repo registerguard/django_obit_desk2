@@ -14,11 +14,11 @@ from django.template import RequestContext, loader
 from django.utils.html import escape
 from django.utils.translation import ugettext
 from django.views.generic.list_detail import object_list
-from obituary.models import Death_notice, Obituary
-from obituary.forms import Death_noticeForm, \
-    ServiceFormSet, ObituaryForm, Other_servicesFormSet, \
+from django_obit_desk2.models import Death_notice, Obituary
+from django_obit_desk2.forms import Death_noticeForm, \
+    ServiceFormSet, ObituaryForm, \
     DeathNoticeOtherServicesFormSet
-from obituary.utils import output_cleanup_hack, adobe_to_web
+from django_obit_desk2.utils import output_cleanup_hack, adobe_to_web
 
 from obituary_settings import DISPLAY_DAYS_BACK
 
@@ -160,12 +160,8 @@ def manage_obituary(request, obituary_id=None):
             current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
         
         form = ObituaryForm(request, request.POST, request.FILES, instance=obituary)
-        os_formset = Other_servicesFormSet(request.POST, instance=obituary)
         
-        if form.is_valid() and formset.is_valid() and \
-            os_formset.is_valid() and \
-            sib_formset.is_valid() and wed_formset.is_valid():
-            
+        if form.is_valid():
             msg = ugettext('The %(verbose_name)s for %(first)s %(last)s was updated.') % \
                 {
                     'verbose_name': Obituary._meta.verbose_name,
@@ -175,16 +171,12 @@ def manage_obituary(request, obituary_id=None):
             messages.success(request, msg, fail_silently=False)
             
             obituary = form.save()
-            formset.save()
-            os_formset.save()
-            sib_formset.save()
-            wed_formset.save()
             if request.POST.has_key('submit'):
                 return HttpResponseRedirect(reverse('death_notice_index'))
             elif request.POST.has_key('submit_add'):
                 return HttpResponseRedirect(reverse('add_obituary'))
             else:
-                return HttpResponseRedirect(reverse('obituary.views.manage_obituary', args=(obituary.pk,)))
+                return HttpResponseRedirect(reverse('django_obit_desk2.views.manage_obituary', args=(obituary.pk,)))
     else:
         if obituary_id:
             current_obit = Obituary.objects.get(pk=obituary_id)
@@ -194,13 +186,6 @@ def manage_obituary(request, obituary_id=None):
     
     ob_response_dict = {
         'form': form,
-        'formset_name': formset.model._meta.verbose_name,
-        'formset': formset,
-        'os_formset_name': os_formset.model._meta.verbose_name,
-        'os_formset': os_formset,
-        'sib_formset_name': sib_formset.model._meta.verbose_name,
-        'sib_formset': sib_formset,
-        'wed_formset': wed_formset,
         'obituary_id': obituary_id,
     }
     

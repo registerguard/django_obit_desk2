@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm
 from django.views.generic.simple import direct_to_template
-from obituary.views import deaths, fh_index, logout_view, manage_death_notice, \
+from django_obit_desk2.views import deaths, fh_index, logout_view, manage_death_notice, \
     manage_obituary, billing, print_obituary, hard_copies_manifest, billing_excel
 
 urlpatterns = list()

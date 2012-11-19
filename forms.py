@@ -4,8 +4,8 @@ from django.forms import ModelForm
 from django.forms.models import inlineformset_factory
 from django_obit_desk2.widgets import SelectWithPopUp
 from django_obit_desk2.models import Death_notice, Service, Obituary, \
-    Other_services, DeathNoticeOtherServices
-from obituary_settings import DISPLAY_DAYS_BACK
+    DeathNoticeOtherServices
+from django_obit_desk2.obituary_settings import DISPLAY_DAYS_BACK
 
 class ObitsCalendarDateTimeWidget(forms.DateTimeInput):
     class Media:
@@ -76,20 +76,6 @@ class ObituaryForm(ModelForm):
     class Meta:
         model = Obituary
         exclude = ('funeral_home', 'prepaid_by', 'obituary_in_system', 'obituary_has_run', 'obituary_publish_date',)
-
-class Other_servicesForm(ModelForm):
-    
-    class Meta:
-        model = Other_services
-        widgets = {
-            'other_services_date_time': ObitsCalendarDateTimeWidget(),
-        }
-
-Other_servicesFormSet = inlineformset_factory(Obituary,
-    Other_services,
-    form = Other_servicesForm,
-    can_delete=True,
-    extra=1,)
 
 class ObituaryAdminForm(forms.ModelForm):
     # See http://stackoverflow.com/questions/1474135/django-admin-ordering-of-foreignkey-and-manytomanyfield-relations-referencing-u
