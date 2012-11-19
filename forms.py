@@ -2,8 +2,8 @@ import datetime
 from django import forms
 from django.forms import ModelForm
 from django.forms.models import inlineformset_factory
-from obituary.widgets import SelectWithPopUp
-from obituary.models import Death_notice, Service, Obituary, \
+from django_obit_desk2.widgets import SelectWithPopUp
+from django_obit_desk2.models import Death_notice, Service, Obituary, \
     Other_services, DeathNoticeOtherServices
 from obituary_settings import DISPLAY_DAYS_BACK
 

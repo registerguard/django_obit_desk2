@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from obituary.forms import ObituaryAdminForm
-from obituary.models import Death_notice, Obituary, FuneralHomeProfile, \
+from django_obit_desk2.forms import ObituaryAdminForm
+from django_obit_desk2.models import Death_notice, Obituary, FuneralHomeProfile, \
     Service, DeathNoticeOtherServices
 
 class FuneralHomeProfileAdmin(admin.ModelAdmin):
