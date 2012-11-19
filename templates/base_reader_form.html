@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>{% block title %}{% endblock %}</title>
+	
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0/build/cssfonts/fonts-min.css&3.0.0/build/cssreset/reset-min.css&3.0.0/build/cssbase/base-min.css" media="screen">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/vader/jquery-ui.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="http://rg-assets.s3.amazonaws.com/v4.0/schedule/1.0/css/schedule.css" type="text/css" media="screen">
+	
+	<style type="text/css">
+		<!--
+			th, td {
+				border: none;
+			}
+			
+			.errorlist {
+				color: #ee0000;
+			}
+			
+			a {
+				color: #c00;
+				text-decoration: none;
+			}
+			a:visited { color: #c00; }
+			a:visited:hover,
+			a:focus,
+			a:focus:hover,
+			a:hover,
+			a:active {
+				color: #f00;
+				text-decoration: underline;
+			}
+			
+			hr { display: none !important; }
+			/* http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ */
+			.clear:after {
+				visibility: hidden;
+				display: block;
+				font-size: 0;
+				content: " ";
+				clear: both;
+				height: 0;
+			}
+			* html .clear { zoom: 1; } /* IE6 */
+			*:first-child+html .clear { zoom: 1; } /* IE7 */
+			
+		-->
+	</style>
+	
+	{{ form.media }}
+	{{ formset.media }}
+{#	{{ other_services_formset.media }} #}
+{#	{{ os_formset.media }} #}
+{#	{{ wed_formset.media }} #}
+	
+	{% block js %}{% endblock %}
+	{% block css %}{% endblock %}
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header" class="clear">
+			</div>
+			<div id="content">
+				{% block content %}
+				{% endblock content %}
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,63 @@
+{% extends "base_reader_form.html" %}
+
+{% block css %}
+<style type="text/css">
+	<!--
+	table {
+		margin: 10px 0 10px 0;
+		border: 1px solid #000000;
+		width: 100%;
+	}
+	#wrapper {
+		background: #eee;
+	}
+	-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://static.registerguard.com/colorbox/example4/colorbox.css">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+	<h1><a href="#">This month</a></h1>
+	<table cellspacing="0" cellpadding="3">
+		<tr><th>Name</th><th>Date first printed</th><th>"Prepaid by" field from form</th><th>Funeral home to be billed</th><th>If entered<br>by R-G staff</th><th>Funeral home<br>invoice amount</th></tr>
+	{% for obit in run_obits %}
+		<tr style="background: {% cycle '#fff' '#eee' %};">
+			<td>
+				{{ forloop.counter }}) {{ obit.death_notice.first_name }} {{ obit.death_notice.last_name }}
+			</td>
+			<td>
+				{{ obit.obituary_publish_date }}</td>
+			<td>
+			{% if obit.prepaid_by %}
+				{{ obit.prepaid_by }}
+			{% else %}
+				&nbsp;
+			{% endif %}
+			</td>
+			<td>
+				{{ obit.death_notice.funeral_home.funeralhomeprofile.full_name }}
+			</td>
+			<td>
+			{% if obit.user %}
+				{{ obit.user.first_name }} {{ obit.user.last_name }}
+			{% else %}
+				&nbsp;
+			{% endif %}
+			</td>
+			<td>
+			{% if obit.user.username in ad_reps %}
+				<b>$50 paid in advance</b>
+			{% else %}{% if obit.user.username in newsroom %}
+				<b>$50</b>
+			{% else %}
+				$25
+			{% endif %}{% endif %}
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+	<h1>Last month</h1>
+	<p>{{ month }}</p>
+</div> <!-- /.wrapper -->
+{% endblock content %}

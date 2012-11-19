@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Recently printed obituaries</title>
+	</head>
+	<body>
+		<table cellspacing="0" cellpadding="3">
+		<tr><th>&nbsp;</th><th>Name</th><th>Publication<br/>date</th><th>Number<br />of copies</th><th>Mailing<br/>address</th></tr>
+		{% for item in list %}
+			<tr style="background: {% cycle '#fff' '#eee' %};"><td>{% if item.photo.name %}{{ item.admin_thumbnail|safe }}{% else %}&nbsp;{% endif %}</td><td>{{ item.death_notice.first_name }} {{ item.death_notice.last_name }}</td><td>{{ item.obituary_publish_date }}</td><td>{{ item.number_of_copies }}</td><td>{{ item.family_contact }}<br/>{{ item.mailing_address }}</td></tr>
+		{% endfor %}
+		</table>
+	</body>
+</html>

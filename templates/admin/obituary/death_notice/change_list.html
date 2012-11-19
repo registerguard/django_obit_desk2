@@ -1,0 +1,14 @@
+{% extends "admin/change_list.html" %}
+{% load adminmedia admin_list i18n %}
+{% load url from future %}
+
+{% block object-tools-items %}
+	<li>
+		<a href="add/{% if is_popup %}?_popup=1{% endif %}" class="addlink">
+			{% blocktrans with cl.opts.verbose_name as name %}Add {{ name }}{% endblocktrans %}
+		</a>
+	</li>
+	<li>
+		<a href="/obituary/deaths/print/">Generate InCopy file</a>
+	</li>
+{% endblock %}

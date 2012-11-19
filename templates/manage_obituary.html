@@ -1,0 +1,326 @@
+{% extends "base_reader_form.html" %}
+{% load adminmedia %}
+
+{% block js %}
+<script type="text/javascript" src="{% admin_media_prefix %}js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="http://static.registerguard.com/colorbox/jquery.colorbox.js"></script>
+<script type="text/javascript" src="http://rg-assets.s3.amazonaws.com/v3.5/js/registerguard.js"></script>
+{% endblock %}
+
+{% block css %}
+<style type="text/css" media="screen">
+	<!--
+	table {
+		margin: 10px 0 10px 0;
+		border: 1px solid #000000;
+		width: 100%;
+	}
+	#wrapper {
+		background: #eee;
+	}
+	-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://static.registerguard.com/colorbox/example4/colorbox.css" media="screen">
+
+<!-- *** THIS BELOW NEEDS TO MOVE. ASK MICKY. *** -->
+
+<style type="text/css" media="screen">
+	<!--
+	#cboxLoadedContent {
+		width: 400px !important;
+		text-align: justify;
+		font-family: "Times New Roman", Times;
+	}
+	
+	#obit-head {
+		font-family: Arial;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+	}
+	-->
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+	{% if messages %}
+		{% for message in messages %}
+			<p style="color: blue; font-weight: bold;">{{ message }}</p>
+		{% endfor %}
+	{% endif %}
+	
+	<table>
+		<tr><td><a href="{% url death_notice_index %}">Home</a>&nbsp;|&nbsp;<a href="{% url logout %}">Logout</a></td></tr>
+		<tr><td>Hello {{ user.funeralhomeprofile.full_name }}</td></tr>
+	</table>
+	
+	{% if form.is_multipart %}
+	<form enctype="multipart/form-data" action="/obituary2/obituaries/" method="post">{% csrf_token %}
+	{% else %}
+	<form action="" method="post">{% csrf_token %}
+	{% endif %}
+
+	<table>
+		<tr class="required" width="100%"><th colspan="2">Items in red are required.</th></tr>
+		
+		<tr>
+			<th colspan="2" class="required">
+			{% if form.errors or formset.errors or bei_formset.errors or os_formset.errors or child_formset.errors or sib_formset.errors or wed_formset.errors %}
+				
+				Please address the error(s) below.
+				
+			{% endif %}
+			</th>
+		</tr>
+		
+		<tr {% if form.death_notice.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.death_notice.label_tag }}:
+			</th>
+			<td>
+				{{ form.death_notice.errors }}
+				{{ form.death_notice }}
+				{% if form.death_notice.help_text %}<p>{{ form.death_notice.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.gender.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.gender.label_tag }}:
+			</th>
+			<td>
+				{{ form.gender.errors }}
+				{{ form.gender }}
+				{% if form.gender.help_text %}<p>{{ form.gender.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.date_of_birth.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.date_of_birth.label_tag }}:
+			</th>
+			<td>
+				{{ form.date_of_birth.errors }}
+				{{ form.date_of_birth }}
+				{% if form.date_of_birth.help_text %}<p>{{ form.date_of_birth.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.obituary_body.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.obituary_body.label_tag }}:
+			</th>
+			<td>
+				{{ form.obituary_body.errors }}
+				{{ form.obituary_body }}
+				{% if form.obituary_body.help_text %}<p>{{ form.obituary_body.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.place_of_birth.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.place_of_birth.label_tag }}:
+			</th>
+			<td>
+				{{ form.place_of_birth.errors }}
+				{{ form.place_of_birth }}
+				{% if form.place_of_birth.help_text %}<p>{{ form.place_of_birth.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.cause_of_death.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.cause_of_death.label_tag }}
+			</th>
+			<td>
+				{{ form.cause_of_death.errors }}
+				{{ form.cause_of_death }}
+				{% if form.cause_of_death.help_text %}<p>{{ form.cause_of_death.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.no_service_planned.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.no_service_planned.label_tag }}
+			</th>
+			<td>
+				{{ form.no_service_planned.errors }}
+				{{ form.no_service_planned }}
+				{% if form.no_service_planned.help_text %}<p>{{ form.no_service_planned.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.service_plans_indefinite.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.service_plans_indefinite.label_tag }}
+			</th>
+			<td>
+				{{ form.service_plans_indefinite.errors }}
+				{{ form.service_plans_indefinite }}
+				{% if form.service_plans_indefinite.help_text %}<p>{{ form.service_plans_indefinite.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+	</table>
+	
+	<table>
+	
+		<tr {% if form.family_contact.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.family_contact.label_tag }}:
+			</th>
+			<td>
+				{{ form.family_contact.errors }}
+				{{ form.family_contact }}
+				{% if form.family_contact.help_text %}<p>{{ form.family_contact.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.photo.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.photo.label_tag }}:
+			</th>
+			<td>
+				{{ form.photo.errors }}
+				{{ form.photo }}
+				{% if form.photo.help_text %}<p>{{ form.photo.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+		<tr {% if form.family_contact_phone.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.family_contact_phone.label_tag }}:
+			</th>
+			<td>
+				{{ form.family_contact_phone.errors }}
+				{{ form.family_contact_phone }}
+				{% if form.family_contact_phone.help_text %}<p>{{ form.family_contact_phone.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+	</table>
+	
+	<table>
+		
+		
+		<tr {% if form.status.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.status.label_tag }}:
+			</th>
+			<td>
+				{{ form.status.errors }}
+				{{ form.status }}
+				{% if form.status.help_text %}<p>{{ form.status.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
+	</table>
+	
+	<table>
+		<tr>
+			<td>
+				<input type="submit" name="delete" value="Delete" /> 
+				<input type="submit" name="submit_add" value="Save and add another" /> 
+				<input type="submit" name="submit_continue" value="Save and continue editing" /> 
+				<input type="submit" name="submit" value="Save" />
+			</td>
+		</tr>
+	</table>
+	</form>
+	
+	{% if obituary_id %}<p style="font-weight: bold;"><a class="preview_ob" href="#">See a preview</a> | <a href="{% url print_obituary obituary_id %}" rel="external">Print the preview</a></p>{% endif %}
+	
+	<div style="display: none;">
+		<div id="preview_ob">
+			{% if current_obit.photo.name %}<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="http://{{ current_obit.photo.storage.bucket }}.{{ current_obit.photo.storage.connection.server }}/{{ current_obit.photo.name }}">{% endif %}{{ current_obit.admin_thumbnail|safe }}{% if current_obit.photo.name %}</a></div>{% endif %}
+			{{ obit_preview|safe }}
+		</div>
+	</div>
+	
+</div>
+
+<script type="text/javascript"> 
+//<!-- 
+  $(function(){
+    $("#id_date_of_birth").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: 'c-110:c+0',
+            dateFormat: 'yy-mm-dd'
+        });
+  });
+
+  $(function(){
+    $("#id_visitation-0-visitation_start_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss'
+    });
+  });
+
+  $(function(){
+    $("#id_visitation-0-visitation_end_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss'
+    });
+  });
+
+  $(function(){
+    $(".marriage_date_picker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: 'c-110:c+0',
+            dateFormat: 'yy-mm-dd',
+            constrainInput: false
+        });
+  });
+
+  $(function(){
+    $(".spouse_death_picker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: 'c-110:c+0',
+            dateFormat: 'yy-mm-dd',
+            constrainInput: false
+        });
+  });
+
+  $(function(){
+    $("#id_bei-0-bei_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss',
+      constrainInput: false
+    });
+  });
+
+  // http://trentrichardson.com/examples/timepicker/
+  $(function(){
+    $("#id_other_services-0-other_services_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss'
+    });
+  });
+
+  document.getElementById('id_death_notice').focus()
+
+  $(document).ready(function() {
+    $(".preview_ob").colorbox({width: "480px", inline: "true", href: "#preview_ob"});
+    
+  });
+// -->
+</script>
+
+{% endblock content %}

@@ -1,0 +1,70 @@
+{% extends "base_reader_form.html" %}
+
+{% block title %}Add {{ dn_verbose_name }}{% endblock %}
+
+{% block js %}
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+{{ form.media }}
+{{ service_form.media }}
+{% endblock %}
+
+{% block css %}
+<style type="text/css">
+	<!--
+	#wrapper {
+		background: none;
+	}
+	h1 {
+		margin-left: 12px;
+	}
+	-->
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Add {{ dn_verbose_name }}</h1>
+<form method="POST" action="/add/{{ field }}/">
+		{% csrf_token %}
+		<table>
+		{{ form }}
+		</table>
+		<table>
+		{{ service_form }}
+		</table>
+		<table>
+		{{ other_services_formset }}
+		</table>
+		
+<p><input type="submit" value="Save" /> | <a href="javascript:window.close()">Cancel</a></p>
+</form>
+
+<script type="text/javascript"> 
+  $(function(){
+    $("#id_death_date").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: 'c-110:c+0',
+            dateFormat: 'yy-mm-dd'
+        });
+  });
+
+  $(function(){
+    $("#id_service-0-service_date_time").datetimepicker({
+          stepMinute: 5,
+          hourMin: 6,
+          hourMax: 23,
+        });
+  });
+
+  // http://trentrichardson.com/examples/timepicker/
+  $(function(){
+    $("#id_deathnoticeotherservices-0-other_services_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23
+    });
+  });
+
+  document.getElementById('id_first_name').focus()
+</script>
+{% endblock %}

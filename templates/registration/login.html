@@ -1,0 +1,43 @@
+{% extends "base_reader_form.html" %}
+
+{% block css %}
+{% include "snippets/css.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+		<!-- <h3 class="sep">Flag a comment</h3> -->
+		<div class="nw bgfff mb15">
+			<div class="ne"><div class="se"><div class="sw">
+				<div class="clear">
+					<form action="" method="POST">{% csrf_token %}
+						<fieldset>
+							{% for field in form %}
+								{% if not field.is_hidden %}
+									<div class="fm{% if field.field.required %} req{% endif %}">
+										<label for="fm_subscribe_{{field.name}}">{% if field.field.required %}<span class="required">*</span> {% endif %}{{ field.label }}:
+										{% if field.errors %}<br/>
+											{% for error in field.errors %}
+												<span class="warning" style="display: inline;">{{ error }}</span>
+											{% endfor %}
+										{% endif %}
+										{% if field.help_text %}<br/>
+											<span class="paren">{{ field.help_text }}</span>
+										{% endif %}
+										</label>
+										{{ field }}
+									</div>
+								{% endif %}
+							{% endfor %}
+							{# <a href="{% url password_reset %}">Forgot your password?</a> #}
+						</fieldset>
+						<div class="submit">
+							<input id="fm_subscribe_submit" type="submit" title="form" value="Submit" name="Submit" />&nbsp;<input type="reset" id="fm_subscribe_reset" name="Reset" value="Reset" title="Reset form">
+						</div>
+	
+					</form>
+				</div> <!-- /.clear -->
+			</div> <!-- /.ne --> </div> <!-- /.se --> </div> <!-- /.sw -->
+		</div> <!-- /.nw -->
+</div> <!-- /.wrapper -->
+{% endblock %}

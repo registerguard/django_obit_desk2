@@ -1,0 +1,107 @@
+{% extends "base_reader_form.html" %}
+
+{% block title %}Manage death notice{% endblock %}
+
+{% block js %}<script type="text/javascript" src="http://static.registerguard.com/colorbox/jquery.colorbox.js"></script>{% endblock %}
+
+{% block css %}
+{% include "snippets/css.html" %}
+<link rel="stylesheet" type="text/css" href="http://static.registerguard.com/colorbox/example4/colorbox.css">
+{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+	<p><a href="{% url death_notice_index %}">Home</a>&nbsp;|&nbsp;<a href="{% url logout %}">Logout</a></p>
+	<p>Hello {{ user.funeralhomeprofile.full_name }}</p>
+	
+	{% if messages %}
+		{% for message in messages %}
+			<p style="color: blue; font-weight: bold;">{{ message }}</p>
+		{% endfor %}
+	{% endif %}
+	
+	<form action="" method="post">{% csrf_token %}
+	<table>
+		{{ form }}
+		{{ formset }}
+		{{ other_services_formset }}
+		<tr>
+			<td colspan="2"><input type="submit" name="submit" value="Save" /> 
+			<input type="submit" name="add_another" value="Save and add another"> 
+			<input type="submit" name="delete_death_notice" value="Delete"></td>
+		</tr>
+	</table>
+	</form>
+	
+	{% if death_notice_id %}<p style="font-weight: bold;"><a class="preview_dn" href="#">Click here to preview</a></p>{% endif %}
+	
+	<div style="display: none;">
+		<div id="preview_dn">
+			{% include "death_list_unix_include.txt" %}
+		</div>
+	</div>
+</div> <!-- /.wrapper -->
+
+<script type="text/javascript"> 
+  $(function(){
+    $("#id_death_date").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: 'c-110:c+0',
+            dateFormat: 'yy-mm-dd'
+        });
+  });
+
+  // http://trentrichardson.com/examples/timepicker/
+  $(function(){
+    $("#id_service-0-service_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss'
+    });
+  });
+
+  // http://trentrichardson.com/examples/timepicker/
+  $(function(){
+    $("#id_service-0-service_end_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss'
+    });
+  });
+
+  // http://trentrichardson.com/examples/timepicker/
+  $(function(){
+    $("#id_deathnoticeotherservices-0-other_services_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss'
+    });
+  });
+
+  // http://trentrichardson.com/examples/timepicker/
+  $(function(){
+    $("#id_deathnoticeotherservices-0-other_services_end_date_time").datetimepicker({
+      stepMinute: 5,
+      hourMin: 6,
+      hourMax: 23,
+      dateFormat: 'yy-mm-dd',
+      timeFormat: 'hh:mm:ss'
+    });
+  });
+
+  document.getElementById('id_first_name').focus()
+
+  $(document).ready(function() {
+    $(".preview_dn").colorbox({width: "50%", inline: "true", href: "#preview_dn"});
+  });
+
+</script>
+
+{% endblock content %}
