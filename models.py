@@ -88,7 +88,7 @@ class FuneralHomeProfile(models.Model):
         ('Wis.', 'Wis.',),
         ('Wyo.', 'Wyo.',),
     )
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, related_name='fh_user2')
     full_name = models.CharField(max_length=80)
     address = models.CharField(max_length=256, blank=True)
     city = models.CharField(max_length=80, blank=True, help_text=u'Leave blank when city name is part of funeral home name, i.e., \'Oakridge Funeral Home Chapel of the Woods\'')
@@ -112,7 +112,7 @@ class Death_notice(models.Model):
         (3, 'days',),
         (4, 'hours',),
     )
-    funeral_home = models.ForeignKey(User)
+    funeral_home = models.ForeignKey(User, related_name='dn_user2')
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(u'Middle name or initial', max_length=95, blank=True)
     nickname = models.CharField(max_length=90, blank=True, help_text='Just enter name, without double-quotes, i.e. Jack, not "Jack"')
@@ -258,7 +258,7 @@ class Obituary(models.Model):
 #         return 'obit_images/ob.%s.%s%s' % (instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
         return 'obits/%s/%s/ob.%s.%s%s' % (datetime.date.today().year, datetime.date.today().month, instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
     
-    user = models.ForeignKey(User, null=True, blank=True)
+    user = models.ForeignKey(User, null=True, blank=True, related_name='obit_user2')
     death_notice = models.OneToOneField(Death_notice, primary_key=True, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
     cause_of_death = models.CharField(u'Died of ... ', max_length=150, blank=True, help_text=u'Leave blank if family chooses not to list cause of death.')
     no_service_planned = models.BooleanField(u'No service planned?', blank=True, help_text=u'Check if NO SERVICE IS PLANNED.')
