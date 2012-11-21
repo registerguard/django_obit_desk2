@@ -21,7 +21,7 @@
 	{% endif %}
 	
 	<p>Hello {{ user.funeralhomeprofile.full_name }}</p>
-	<p><a href="{% url logout %}">Logout</a>&nbsp;|&nbsp;<a href="{% url add_death_notice2 %}">Add death notice</a>&nbsp;|&nbsp;<a href={% url add_obituary2 %}>Add obituary</a></p>
+	<p><a href="{% url logout2 %}">Logout</a>&nbsp;|&nbsp;<a href="{% url add_death_notice2 %}">Add death notice</a>&nbsp;|&nbsp;<a href={% url add_obituary2 %}>Add obituary</a></p>
 	
 	{% if death_notices %}
 	<h3>Death notices</h3>
