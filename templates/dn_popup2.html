@@ -1,6 +1,6 @@
 {% extends "base_reader_form.html" %}
 
-{% block title %}Add {{ dn_verbose_name }}{% endblock %}
+{% block title %}{{ dn_verbose_name }}{% endblock %}
 
 {% block js %}
 <script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
@@ -22,8 +22,8 @@
 {% endblock %}
 
 {% block content %}
-<h1>Add {{ dn_verbose_name }}</h1>
-<form method="POST" action="/add/{{ field }}/">
+<h1>Add Gaaah! {{ dn_app_name }} {{ dn_verbose_name }}</h1>
+<form method="POST" action="/add2/{{ field }}/">
 		{% csrf_token %}
 		<table>
 		{{ form }}

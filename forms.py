@@ -2,7 +2,7 @@ import datetime
 from django import forms
 from django.forms import ModelForm
 from django.forms.models import inlineformset_factory
-from django_obit_desk2.widgets import SelectWithPopUp
+from django_obit_desk2.widgets import SelectWithPopUp2
 from django_obit_desk2.models import Death_notice, Service, Obituary, \
     DeathNoticeOtherServices
 from django_obit_desk2.obituary_settings import DISPLAY_DAYS_BACK
@@ -70,7 +70,7 @@ class ObituaryForm(ModelForm):
     error_css_class = 'error'
     required_css_class = 'required'
     
-    death_notice = forms.ModelChoiceField(Death_notice.objects, widget = SelectWithPopUp)
+    death_notice = forms.ModelChoiceField(Death_notice.objects, widget = SelectWithPopUp2)
     date_of_birth = forms.DateField(widget=CalendarWidget())
     
     class Meta:

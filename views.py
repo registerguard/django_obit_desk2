@@ -15,9 +15,8 @@ from django.utils.html import escape
 from django.utils.translation import ugettext
 from django.views.generic.list_detail import object_list
 from django_obit_desk2.models import Death_notice, Obituary
-from django_obit_desk2.forms import Death_noticeForm, \
-    ServiceFormSet, ObituaryForm, \
-    DeathNoticeOtherServicesFormSet
+from django_obit_desk2.forms import Death_noticeForm, ServiceFormSet, \
+    ObituaryForm, DeathNoticeOtherServicesFormSet
 from django_obit_desk2.utils import output_cleanup_hack, adobe_to_web
 
 from obituary_settings import DISPLAY_DAYS_BACK
@@ -27,13 +26,13 @@ from obituary_settings import DISPLAY_DAYS_BACK
 def deaths2(request, model=None, file=None):
     # Set the right template
     if request.META['HTTP_USER_AGENT'].count('Macintosh') and model == 'Death_notice':
-        template_name = 'death_list_unix_line_endings.html'
+        template_name = 'death_list_unix_line_endings2.html'
     elif request.META['HTTP_USER_AGENT'].count('Macintosh') and model == 'Obituary':
-        template_name = 'obituary_list_unix_line_endings.html'
+        template_name = 'obituary_list_unix_line_endings2.html'
     elif model == 'Death_notice':
-        template_name = 'death_list_windows_line_endings.html'
+        template_name = 'death_list_windows_line_endings2.html'
     else:
-        template_name = 'obituary_list_windows_line_endings.html'
+        template_name = 'obituary_list_windows_line_endings2.html'
         
     model = eval(model)
     if model == Death_notice:
@@ -78,7 +77,7 @@ def manage_death_notice2(request, death_notice_id=None):
             msg = ugettext('The %(verbose_name)s was deleted.') %\
                 { 'verbose_name': Death_notice._meta.verbose_name }
             messages.success(request, msg, fail_silently=True)
-            return HttpResponseRedirect(reverse('death_notice_index'))
+            return HttpResponseRedirect(reverse('death_notice_index2'))
         
         if death_notice_id:
             death_notice = Death_notice.objects.get(pk=death_notice_id)
@@ -101,9 +100,9 @@ def manage_death_notice2(request, death_notice_id=None):
             messages.success(request, msg, fail_silently=True)
             dn_os_formset.save()
             if request.POST.has_key('add_another'):
-                return HttpResponseRedirect(reverse('add_death_notice'))
+                return HttpResponseRedirect(reverse('add_death_notice2'))
             else:
-                return HttpResponseRedirect(reverse('death_notice_index'))
+                return HttpResponseRedirect(reverse('death_notice_index2'))
     else:
         if death_notice_id:
             death_notice = Death_notice.objects.get(pk=death_notice_id)
@@ -191,7 +190,7 @@ def manage_obituary2(request, obituary_id=None):
     
     # To be used for Preview
     if obituary_id:
-        tm = loader.get_template('obituary_list_unix_include.txt')
+        tm = loader.get_template('obituary_list_unix_include2.txt')
         ct = RequestContext(request, {'object_list': [current_obit]})
 #         ct = RequestContext(request)
 #         ct['object_list'] = [current_obit]
@@ -214,45 +213,53 @@ def add_new_model2(request, model_name):
     else:
         normal_model_name = model_name
     
-    app_list = get_apps()
-    for app in app_list:
-        for model in get_models(app):
-            if model.__name__ == normal_model_name:
-                form = modelform_factory(model)
-                
-                if normal_model_name == 'Death_notice':
-                    dn_name = model._meta.verbose_name
-                    form = Death_noticeForm
-                    service_form = ServiceFormSet
-                    dn_os_formset = DeathNoticeOtherServicesFormSet
-                
-                if request.method == 'POST':
-                    form = form(request.POST)
-                    service_form = service_form(request.POST)
-                    dn_os_formset = DeathNoticeOtherServicesFormSet(request.POST)
-                    if form.is_valid() and service_form.is_valid() and dn_os_formset.is_valid():
-                        try:
-                            if normal_model_name == 'Death_notice':
-                                new_obj = form.save(commit=False)
-                                new_obj.funeral_home = request.user
-                                new_obj.save()
-                                service_form = ServiceFormSet(request.POST, instance=new_obj)
-                                service_form.save()
-                                dn_os_formset = DeathNoticeOtherServicesFormSet(request.POST, instance=new_obj)
-                                dn_os_formset.save()
-                            else:
-                                new_obj = form.save()
-                        except forms.ValidationError, error:
-                            new_obj = None
-                        
-                        if new_obj:
-                             return HttpResponse('<script type="text/javascript">opener.dismissAddAnotherPopup(window, "%s", "%s");</script>' % \
-                                    (escape(new_obj._get_pk_val()), escape(new_obj)))
-                else:
-                   form = form()
-                
-                page_context = {'form': form, 'service_form': service_form, 'other_services_formset': dn_os_formset, 'field': normal_model_name, 'dn_verbose_name': dn_name }
-                return render_to_response('dn_popup.html', page_context, context_instance=RequestContext(request))
+#     app_list = get_apps()
+#     for app in app_list:
+    app = get_app('django_obit_desk2')
+    for model in get_models(app):
+        if model.__name__ == normal_model_name:
+            form = modelform_factory(model)
+            
+            if normal_model_name == 'Death_notice':
+                dn_name = model._meta.verbose_name
+                form = Death_noticeForm
+                service_form = ServiceFormSet
+                dn_os_formset = DeathNoticeOtherServicesFormSet
+            
+            if request.method == 'POST':
+                form = form(request.POST)
+                service_form = service_form(request.POST)
+                dn_os_formset = DeathNoticeOtherServicesFormSet(request.POST)
+                if form.is_valid() and service_form.is_valid() and dn_os_formset.is_valid():
+                    try:
+                        if normal_model_name == 'Death_notice':
+                            new_obj = form.save(commit=False)
+                            new_obj.funeral_home = request.user
+                            new_obj.save()
+                            service_form = ServiceFormSet(request.POST, instance=new_obj)
+                            service_form.save()
+                            dn_os_formset = DeathNoticeOtherServicesFormSet(request.POST, instance=new_obj)
+                            dn_os_formset.save()
+                        else:
+                            new_obj = form.save()
+                    except forms.ValidationError, error:
+                        new_obj = None
+                    
+                    if new_obj:
+                         return HttpResponse('<script type="text/javascript">opener.dismissAddAnotherPopup(window, "%s", "%s");</script>' % \
+                                (escape(new_obj._get_pk_val()), escape(new_obj)))
+            else:
+               form = form()
+            
+            page_context = {
+                'form': form, 
+                'service_form': service_form, 
+                'other_services_formset': dn_os_formset, 
+                'field': normal_model_name, 
+                'dn_verbose_name': dn_name, 
+                'dn_app_name': app, 
+            }
+            return render_to_response('dn_popup2.html', page_context, context_instance=RequestContext(request))
 
 @login_required
 def billing2(request, billing_month=None, excel_response=False):
@@ -295,7 +302,7 @@ def print_obituary2(request, obituary_id=None):
     '''
     if obituary_id:
         obit = Obituary.objects.get(pk=obituary_id)
-        tm = loader.get_template('obituary_list_unix_include.txt')
+        tm = loader.get_template('obituary_list_unix_include2.txt')
         ct = RequestContext(request, {'object_list': [obit]})
         dt = tm.render(ct)
         dt = output_cleanup_hack(dt)

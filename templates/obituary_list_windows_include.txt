@@ -1,7 +1,0 @@
-{% for ob in object_list %}<pstyle:Headlines\:DigestHead>{{ ob.death_notice.first_name }} {{ ob.death_notice.last_name }}
-<pstyle:BodyText\:BodyText\_No\_BL>{{ ob.intro|safe }}{% if ob.other_services %} {{ ob.other_services.description }} will be at {{ ob.other_services.other_services_date_time|date:"P l, N j," }} at {{ ob.other_services.other_services_location }}.{% endif %}
-<pstyle:BodyText\:BodyText\_No\_BL>{{ ob.pronoun }} was born {{ ob.date_of_birth }}, in {{ ob.place_of_birth }}{% if ob.parents_names %}, to {{ ob.parents_names|safe }}{% endif %}. {{ ob.marriage|safe }}
-<pstyle:BodyText\:BodyText\_No\_BL>{{ ob.education|safe }} {{ ob.military_service|safe }} {{ ob.career_work_experience|safe }}
-<pstyle:BodyText\:BodyText\_No\_BL>Survivors include{{ ob.surviving_sig_ot }}{{ ob.surviving_parents }}{{ ob.surviving_grandparents }}{{ ob.surviving_children|safe }}{{ ob.surviving_siblings|safe }}{{ ob.surviving_grands|safe }}. {% if ob.preceded_in_death_by %} {{ ob.pronoun }} was preceded in death by {{ ob.preceded_in_death_by }}.{% endif %}
-{{ ob.bei_display|safe }}<pstyle:BodyText\:BodyText\_No\_BL>Arrangements by {{ ob.death_notice.funeral_home.funeralhomeprofile.full_name|safe }}{% if ob.death_notice.funeral_home.funeralhomeprofile.city %} in {{ ob.death_notice.funeral_home.funeralhomeprofile.city }}{% if ob.death_notice.funeral_home.funeralhomeprofile.state %}, {{ ob.death_notice.funeral_home.funeralhomeprofile.state }}{% endif %}{% endif %}.{% if ob.remembrances %} Remembrances to {{ ob.remembrances|safe }}.{% endif %}
-{% endfor %}
