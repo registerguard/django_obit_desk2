@@ -1,0 +1,11 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+{% block object-tools %}
+{% if change %}{% if not is_popup %}
+<ul class="object-tools">
+    <li><a href="history/" class="historylink">{% trans "History" %}</a></li>
+    {# <li><a href="{% url print_obituary2 object_id %}" class="historylink" target="_new">{% trans "Preview Obituary" %}</a></li> #}
+    <li><a href="{% url print_obituary2 object_id %}" class="historylink" onclick="javascript:window.open(this.href); return false;">{% trans "Preview Obituary" %}</a></li>
+</ul>
+{% endif %}{% endif %}
+{% endblock %}
