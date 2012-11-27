@@ -311,7 +311,7 @@ def print_obituary2(request, obituary_id=None):
         'obit_string': dt,
         'obit': obit,
     }
-    return render_to_response('print_obituary.html', response_dict, context_instance=RequestContext(request))
+    return render_to_response('print_obituary2.html', response_dict, context_instance=RequestContext(request))
 
 @login_required
 def hard_copies_manifest2(request):
