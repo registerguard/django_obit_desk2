@@ -22,7 +22,7 @@
 {% endblock %}
 
 {% block content %}
-<h1>Add Gaaah! {{ dn_app_name }} {{ dn_verbose_name }}</h1>
+<h1>{{ dn_verbose_name }}</h1>
 <form method="POST" action="/add2/{{ field }}/">
 		{% csrf_token %}
 		<table>

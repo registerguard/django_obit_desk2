@@ -86,17 +86,6 @@
 			</td>
 		</tr>
 		
-		<tr {% if form.gender.field.required %}class="required"{% endif %}>
-			<th>
-				{{ form.gender.label_tag }}:
-			</th>
-			<td>
-				{{ form.gender.errors }}
-				{{ form.gender }}
-				{% if form.gender.help_text %}<p>{{ form.gender.help_text|safe }}</p>{% endif %}
-			</td>
-		</tr>
-		
 		<tr {% if form.date_of_birth.field.required %}class="required"{% endif %}>
 			<th>
 				{{ form.date_of_birth.label_tag }}:
