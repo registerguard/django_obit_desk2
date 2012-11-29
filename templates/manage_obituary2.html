@@ -108,50 +108,6 @@
 			</td>
 		</tr>
 		
-		<tr {% if form.place_of_birth.field.required %}class="required"{% endif %}>
-			<th>
-				{{ form.place_of_birth.label_tag }}:
-			</th>
-			<td>
-				{{ form.place_of_birth.errors }}
-				{{ form.place_of_birth }}
-				{% if form.place_of_birth.help_text %}<p>{{ form.place_of_birth.help_text|safe }}</p>{% endif %}
-			</td>
-		</tr>
-		
-		<tr {% if form.cause_of_death.field.required %}class="required"{% endif %}>
-			<th>
-				{{ form.cause_of_death.label_tag }}
-			</th>
-			<td>
-				{{ form.cause_of_death.errors }}
-				{{ form.cause_of_death }}
-				{% if form.cause_of_death.help_text %}<p>{{ form.cause_of_death.help_text|safe }}</p>{% endif %}
-			</td>
-		</tr>
-		
-		<tr {% if form.no_service_planned.field.required %}class="required"{% endif %}>
-			<th>
-				{{ form.no_service_planned.label_tag }}
-			</th>
-			<td>
-				{{ form.no_service_planned.errors }}
-				{{ form.no_service_planned }}
-				{% if form.no_service_planned.help_text %}<p>{{ form.no_service_planned.help_text|safe }}</p>{% endif %}
-			</td>
-		</tr>
-		
-		<tr {% if form.service_plans_indefinite.field.required %}class="required"{% endif %}>
-			<th>
-				{{ form.service_plans_indefinite.label_tag }}
-			</th>
-			<td>
-				{{ form.service_plans_indefinite.errors }}
-				{{ form.service_plans_indefinite }}
-				{% if form.service_plans_indefinite.help_text %}<p>{{ form.service_plans_indefinite.help_text|safe }}</p>{% endif %}
-			</td>
-		</tr>
-		
 	</table>
 	
 	<table>

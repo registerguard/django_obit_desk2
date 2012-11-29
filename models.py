@@ -229,7 +229,29 @@ class Service(models.Model):
 class DeathNoticeOtherServices(baseOtherServices):
     death_notice = models.OneToOneField(Death_notice)
 
+'''
+11/28/12:
+Dropped these fields:
+place_of_birth
+gender
+cause_of_death
+no_service_planned
+service_plans_indefinite
+'''
 class Obituary(models.Model):
+    COPIES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+    )
+    
     COST = {
         'FH':    '$25',
         'STAFF': '$50',
@@ -242,16 +264,13 @@ class Obituary(models.Model):
     
     user = models.ForeignKey(User, null=True, blank=True, related_name='obit_user2')
     death_notice = models.OneToOneField(Death_notice, primary_key=True, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
-    cause_of_death = models.CharField(u'Died of ... ', max_length=150, blank=True, help_text=u'Leave blank if family chooses not to list cause of death.')
-    no_service_planned = models.BooleanField(u'No service planned?', blank=True, help_text=u'Check if NO SERVICE IS PLANNED.')
-    service_plans_indefinite = models.CharField(u'Service planned, no specifics yet', max_length=300, blank=True, help_text=u'If a Service is planned, but exact date, time, place are not known or it is private, use this field, i.e., "A service is planned in Oakridge." or "A service is planned for February." or "A private memorial service is planned." (If specifics are known, use Service section of Death Notice form.)')
     prepaid_by = models.CharField(max_length=325, blank=True)
     date_of_birth = models.DateField(help_text=u'YYYY-MM-DD format')
-    place_of_birth = models.CharField(max_length=75, blank=True, help_text=u'City, State (if known, otherwise, just enter state). If born in Lane County area, just enter city.')
     family_contact = models.CharField(max_length=126)
     family_contact_phone = models.CharField(max_length=12)
     obituary_body = models.TextField()
     mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive up to 10 copies of this obituary.')
+    number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
     photo = ImageField(upload_to=obit_file_name, blank=True)
     # Survivors
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact The Register-Guard newsroom.</p>')
