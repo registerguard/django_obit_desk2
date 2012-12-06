@@ -1,0 +1,135 @@
+[
+  {
+    "pk": 15, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "drft", 
+      "obituary_created": "2012-12-04 16:45:12", 
+      "family_contact": "terry brown", 
+      "mailing_address": "", 
+      "family_contact_phone": "541-683-7612", 
+      "obituary_publish_date": null, 
+      "prepaid_by": "", 
+      "date_of_birth": "2012-07-07", 
+      "user": null, 
+      "photo": "", 
+      "number_of_copies": null, 
+      "obituary_in_system": false, 
+      "obituary_body": " 1) Ready to build your dream home mature trees,1/2 + acre of Silk Creek front property, older home has been removed from property. Gas power and water services in and ready for new construction. Lot has been surveyed. Maybe dividable. Buyer to verify with city.  MLS #10049868. $55,000. 1852 E MAIN ST, Cottage Grove\r\n2) Great location near Riverbend, newer roof, house is being painted as soon as weather permits. Large lot, covered patio, inside utility with half bath and shower. Lots of storage and cupboards. Small shop and outside fruit room, room for large shop in rear. Many shrubs & roses, well landscaped.  MLS# 12654484. $174,900. 141 HAYDEN BRIDGE WAY, Springfield\r\n 3) Breathtaking views from every window in the home. Built in 2006 as a vacation home, there are still some finishing touches to be done. Great location for recreation; snowboarding/skiing, fishing, golf, boating, etc. Riverfront beauty with unlimited potential. MLS# 12039241. $228,000. 123819 TWO RIVERS RD, Crescent Lake\r\n 4) INVESTOR ALERT!! Large lot with city view. House is \"Vintage Cottage Grove\", complete with a rock foundation. Charming but not financeable. A definite fixer or build new. House is on a grandfathered well. Some extras; including washer and dryer, microwave, gas heater, and some antique furniture.  MLS#12586801. $66,300. 750 S 14TH ST, Cottage Grove \r\n5) Reduced Price!!Newly updated and beautifully maintained 3Bdrm/2Bath home. Home features, new flooring, cabinets, heat pump, AC, walk-in showers, new energy efficient appliances, and vinyl thermo pane windows. Low maintenance yard, patio and deck. Located in the Greenway Mobile Home Park. Must see to appreciate.  MLS# 12124317. $22,900. 300 SE Lacreole DR #230, Dallas\r\n 6) Large city lot (.26 acre) with spectacular view in nice neighborhood with newer homes. Across road from Hidden Valley Golf Course. Gentle slope. Paved road frontage. Utilities to property line. Good Access to I-5 and local schools and shopping. PRICE REDUCED!! OWNER IS MOTIVATED AND WILL CARRY CONTRACT MLS# 12486901. $39,900. Holly Street, Cottage Grove\r\n7) Sweet, country property. Over 1/2 Acre. 3 bdrm, 2 full baths. Large bonus room and master suite on upper level. Quality appliances, utility room, large closets & abundant storage. Covered porch. Garden space, RV parking, storage building. New fencing. Silk creek frontage. Minutes to town & easy commute. MLS # 12205300. $245,000. 31803 Gowdyville Rd, Cottage Grove\r\n8)  2.72 acres of privacy, wonderful views & southern exposure. Large windows provide lot of natural light. A few finishing touches will bring this remodel in progress alive. Beautiful wood floors, new roof, paint, fireplace extraordinaire. Paved driveway and parking. Privacy fence, large rooms, wide halls & tons of storage. Conveniently located close to Golf, town & schools.  MLS#12350734. $279,000. 310 Elk Drive, Cottage Grove \r\n \r\n"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "drft", 
+      "obituary_created": "2012-11-28 18:46:12", 
+      "family_contact": "adfad", 
+      "mailing_address": "", 
+      "family_contact_phone": "adfasd", 
+      "obituary_publish_date": null, 
+      "prepaid_by": "Family member", 
+      "date_of_birth": "1965-11-12", 
+      "user": 2, 
+      "photo": "", 
+      "number_of_copies": 10, 
+      "obituary_in_system": false, 
+      "obituary_body": "Here is the life story of the decedent."
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "live", 
+      "obituary_created": "2012-11-28 18:42:27", 
+      "family_contact": "Mum", 
+      "mailing_address": "", 
+      "family_contact_phone": "666asdf", 
+      "obituary_publish_date": null, 
+      "prepaid_by": "", 
+      "date_of_birth": "1962-11-05", 
+      "user": null, 
+      "photo": "", 
+      "number_of_copies": null, 
+      "obituary_in_system": false, 
+      "obituary_body": "It was fun while it lasted."
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "drft", 
+      "obituary_created": "2012-11-26 15:12:18", 
+      "family_contact": "Test", 
+      "mailing_address": "", 
+      "family_contact_phone": "541-555-5555", 
+      "obituary_publish_date": null, 
+      "prepaid_by": "Test", 
+      "date_of_birth": "1926-10-16", 
+      "user": 2, 
+      "photo": "obits/2012/11/ob.fitzgerald.jerome.JPG", 
+      "number_of_copies": 10, 
+      "obituary_in_system": false, 
+      "obituary_body": "A funeral Mass will be held at St. Paul Catholic Church in Eugene for Jerome &#8220Jay&#8221 Fitzgerald of Eugene at 11:00 a.m. on Monday, Nov. 26, 2012.\r\n\r\nJay was born Oct. 16, 1926, in Portland to William and Zoe Patrick Fitzgerald. \r\n\r\nJay completed his secondary education at Mount Angel Seminary and took advanced religious studies at Mt. St. Philip in Milwaukee, Wisc. When Jay decided to leave the seminary, he boarded a train for Portland and somewhere between Chicago and Cedar Rapids, he met Rosemary Marsh. They married on Oct. 8, 1949 in her hometown of Cedar Rapids, Iowa and celebrated 63 years together.\r\n\r\nJay graduated from the University of Washington School of Banking. Jay&#8217s career in banking spanned 43 years and took him to jobs in Portland, Coos Bay, and Eugene. He retired as a vice president for First Interstate Bank.\r\n\r\nJay is survived by five sons Pat of Battle Ground WA, Tom of Coburg, Steve of El Paso TX, Jim of Kenmore WA, John of Portland, and two daughters Kathleen &#8220Bee&#8221 McRae of Junction City, and Kelly Greatwood of Eugene. An infant son, Danny, died previously. \r\n\r\nJay was proud to serve the communities where he worked. He was President of the Parish School Association, President of the Portland Chapter of the American Institute of Banking and member of the national board, Chairman of the Recreational and Natural Resources Committee for the Portland Chamber of Commerce, President of the SW Oregon Personnel Management Association (Coos Bay), President and board member for the United Way of Lane County, President of Sheldon High School Men&#8217s Club, Vice President and board member of the Eugene Area Chamber of Commerce, and he served on boards for the Oregon Trail Council of the Boy Scouts, St. Vincent De Paul Society, the Bureau of Land Management, and the YMCA. Jay also worked for the University of Oregon&#8217s Business Giving Campaign, and served as the metropolitan chair of the National Alliance of Businessmen in Eugene.\r\nGolfing, gardening, and reading were among his favorite pastimes. His all-time favorite event was the annual Fitzgerald Family Reunion and Golf Tournament. \r\n\r\nFamily, faith, and friends were his life. In his retirement years he served nursing homes and both Sacred Heart Hospitals as a Eucharistic minister.\r\n\r\nPrivate burial will be at Sunset Memorial Park in Coos Bay. Arrangements by Andreason&#8217s Cremation & Burial Service in Springfield. Remembrances to the St. Paul Catholic Church.\r\n"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "drft", 
+      "obituary_created": "2012-11-26 14:51:02", 
+      "family_contact": "Wendy Shaw", 
+      "mailing_address": "Wendy Shaw, 1408 Russet Dr., Eugene, OR 97401", 
+      "family_contact_phone": "541-501-1549", 
+      "obituary_publish_date": null, 
+      "prepaid_by": "Wendy Shaw", 
+      "date_of_birth": "1933-11-21", 
+      "user": 290, 
+      "photo": "obits/2012/11/ob.nash.adeline.jpg", 
+      "number_of_copies": 10, 
+      "obituary_in_system": false, 
+      "obituary_body": " Adeline Lorraine Nash  passed away on Nov. 30, 2012.  she was born Nov. 21, 1933 in Warroad, Minnesota to  Alton Bolton Sr. and Clara Amanda Olson Bolton. She graduated from Warroad High School.  She married  Lloyd Frederick Nash on Nov. 6, 1954 in  Fargo, North Dakota.  He preceded her in death in Feb. 2009. \r\n\r\nShe worked at Mouldings Inc,. and was a homemaker. \r\n\r\n She is survived by four children: Wendy of Eugene, Bruce of Bend, Nola of Denver Co, and Lee of  Snake River, OR; 6 grandchildren:  Stephanie,  Noelle, Devon,  Kyle,  Adam and Robert; and 3 great grandchildren Tristan and Ahanu. \r\n\r\n Private family services will be held.  Remembrances to the Harrisburg Fire Department\r\n\r\n"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "drft", 
+      "obituary_created": "2012-11-21 19:56:36", 
+      "family_contact": "SSDD", 
+      "mailing_address": "", 
+      "family_contact_phone": "DDDD", 
+      "obituary_publish_date": null, 
+      "prepaid_by": "", 
+      "date_of_birth": "1998-11-10", 
+      "user": null, 
+      "photo": "", 
+      "number_of_copies": null, 
+      "obituary_in_system": false, 
+      "obituary_body": "Jerome (Jay, Jerry) Charles Fitzgerald\r\nA funeral mass will be held at St. Paul Catholic Church in Eugene for Jerome &#8220Jay&#8221 Fitzgerald of Eugene at 11:00 a.m. on Monday, Nov. 26, 2012.\r\n\r\nJay was born Oct. 16, 1926, in Portland to William and Zoe Patrick Fitzgerald. \r\n\r\nJay completed his secondary education at Mount Angel Seminary and continued his preparation for the priesthood with advanced religious studies at Mt. St. Phillp in Milwaukee, WI. While on a train between Chicago and Portland, he learned that God had other plans when he met Rosemary Marsh. They married on Oct. 8, 1949, in her hometown of Cedar Rapids, Iowa. He graduated from the University of Washington School of Banking. Jay&#8217s career in banking spanned 43 years and took him to jobs in Portland, Coos Bay, and Eugene. He retired as a vice president for First Interstate Bank.\r\n\r\nJay is survived by five sons Pat of Battle Ground WA, Tom of Coburg, Steve of El Paso TX, Jim of Kenmore WA, John of Portland, and two daughters Kathleen &#8220Bee&#8221 McRae of Junction City, and Kelly Greatwood of Eugene. An infant son, Danny, died previously. \r\n\r\nJay was proud to serve the communities where he worked. He was President of the Parish School Association, President of the Portland Chapter of the American Institute of Banking and member of the national board, Chairman of the Recreational and Natural Resources Committee for the Portland Chamber of Commerce, President of the SW Oregon Personnel Management Association (Coos Bay), President and board member for the United Way of Lane County, President of Sheldon High School Men&#8217s Club, Vice President and board member of the Eugene Area Chamber of Commerce, and he served on boards for the Oregon Trail Council of the Boy Scouts, St. Vincent De Paul Society, the Bureau of Land Management, and the YMCA. Jay also worked for the University of Oregon&#8217s Business Giving Campaign, and served as the metropolitan chair of the National Alliance of Businessmen in Eugene.\r\nGolfing, gardening, and reading were among his favorite pastimes. His all-time favorite event was the annual Fitzgerald Family Reunion and Golf Tournament. \r\n\r\nFamily, faith, and friends were his life. In his retirement years he served nursing homes and both Sacred Heart Hospitals as a Eucharistic minister.\r\n\r\nPrivate burial will be at Sunset Memorial Park in Coos Bay. Arrangements by Andreason&#8217s Cremation & Burial Service in Springfield. Remembrances to the St. Paul Catholic Church.\r\n"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "drft", 
+      "obituary_created": "2012-11-21 17:43:55", 
+      "family_contact": "Bonnie Doone", 
+      "mailing_address": "", 
+      "family_contact_phone": "adsfasdad", 
+      "obituary_publish_date": null, 
+      "prepaid_by": "", 
+      "date_of_birth": "1922-11-09", 
+      "user": null, 
+      "photo": "", 
+      "number_of_copies": null, 
+      "obituary_in_system": false, 
+      "obituary_body": "He's gone.\r\nAnd we'll miss him."
+    }
+  }
+]

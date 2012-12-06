@@ -76,6 +76,12 @@ class ObituaryForm(ModelForm):
     class Meta:
         model = Obituary
         exclude = ('funeral_home', 'prepaid_by', 'obituary_in_system', 'obituary_has_run', 'obituary_publish_date',)
+    
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        desired_pub_date = cleaned_data.get("obituary_publish_date")
+        if desired_pub_date > 
+        return cleaned_data
 
 class ObituaryAdminForm(forms.ModelForm):
     # See http://stackoverflow.com/questions/1474135/django-admin-ordering-of-foreignkey-and-manytomanyfield-relations-referencing-u

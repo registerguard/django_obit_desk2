@@ -95,6 +95,7 @@ class FuneralHomeProfile(models.Model):
     state = models.CharField(max_length=6, choices=STATES, blank=True, help_text=u'Leave blank if located in Oregon')
     zip_code = models.CharField(max_length=32, blank=True)
     phone = models.CharField(max_length=14, blank=True)
+    rg_rep = models.ForeignKey(User, related_name='rg_rep', blank=True, null=True)
     
     class Meta:
         ordering = ('full_name',)
@@ -272,12 +273,13 @@ class Obituary(models.Model):
     mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive up to 10 copies of this obituary.')
     number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
     photo = ImageField(upload_to=obit_file_name, blank=True)
+    photo_two = ImageField(upload_to=obit_file_name, blank=True)
     # Survivors
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact The Register-Guard newsroom.</p>')
     
     obituary_in_system = models.BooleanField(u'Obit in DT?')
 #     obituary_has_run = models.BooleanField(u'Obit has run?')
-    obituary_publish_date = models.DateField(blank=True, null=True, help_text=u'Date the obituary was published in the paper.')
+    obituary_publish_date = models.DateField(blank=True, null=True)
     obituary_created = models.DateTimeField(auto_now_add=True)
     
     class Meta:

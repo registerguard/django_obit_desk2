@@ -39,6 +39,10 @@
 		font-weight: bold;
 		text-align: center;
 	}
+	
+	#estimator {
+		color: black;
+	}
 	-->
 </style>
 
@@ -106,7 +110,7 @@
 				{{ form.obituary_body.errors }}
 				{{ form.obituary_body }}
 				{% if form.obituary_body.help_text %}<p>{{ form.obituary_body.help_text|safe }}</p>{% endif %}
-				<p><span id="obit_text_count"></span> characters so far ... Estimated cost: <span id="obit_text_cost">0</span></p>
+				<p id="estimator"><span id="obit_text_count"></span> characters so far ... Estimated cost: <span id="obit_text_cost">0</span></p>
 			</td>
 		</tr>
 		
@@ -221,157 +225,157 @@
 
   $(function(){
     $("#id_obituary_body").NobleCount("#obit_text_count", {
-      max_chars:5000,
+      max_chars: 0,
       on_update: function(t_obj, char_area, c_settings, char_rem){
         // 4"
         if ($(t_obj).val().length <= 1012) {
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$50.00');
+          $('#obit_text_cost').text('$50.00, 4" or less.');
         // 4 1/2"
         } else if (($(t_obj).val().length > 1012) && ($(t_obj).val().length <= 1227)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$67.50');
+          $('#obit_text_cost').text('$67.50, about 4 1/2"');
         // 5"
         } else if (($(t_obj).val().length > 1227) && ($(t_obj).val().length <= 1421)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$75.00');
+          $('#obit_text_cost').text('$75.00, about 5"');
         // 5 1/2"
         } else if (($(t_obj).val().length > 1421) && ($(t_obj).val().length <= 1635)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$87.50');
+          $('#obit_text_cost').text('$87.50, about 5 1/2"');
         // 6"
         } else if (($(t_obj).val().length > 1635) && ($(t_obj).val().length <= 1839)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$100.00');
+          $('#obit_text_cost').text('$100.00, about 6"');
         // 6 /1/2"
         } else if (($(t_obj).val().length > 1839) && ($(t_obj).val().length <= 2045)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$112.50');
+          $('#obit_text_cost').text('$112.50, about 6 1/2"');
         // 7"
         } else if (($(t_obj).val().length > 2045) && ($(t_obj).val().length <= 2214)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$125.00');
+          $('#obit_text_cost').text('$125.00, about 7"');
         // 7 1/2"
         } else if (($(t_obj).val().length > 2214) && ($(t_obj).val().length <= 2435)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$137.50');
+          $('#obit_text_cost').text('$137.50, about 7 1/2"');
         // 8"
         } else if (($(t_obj).val().length > 2435) && ($(t_obj).val().length <= 2638)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$150.00');
+          $('#obit_text_cost').text('$150.00, about 8"');
         // 8 1/2"
         } else if (($(t_obj).val().length > 2638) && ($(t_obj).val().length <= 2900)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$167.50');
+          $('#obit_text_cost').text('$167.50, about 8 1/2"');
         // 9"
         } else if (($(t_obj).val().length > 2900) && ($(t_obj).val().length <= 3102)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$175.00');
+          $('#obit_text_cost').text('$175.00, about 9"');
         //9 1/2"
         } else if (($(t_obj).val().length > 3102) && ($(t_obj).val().length <= 3308)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$187.50');
+          $('#obit_text_cost').text('$187.50, about 9 1/2"');
         // 10"
         } else if (($(t_obj).val().length > 3308) && ($(t_obj).val().length <= 3502)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$200.00');
+          $('#obit_text_cost').text('$200.00, about 10"');
         // 10 1/2"
         } else if (($(t_obj).val().length > 3502) && ($(t_obj).val().length <= 3716)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$212.50');
+          $('#obit_text_cost').text('$212.50, about 10 1/2"');
         // 11"
         } else if (($(t_obj).val().length > 3716) && ($(t_obj).val().length <= 3927)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$225.00');
+          $('#obit_text_cost').text('$225.00, about 11"');
         // 11 1/2"
         } else if (($(t_obj).val().length > 3927) && ($(t_obj).val().length <= 4132)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$237.50');
+          $('#obit_text_cost').text('$237.50, about 11 1/2"');
         // 12"
         } else if (($(t_obj).val().length > 4132) && ($(t_obj).val().length <= 4349)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$250.00');
+          $('#obit_text_cost').text('$250.00, about 12"');
         // 12 1/2"
         } else if (($(t_obj).val().length > 4349) && ($(t_obj).val().length <= 4560)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$267.50');
+          $('#obit_text_cost').text('$267.50, about 12 1/2"');
         // 13"
         } else if (($(t_obj).val().length > 4560) && ($(t_obj).val().length <= 4831)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$275.00');
+          $('#obit_text_cost').text('$275.00, about 13"');
         // 13 1/2"
         } else if (($(t_obj).val().length > 4831) && ($(t_obj).val().length <= 5029)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$287.50');
+          $('#obit_text_cost').text('$287.50, about 13 1/2"');
         // 14"
         } else if (($(t_obj).val().length > 5029) && ($(t_obj).val().length <= 5226)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$300.00');
+          $('#obit_text_cost').text('$300.00, about 14"');
         // 14 1/2"
         } else if (($(t_obj).val().length > 5226) && ($(t_obj).val().length <= 5432)) {
-          char_area.css('font-weight', 'bold');
+          char_area.css('font-weight', 'bold, about 14 1/2"');
           char_area.text($(t_obj).val().length);
           $('#obit_text_cost').text('$312.50');
         // 15"
         } else if (($(t_obj).val().length > 5432) && ($(t_obj).val().length <= 5616)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$325.00');
+          $('#obit_text_cost').text('$325.00, about 15"');
         // 15 1/2"
         } else if (($(t_obj).val().length > 5616) && ($(t_obj).val().length <= 5829)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$337.50');
+          $('#obit_text_cost').text('$337.50, about 15 1/2"');
         // 16"
         } else if (($(t_obj).val().length > 5829) && ($(t_obj).val().length <= 6046)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$350.00');
+          $('#obit_text_cost').text('$350.00, about 16"');
         // 16 1/2"
         } else if (($(t_obj).val().length > 6046) && ($(t_obj).val().length <= 6260)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$367.50');
+          $('#obit_text_cost').text('$367.50, about 16 1/2"');
         // 17"
         } else if (($(t_obj).val().length > 6260) && ($(t_obj).val().length <= 6450)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$375.00');
+          $('#obit_text_cost').text('$375.00, about 17"');
         // 17 1/2"
         } else if (($(t_obj).val().length > 6450) && ($(t_obj).val().length <= 6683)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$387.50');
+          $('#obit_text_cost').text('$387.50, about 17 1/2"');
         // 18"
         } else if (($(t_obj).val().length > 6683) && ($(t_obj).val().length <= 6860)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$400.00');
+          $('#obit_text_cost').text('$400.00, about 18"');
         // 21"
         } else if (($(t_obj).val().length > 6860) && ($(t_obj).val().length <= 8057)) {
           char_area.css('font-weight', 'bold');
           char_area.text($(t_obj).val().length);
-          $('#obit_text_cost').text('$475.00');
+          $('#obit_text_cost').text('$475.00, about 21"');
         }
       }
     });

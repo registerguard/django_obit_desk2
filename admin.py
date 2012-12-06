@@ -5,8 +5,14 @@ from django_obit_desk2.models import Death_notice, Obituary, FuneralHomeProfile,
     Service, DeathNoticeOtherServices
 
 class FuneralHomeProfileAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'user', 'city', 'state', 'phone',)
+    list_display = ('full_name', 'user', 'city', 'state', 'phone', 'rg_rep',)
+    list_editable = ('rg_rep',)
     list_filter = ('user__is_active',)
+    
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "rg_rep":
+            kwargs["queryset"] = User.objects.filter(groups='2').order_by('username')
+        return super(FuneralHomeProfileAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
 admin.site.register(FuneralHomeProfile, FuneralHomeProfileAdmin)
 

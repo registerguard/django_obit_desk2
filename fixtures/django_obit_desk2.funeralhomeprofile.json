@@ -1,0 +1,2017 @@
+[
+  {
+    "pk": 89, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Albany", 
+      "phone": "541-926-5541", 
+      "state": "", 
+      "user": 347, 
+      "full_name": "AAsum-Dufour Funeral Home", 
+      "address": "805 Ellsworth St. S.W.", 
+      "zip_code": "97321"
+    }
+  }, 
+  {
+    "pk": 124, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Sheridan", 
+      "phone": "503-843-2525", 
+      "state": "", 
+      "user": 382, 
+      "full_name": "Adamson's Sheridan Funeral Home", 
+      "address": "108 NW Lincoln St.", 
+      "zip_code": "97378"
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Newport", 
+      "phone": "541-265-7111", 
+      "state": "", 
+      "user": 275, 
+      "full_name": "Affordable Burial & Cremation", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 105, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Lincoln City", 
+      "phone": "541-265-7111", 
+      "state": "", 
+      "user": 363, 
+      "full_name": "Affordable Burial & Cremation", 
+      "address": "6062 S.E. Highway 101 \"A\"", 
+      "zip_code": "97367"
+    }
+  }, 
+  {
+    "pk": 98, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-775-2759", 
+      "state": "", 
+      "user": 356, 
+      "full_name": "AJ Cremation", 
+      "address": "4223 S.E. 59th Ave.", 
+      "zip_code": "97206"
+    }
+  }, 
+  {
+    "pk": 80, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Palm Springs", 
+      "phone": "1-800-575-0551", 
+      "state": "Calif.", 
+      "user": 338, 
+      "full_name": "All California Cremation", 
+      "address": "660 S. Vella Road", 
+      "zip_code": "92264"
+    }
+  }, 
+  {
+    "pk": 132, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Palo Cedro", 
+      "phone": "530-547-4444", 
+      "state": "Calif.", 
+      "user": 390, 
+      "full_name": "Allen & Dahl Funeral Chapel", 
+      "address": "9100 Deschutes Road", 
+      "zip_code": "96073"
+    }
+  }, 
+  {
+    "pk": 91, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Redding", 
+      "phone": "530-243-1525", 
+      "state": "Calif.", 
+      "user": 349, 
+      "full_name": "Allen & Dahl Funeral Chapel", 
+      "address": "2655 Eureka Way", 
+      "zip_code": "96001"
+    }
+  }, 
+  {
+    "pk": 83, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Long Beach", 
+      "phone": "562-424-8601", 
+      "state": "Calif.", 
+      "user": 341, 
+      "full_name": "All Souls Cemetery & Mortuary", 
+      "address": "4400 Cherry Ave.", 
+      "zip_code": "90807"
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-686-3034", 
+      "state": "", 
+      "user": 245, 
+      "full_name": "Alpha Cremation & Burial Service", 
+      "address": "P.O. Box 22210", 
+      "zip_code": "97402"
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Springfield", 
+      "phone": "541-726-9935", 
+      "state": "", 
+      "user": 291, 
+      "full_name": "American Burial & Cremation Alternatives", 
+      "address": "320 6th St.", 
+      "zip_code": "97477"
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Marysville", 
+      "phone": "360-651-9233", 
+      "state": "Wash.", 
+      "user": 273, 
+      "full_name": "American Cremation & Casket Alliance", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 126, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Coquille", 
+      "phone": "541-396-3846", 
+      "state": "", 
+      "user": 384, 
+      "full_name": "Amling/Schroeder Funeral Service", 
+      "address": "225 N. Birch St.", 
+      "zip_code": "97423"
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Springfield", 
+      "phone": "541-485-6659", 
+      "state": "", 
+      "user": 246, 
+      "full_name": "Andreason's Cremation & Burial Service", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 148, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Newberg", 
+      "phone": "503-538-2191", 
+      "state": "", 
+      "user": 406, 
+      "full_name": "Attrell's Newberg Funeral Chapels", 
+      "address": "207 Villa Road", 
+      "zip_code": "97132"
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-484-7122", 
+      "state": "", 
+      "user": 247, 
+      "full_name": "Aurora Cremation & Burial Services", 
+      "address": "1100 Charnelton", 
+      "zip_code": "97401"
+    }
+  }, 
+  {
+    "pk": 139, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Bend", 
+      "phone": "541-318-0842", 
+      "state": "", 
+      "user": 397, 
+      "full_name": "Autumn Funerals", 
+      "address": "61555 Parrell Road", 
+      "zip_code": "97702"
+    }
+  }, 
+  {
+    "pk": 93, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Redmond", 
+      "phone": "541-504-9485", 
+      "state": "", 
+      "user": 351, 
+      "full_name": "Autumn Funerals", 
+      "address": "485 N.W. Larch Ave.", 
+      "zip_code": "97756"
+    }
+  }, 
+  {
+    "pk": 108, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Bend", 
+      "phone": "541-382-0903", 
+      "state": "", 
+      "user": 365, 
+      "full_name": "Baird Funeral Home", 
+      "address": "2425 N.E. Tweet Place", 
+      "zip_code": "97701"
+    }
+  }, 
+  {
+    "pk": 107, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "La Pine", 
+      "phone": "541-536-5104", 
+      "state": "", 
+      "user": 364, 
+      "full_name": "Baird Memorial Chapel", 
+      "address": "16468 Finley Butte Road", 
+      "zip_code": "97739"
+    }
+  }, 
+  {
+    "pk": 134, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Gresham", 
+      "phone": "503-665-2128", 
+      "state": "", 
+      "user": 392, 
+      "full_name": "Bateman Carroll Funeral Home", 
+      "address": "520 W. Powell Blvd.", 
+      "zip_code": "97030"
+    }
+  }, 
+  {
+    "pk": 54, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Newport", 
+      "phone": "541-265-2781", 
+      "state": "", 
+      "user": 308, 
+      "full_name": "Bateman Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 71, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "San Jose", 
+      "phone": "1-800-998-2202", 
+      "state": "", 
+      "user": 329, 
+      "full_name": "Bay Area Mortuary", 
+      "address": "", 
+      "zip_code": "95125"
+    }
+  }, 
+  {
+    "pk": 72, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "East Helena", 
+      "phone": "406-227-2241", 
+      "state": "Mont.", 
+      "user": 330, 
+      "full_name": "Big Sky Cremations", 
+      "address": "2 W. Main St.", 
+      "zip_code": "59635"
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-670-1799", 
+      "state": "", 
+      "user": 271, 
+      "full_name": "BioGift Anatomical and Surgical Education Center", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 96, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Grangeville", 
+      "phone": "208-983-0740", 
+      "state": "Idaho", 
+      "user": 354, 
+      "full_name": "Blackmer Funeral Home", 
+      "address": "305 N. Mill St.", 
+      "zip_code": "83530"
+    }
+  }, 
+  {
+    "pk": 66, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Seattle", 
+      "phone": "425-785-0442", 
+      "state": "Wash.", 
+      "user": 324, 
+      "full_name": "Bleitz Funeral Home", 
+      "address": "", 
+      "zip_code": "98109"
+    }
+  }, 
+  {
+    "pk": 60, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Enterprise", 
+      "phone": "541-426-3838", 
+      "state": "", 
+      "user": 316, 
+      "full_name": "Bollman Funeral Home", 
+      "address": "", 
+      "zip_code": "97828"
+    }
+  }, 
+  {
+    "pk": 147, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Green Cove Springs", 
+      "phone": "904-284-4000", 
+      "state": "Fla.", 
+      "user": 405, 
+      "full_name": "Broadus Raines Funeral Home", 
+      "address": "501 Spring St.", 
+      "zip_code": "32043"
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Springfield", 
+      "phone": "541-747-1266", 
+      "state": "", 
+      "user": 242, 
+      "full_name": "Buell Funeral Chapel", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 109, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Hermiston", 
+      "phone": "541-567-6474", 
+      "state": "", 
+      "user": 366, 
+      "full_name": "Burns Mortuary of Hermiston", 
+      "address": "685 W. Hermiston Ave.", 
+      "zip_code": "97838"
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "", 
+      "phone": "541-997-3416", 
+      "state": "", 
+      "user": 248, 
+      "full_name": "Burns's Riverside Chapel Florence Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 102, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Chardon", 
+      "phone": "440-285-2182", 
+      "state": "Ohio", 
+      "user": 360, 
+      "full_name": "Burr Funeral Home and Cremation", 
+      "address": "116 South St.", 
+      "zip_code": "44024"
+    }
+  }, 
+  {
+    "pk": 121, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "San Jose", 
+      "phone": "408-998-4066", 
+      "state": "Calif.", 
+      "user": 379, 
+      "full_name": "California Cremation Society", 
+      "address": "586 N. First St.", 
+      "zip_code": "95112"
+    }
+  }, 
+  {
+    "pk": 143, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Clackamas", 
+      "phone": "503-656-9177", 
+      "state": "", 
+      "user": 401, 
+      "full_name": "Care Cremation Service", 
+      "address": "10754 SE 106th Ave.", 
+      "zip_code": "97015"
+    }
+  }, 
+  {
+    "pk": 128, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Salem", 
+      "phone": "503-363-8652", 
+      "state": "", 
+      "user": 386, 
+      "full_name": "City View Funeral Home & Cemetery", 
+      "address": "390 Hoyt St.", 
+      "zip_code": "97302"
+    }
+  }, 
+  {
+    "pk": 119, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Arvada", 
+      "phone": "720-328-6055", 
+      "state": "Colo.", 
+      "user": 377, 
+      "full_name": "Colorado Crematory", 
+      "address": "570 Independence St.", 
+      "zip_code": "80002"
+    }
+  }, 
+  {
+    "pk": 149, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "St. Helens", 
+      "phone": "503-397-1154", 
+      "state": "", 
+      "user": 408, 
+      "full_name": "Columbia Funeral Home", 
+      "address": "681 Columbia Blvd.", 
+      "zip_code": "97051"
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Medford", 
+      "phone": "541-772-7111", 
+      "state": "", 
+      "user": 269, 
+      "full_name": "Conger-Morris Funeral Directors", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "", 
+      "phone": "541-267-3131", 
+      "state": "", 
+      "user": 293, 
+      "full_name": "Coos Bay Chapel", 
+      "address": "685 Anderson Ave.", 
+      "zip_code": "97420"
+    }
+  }, 
+  {
+    "pk": 161, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Boring", 
+      "phone": "503-637-5020", 
+      "state": "", 
+      "user": 421, 
+      "full_name": "Cornerstone Funeral Services & Cremation", 
+      "address": "18625 S.E. Bakers Ferry Road", 
+      "zip_code": "97009"
+    }
+  }, 
+  {
+    "pk": 79, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-253-7569", 
+      "state": "", 
+      "user": 337, 
+      "full_name": "Cremation & Burial Care of Oregon", 
+      "address": "225 N.E. 80th Ave.", 
+      "zip_code": "97213"
+    }
+  }, 
+  {
+    "pk": 94, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Vista", 
+      "phone": "760-727-8906", 
+      "state": "Calif.", 
+      "user": 352, 
+      "full_name": "Cremation Services Inc.", 
+      "address": "2570 Fortune Way", 
+      "zip_code": "92081"
+    }
+  }, 
+  {
+    "pk": 112, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Tualatin", 
+      "phone": "503-885-7800", 
+      "state": "", 
+      "user": 369, 
+      "full_name": "Crown Memorial Center", 
+      "address": "8970 S.W. Tualatin Sherwood Road", 
+      "zip_code": "97062"
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Salem", 
+      "phone": "503-581-6265", 
+      "state": "", 
+      "user": 295, 
+      "full_name": "Crown Memorial Center Cremation & Burial", 
+      "address": "412 Lancaster Drive N.E.", 
+      "zip_code": "97301"
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-783-3393", 
+      "state": "", 
+      "user": 286, 
+      "full_name": "Crown Memorial Centers", 
+      "address": "832 N.E. Broadway", 
+      "zip_code": "97232"
+    }
+  }, 
+  {
+    "pk": 53, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Davenport", 
+      "phone": "", 
+      "state": "Iowa", 
+      "user": 307, 
+      "full_name": "Cunnick and Collins Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 116, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Vancouver", 
+      "phone": "360-693-1036", 
+      "state": "Wash.", 
+      "user": 374, 
+      "full_name": "Davies Cremation & Burial Service", 
+      "address": "309 E. 15th St., Suite \"E\"", 
+      "zip_code": "98663"
+    }
+  }, 
+  {
+    "pk": 65, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Corvallis", 
+      "phone": "541-754-6255", 
+      "state": "", 
+      "user": 323, 
+      "full_name": "DeMoss-Durdan Funeral Home & Crematory", 
+      "address": "", 
+      "zip_code": "97330"
+    }
+  }, 
+  {
+    "pk": 104, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Baxter Springs", 
+      "phone": "620-856-2345", 
+      "state": "Kan.", 
+      "user": 362, 
+      "full_name": "Derfelt Funeral Home", 
+      "address": "328 E. 12th St.", 
+      "zip_code": "66713"
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Reedsport", 
+      "phone": "541-271-2822", 
+      "state": "", 
+      "user": 265, 
+      "full_name": "Dunes Memorial Chapel", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 155, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Forest Grove", 
+      "phone": "503-357-8749", 
+      "state": "", 
+      "user": 414, 
+      "full_name": "Duyck & VanDeHey Funeral Home & Cremations", 
+      "address": "9456 NW Roy Road", 
+      "zip_code": "97116"
+    }
+  }, 
+  {
+    "pk": 63, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Milwaukie", 
+      "phone": "503-652-3357", 
+      "state": "", 
+      "user": 319, 
+      "full_name": "Emily's Cremation & Burial Service", 
+      "address": "17064 S.E. McLoughlin Blvd.", 
+      "zip_code": "97267"
+    }
+  }, 
+  {
+    "pk": 129, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Jacksonville", 
+      "phone": "904-384-5579", 
+      "state": "Fla.", 
+      "user": 387, 
+      "full_name": "Eternity Funeral Homes & Crematory", 
+      "address": "4856 Oakdale Ave.", 
+      "zip_code": "32207"
+    }
+  }, 
+  {
+    "pk": 78, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Vancouver", 
+      "phone": "360-892-6060", 
+      "state": "Wash.", 
+      "user": 336, 
+      "full_name": "Evergreen Memorial Gardens", 
+      "address": "1101 N.E. 112th Ave.", 
+      "zip_code": "98684"
+    }
+  }, 
+  {
+    "pk": 142, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Alexandria", 
+      "phone": "703-998-9200", 
+      "state": "Va.", 
+      "user": 400, 
+      "full_name": "Everly-Wheatley Funeral Home", 
+      "address": "1500 W. Braddock Road", 
+      "zip_code": "22302"
+    }
+  }, 
+  {
+    "pk": 122, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Fairfield", 
+      "phone": "707-425-0208", 
+      "state": "Calif.", 
+      "user": 380, 
+      "full_name": "Fairmont Cremation Services", 
+      "address": "1901 Union Ave.", 
+      "zip_code": "94533"
+    }
+  }, 
+  {
+    "pk": 115, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-292-6654", 
+      "state": "", 
+      "user": 372, 
+      "full_name": "Finley-Sunset Hills Mortuary", 
+      "address": "6801 S.W. Sunset Highway", 
+      "zip_code": "97225"
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Albany", 
+      "phone": "541-928-3349", 
+      "state": "", 
+      "user": 274, 
+      "full_name": "Fisher Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 123, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Issaquah", 
+      "phone": "425-392-6444", 
+      "state": "Wash.", 
+      "user": 381, 
+      "full_name": "Flintofts Funeral Home & Crematory", 
+      "address": "540 E. Sunset Way", 
+      "zip_code": "98027"
+    }
+  }, 
+  {
+    "pk": 133, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Bend", 
+      "phone": "541-382-2471", 
+      "state": "", 
+      "user": 391, 
+      "full_name": "Funeral Alternatives Crematory", 
+      "address": "105 N.W. Irving Ave.", 
+      "zip_code": "97701"
+    }
+  }, 
+  {
+    "pk": 75, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Bellevue", 
+      "phone": "1-800-764-0895", 
+      "state": "Wash.", 
+      "user": 333, 
+      "full_name": "Funeral & Cremation Care", 
+      "address": "4205 S.E. 36th St.", 
+      "zip_code": "98229"
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "White Salmon", 
+      "phone": "509-493-1323", 
+      "state": "Wash.", 
+      "user": 277, 
+      "full_name": "Gardner Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 69, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Yreka", 
+      "phone": "530-842-3434", 
+      "state": "Calif.", 
+      "user": 327, 
+      "full_name": "Girdner Funeral Chapel", 
+      "address": "", 
+      "zip_code": "96097"
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Bradenton", 
+      "phone": "941-748-7756", 
+      "state": "Fla.", 
+      "user": 272, 
+      "full_name": "Good Earth Crematory", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 150, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Sahuarita", 
+      "phone": "(520) 625-7400", 
+      "state": "Ariz.", 
+      "user": 409, 
+      "full_name": "Green Valley Mortuary", 
+      "address": "18751 S. La Ca\u00f1ada Drive", 
+      "zip_code": "85629"
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Rainier", 
+      "phone": "503-556-2323", 
+      "state": "", 
+      "user": 276, 
+      "full_name": "Groulx Family Mortuary", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 157, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Phoenix", 
+      "phone": "480-991-5800", 
+      "state": "Ariz.", 
+      "user": 416, 
+      "full_name": "Hansen Mortuaries & Cemetery", 
+      "address": "8314 N. 7th St.", 
+      "zip_code": "85020"
+    }
+  }, 
+  {
+    "pk": 74, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Payette", 
+      "phone": "208-889-9335", 
+      "state": "Idaho", 
+      "user": 332, 
+      "full_name": "Haren Wood Funeral Chapel", 
+      "address": "2543 S.W. Fourth Ave.", 
+      "zip_code": "83661"
+    }
+  }, 
+  {
+    "pk": 114, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-231-1400", 
+      "state": "", 
+      "user": 371, 
+      "full_name": "Heritage Memorial", 
+      "address": "6705 S.E. 14th Ave.", 
+      "zip_code": "97202"
+    }
+  }, 
+  {
+    "pk": 111, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Rocklin", 
+      "phone": "916-791-2273", 
+      "state": "Calif.", 
+      "user": 368, 
+      "full_name": "Heritage Oaks Memorial Chapel", 
+      "address": "6920 Destiny Drive", 
+      "zip_code": "95677"
+    }
+  }, 
+  {
+    "pk": 92, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Oregon City", 
+      "phone": "503-656-4285", 
+      "state": "", 
+      "user": 350, 
+      "full_name": "Hillside Chapel", 
+      "address": "1306 Seventh St.", 
+      "zip_code": "97045"
+    }
+  }, 
+  {
+    "pk": 82, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Havre", 
+      "phone": "406-265-4371", 
+      "state": "Mont.", 
+      "user": 340, 
+      "full_name": "Holland & Bonine Funeral Home", 
+      "address": "210 Third St.", 
+      "zip_code": "59501"
+    }
+  }, 
+  {
+    "pk": 86, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Oregon City", 
+      "phone": "503-656-2661", 
+      "state": "", 
+      "user": 344, 
+      "full_name": "Holman-Hankins-Bowker & Waud Funeral Home", 
+      "address": "715 Seventh St.", 
+      "zip_code": "97045"
+    }
+  }, 
+  {
+    "pk": 162, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-232-5131", 
+      "state": "", 
+      "user": 422, 
+      "full_name": "Holman's Funeral Service", 
+      "address": "2610 S.E. Hawthorne Blvd.", 
+      "zip_code": "97214"
+    }
+  }, 
+  {
+    "pk": 144, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Salem", 
+      "phone": "503-581-3911", 
+      "state": "", 
+      "user": 402, 
+      "full_name": "Howell Edwards Doerksen with Rigdon Ransom Funeral Directors", 
+      "address": "1350 Commercial St.", 
+      "zip_code": "97302"
+    }
+  }, 
+  {
+    "pk": 151, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Lakeview", 
+      "phone": "541-947-3264", 
+      "state": "", 
+      "user": 410, 
+      "full_name": "Huffstutter Funeral Chapel", 
+      "address": "410 Center St.", 
+      "zip_code": "97630"
+    }
+  }, 
+  {
+    "pk": 110, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Grants Pass", 
+      "phone": "541-476-4453", 
+      "state": "", 
+      "user": 367, 
+      "full_name": "Hull & Hull Funeral Directors", 
+      "address": "613 N.W. A St.", 
+      "zip_code": "97526"
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-286-9663", 
+      "state": "", 
+      "user": 266, 
+      "full_name": "Hustad Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Lebanon", 
+      "phone": "541-258-2123", 
+      "state": "", 
+      "user": 297, 
+      "full_name": "Huston Jost Funeral Home", 
+      "address": "86 W. Grant St.", 
+      "zip_code": "97355"
+    }
+  }, 
+  {
+    "pk": 146, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Armadale, Victoria, Australia", 
+      "phone": "613-9883-6237", 
+      "state": "", 
+      "user": 404, 
+      "full_name": "Jewish Funerals", 
+      "address": "P.O. Box 8207", 
+      "zip_code": "3143"
+    }
+  }, 
+  {
+    "pk": 61, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Yuma", 
+      "phone": "928-782-4384", 
+      "state": "Ariz.", 
+      "user": 317, 
+      "full_name": "Johnson Mortuary & Desert Lawn Memorial Park", 
+      "address": "1415 1st Ave. ", 
+      "zip_code": "85364"
+    }
+  }, 
+  {
+    "pk": 67, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Palmer", 
+      "phone": "907-745-3580", 
+      "state": "Alaska", 
+      "user": 325, 
+      "full_name": "Kehl's Palmer Mortuary", 
+      "address": "209 S. Alaska St.", 
+      "zip_code": "99645"
+    }
+  }, 
+  {
+    "pk": 101, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Keizer", 
+      "phone": "503-393-7037", 
+      "state": "", 
+      "user": 359, 
+      "full_name": "Keizer Funeral Chapel & Crematory", 
+      "address": "4365 River Road N.", 
+      "zip_code": "97303"
+    }
+  }, 
+  {
+    "pk": 59, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "St. Louis", 
+      "phone": "", 
+      "state": "Mo.", 
+      "user": 315, 
+      "full_name": "Kutis Funeral Homes", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 88, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-771-1117", 
+      "state": "", 
+      "user": 346, 
+      "full_name": "Lincoln Memorial Park & Funeral Home", 
+      "address": "11801 S.E. Mount Scott Blvd.", 
+      "zip_code": "97086"
+    }
+  }, 
+  {
+    "pk": 156, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Chillicothe", 
+      "phone": "660-646-4857", 
+      "state": "Mo.", 
+      "user": 415, 
+      "full_name": "Lindley Funeral Homes", 
+      "address": "P.O. Box 47", 
+      "zip_code": "64601-4857"
+    }
+  }, 
+  {
+    "pk": 130, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "McMinnville", 
+      "phone": "503-472-6151", 
+      "state": "", 
+      "user": 388, 
+      "full_name": "Macy & Son Funeral Home", 
+      "address": "135 N.E. Evans St.", 
+      "zip_code": "97128"
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Springfield", 
+      "phone": "541-746-9667", 
+      "state": "", 
+      "user": 250, 
+      "full_name": "Major Family Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 57, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Corvallis", 
+      "phone": "541-757-8141", 
+      "state": "", 
+      "user": 313, 
+      "full_name": "McHenry Funeral Home & Cremation Services", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "1-866-560-2525", 
+      "state": "", 
+      "user": 278, 
+      "full_name": "MedCure", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 87, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-771-1171", 
+      "state": "", 
+      "user": 345, 
+      "full_name": "Mount Scott Funeral Home", 
+      "address": "4205 S.E. 59th Ave.", 
+      "zip_code": "97206"
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Junction City", 
+      "phone": "541-998-2152", 
+      "state": "", 
+      "user": 251, 
+      "full_name": "Murphy-Musgrove Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-686-2818", 
+      "state": "", 
+      "user": 241, 
+      "full_name": "Musgrove Family Mortuary", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-687-1431", 
+      "state": "", 
+      "user": 267, 
+      "full_name": "Musgrove's at Chapel of Memories Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Creswell", 
+      "phone": "541-895-2522", 
+      "state": "", 
+      "user": 268, 
+      "full_name": "Musgrove's at England's Creswell Memorial Chapel", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-686-2035", 
+      "state": "", 
+      "user": 262, 
+      "full_name": "Musgrove's at England's Eugene Memorial Chapel", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-343-1684", 
+      "state": "", 
+      "user": 249, 
+      "full_name": "Musgrove's at Lane Memorial Gardens & Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Springfield", 
+      "phone": "541-746-5311", 
+      "state": "", 
+      "user": 257, 
+      "full_name": "Musgrove's at Springfield Memorial Gardens & Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-342-8281", 
+      "state": "", 
+      "user": 260, 
+      "full_name": "Musgrove's at West Lawn Memorial Park & Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Coos Bay", 
+      "phone": "541-267-4216", 
+      "state": "", 
+      "user": 280, 
+      "full_name": "Nelson's Bay Area Mortuary", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 55, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "1-888-637-8863", 
+      "state": "", 
+      "user": 311, 
+      "full_name": "Neptune Cremation Services", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Bend", 
+      "phone": "541-382-2471", 
+      "state": "", 
+      "user": 279, 
+      "full_name": "Niswonger-Reynolds Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "North Bend", 
+      "phone": "541-756-0440", 
+      "state": "", 
+      "user": 294, 
+      "full_name": "North Bend Chapel", 
+      "address": "2014 McPherson Ave.", 
+      "zip_code": "97459"
+    }
+  }, 
+  {
+    "pk": 153, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Stayton", 
+      "phone": "503-769-9010", 
+      "state": "", 
+      "user": 412, 
+      "full_name": "North Santiam Funeral Service", 
+      "address": "224 N. Third Ave.", 
+      "zip_code": "97383"
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "", 
+      "phone": "541-782-4328", 
+      "state": "", 
+      "user": 252, 
+      "full_name": "Oakridge Funeral Home Chapel of the Woods", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 118, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Coos Bay", 
+      "phone": "541-888-4709", 
+      "state": "", 
+      "user": 376, 
+      "full_name": "Ocean View Memory Gardens & Crematory", 
+      "address": "1525 Ocean Blvd.", 
+      "zip_code": "97420"
+    }
+  }, 
+  {
+    "pk": 141, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Laguna Hills", 
+      "phone": "949-581-4300", 
+      "state": "Calif.", 
+      "user": 399, 
+      "full_name": "O'Connor Funeral Home", 
+      "address": "25301 Alicia Parkway", 
+      "zip_code": "92653"
+    }
+  }, 
+  {
+    "pk": 99, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-231-6030", 
+      "state": "", 
+      "user": 357, 
+      "full_name": "Omega Funeral & Cremation Services", 
+      "address": "223 S.E. 122nd Ave.", 
+      "zip_code": "97233"
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "", 
+      "state": "", 
+      "user": 306, 
+      "full_name": "Oregon Health & Science University", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Milwaukie", 
+      "phone": "503-654-7755", 
+      "state": "", 
+      "user": 253, 
+      "full_name": "Peake Funeral Chapel", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 73, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Roseburg", 
+      "phone": "541-672-4435", 
+      "state": "", 
+      "user": 331, 
+      "full_name": "Pearson's Funeral Home", 
+      "address": "2305 N.E. Diamond Lake Blvd.", 
+      "zip_code": "97470"
+    }
+  }, 
+  {
+    "pk": 138, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Seattle", 
+      "phone": "206-529-3800", 
+      "state": "Wash.", 
+      "user": 396, 
+      "full_name": "People's Memorial Funeral Cooperative", 
+      "address": "1801 12th Ave., Suite A", 
+      "zip_code": "98122"
+    }
+  }, 
+  {
+    "pk": 84, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Medford", 
+      "phone": "541-772-5488", 
+      "state": "", 
+      "user": 342, 
+      "full_name": "Perl Funeral Home & Siskiyou Memorial Park", 
+      "address": "2100 Siskiyou Blvd.", 
+      "zip_code": "97504"
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-484-1435", 
+      "state": "", 
+      "user": 254, 
+      "full_name": "Poole-Larsen Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 127, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Puyallup", 
+      "phone": "253-845-0536", 
+      "state": "Wash.", 
+      "user": 385, 
+      "full_name": "Powers Funeral Home", 
+      "address": "320 W. Pioneer", 
+      "zip_code": "98371"
+    }
+  }, 
+  {
+    "pk": 76, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Redmond", 
+      "phone": "541-548-3219", 
+      "state": "", 
+      "user": 334, 
+      "full_name": "Redmond Memorial Chapel", 
+      "address": "717 S.W. 6th St.", 
+      "zip_code": "97756"
+    }
+  }, 
+  {
+    "pk": 140, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Brookings", 
+      "phone": "541-469-9112", 
+      "state": "", 
+      "user": 398, 
+      "full_name": "Redwood Memorial Chapel", 
+      "address": "1020 Fifield St.", 
+      "zip_code": "97415"
+    }
+  }, 
+  {
+    "pk": 117, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Chandler", 
+      "phone": "1-480-940-1310", 
+      "state": "Ariz.", 
+      "user": 375, 
+      "full_name": "Research for Life", 
+      "address": "119 S. Weber Drive", 
+      "zip_code": "85226"
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-345-8521", 
+      "state": "", 
+      "user": 255, 
+      "full_name": "Rest-Haven Memorial Park & Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 70, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Salem", 
+      "phone": "503-585-1373", 
+      "state": "", 
+      "user": 328, 
+      "full_name": "Restlawn Funeral Home", 
+      "address": "201 Oak Grove Road N.W.", 
+      "zip_code": "97304"
+    }
+  }, 
+  {
+    "pk": 158, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-246-6488", 
+      "state": "", 
+      "user": 417, 
+      "full_name": "River View Cemetery Funeral Home", 
+      "address": "8421 S.W. Macadam Ave.", 
+      "zip_code": "97219"
+    }
+  }, 
+  {
+    "pk": 90, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Roseburg", 
+      "phone": "541-672-5836", 
+      "state": "", 
+      "user": 348, 
+      "full_name": "Roseburg Funeral Alternatives", 
+      "address": "2225 N.W. Steward Pkwy., No. 103", 
+      "zip_code": "97471"
+    }
+  }, 
+  {
+    "pk": 81, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-281-1800", 
+      "state": "", 
+      "user": 339, 
+      "full_name": "Ross Hollywood Chapel", 
+      "address": "4733 N.E. Thompson St.", 
+      "zip_code": "97213"
+    }
+  }, 
+  {
+    "pk": 160, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Libby", 
+      "phone": "406-293-4143", 
+      "state": "Mont.", 
+      "user": 420, 
+      "full_name": "Schnackenberg & Nelson Funeral Home", 
+      "address": "422 W. Second St.", 
+      "zip_code": "59923"
+    }
+  }, 
+  {
+    "pk": 152, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Yakima", 
+      "phone": "509-453-0331", 
+      "state": "Wash.", 
+      "user": 411, 
+      "full_name": "Shaw and Sons Funeral Directors", 
+      "address": "201 N. Second St.", 
+      "zip_code": "98901"
+    }
+  }, 
+  {
+    "pk": 85, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Reno", 
+      "phone": "775-324-3720", 
+      "state": "Nev.", 
+      "user": 343, 
+      "full_name": "Simple Cremation", 
+      "address": "1547 S. Virginia St., Suite 2", 
+      "zip_code": "89502"
+    }
+  }, 
+  {
+    "pk": 58, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Redmond", 
+      "phone": "425-636-1515", 
+      "state": "Wash.", 
+      "user": 314, 
+      "full_name": "Smart Cremation", 
+      "address": "", 
+      "zip_code": "98052"
+    }
+  }, 
+  {
+    "pk": 159, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Beaverton", 
+      "phone": "503-641-7168", 
+      "state": "", 
+      "user": 419, 
+      "full_name": "Smart Cremations", 
+      "address": "8245 S.W. Cirrus Drive", 
+      "zip_code": "97008"
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Cottage Grove", 
+      "phone": "541-942-0185", 
+      "state": "", 
+      "user": 256, 
+      "full_name": "Smith-Lund-Mills Funeral Chapel", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 95, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Aloha", 
+      "phone": "503-356-1000", 
+      "state": "", 
+      "user": 353, 
+      "full_name": "Springer and Son", 
+      "address": "4150 S.W. 185th Ave.", 
+      "zip_code": "97006"
+    }
+  }, 
+  {
+    "pk": 62, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Raymond", 
+      "phone": "360-942-2071", 
+      "state": "Wash.", 
+      "user": 318, 
+      "full_name": "Stollers Mortuary", 
+      "address": "315 5th St.", 
+      "zip_code": "98577"
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "541-342-6853", 
+      "state": "", 
+      "user": 258, 
+      "full_name": "Sunset Hills Cemetery, Funeral Home & Crematorium", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 68, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Sutherlin", 
+      "phone": "541-459-2281", 
+      "state": "", 
+      "user": 326, 
+      "full_name": "Sutherlin Chapel of the Roses", 
+      "address": "", 
+      "zip_code": "97479"
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "", 
+      "phone": "541-367-2891", 
+      "state": "", 
+      "user": 287, 
+      "full_name": "Sweet Home Funeral Chapel", 
+      "address": "1443 Long Street", 
+      "zip_code": "97386"
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Winston", 
+      "phone": "541-679-6983", 
+      "state": "", 
+      "user": 270, 
+      "full_name": "Taylor's Family Mortuary", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Eugene", 
+      "phone": "", 
+      "state": "", 
+      "user": 288, 
+      "full_name": "Test Funeral Home", 
+      "address": "", 
+      "zip_code": ""
+    }
+  }, 
+  {
+    "pk": 125, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Albany", 
+      "phone": "541-740-6257", 
+      "state": "", 
+      "user": 383, 
+      "full_name": "Twin Oaks Funeral Home & Cremation Services", 
+      "address": "34275 Riverside Drive", 
+      "zip_code": "97321"
+    }
+  }, 
+  {
+    "pk": 145, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Silverton", 
+      "phone": "503-873-5141", 
+      "state": "", 
+      "user": 403, 
+      "full_name": "Unger Funeral Chapel", 
+      "address": "229 Mill St.", 
+      "zip_code": "97381"
+    }
+  }, 
+  {
+    "pk": 135, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Las Vegas", 
+      "phone": "702-367-7426", 
+      "state": "Nev.", 
+      "user": 393, 
+      "full_name": "Valley Memorial Crematory", 
+      "address": "4855 W. Desert Inn Road", 
+      "zip_code": "89102"
+    }
+  }, 
+  {
+    "pk": 154, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Rock Springs", 
+      "phone": "307-362-5607", 
+      "state": "Wyo.", 
+      "user": 413, 
+      "full_name": "Vase Funeral Home", 
+      "address": "3512 Tahoe Road", 
+      "zip_code": "82901"
+    }
+  }, 
+  {
+    "pk": 120, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Lewiston", 
+      "phone": "208-743-6541", 
+      "state": "Idaho", 
+      "user": 378, 
+      "full_name": "Vassar-Rawls Funeral Home & Crematory", 
+      "address": "920 21st Ave.", 
+      "zip_code": "83501"
+    }
+  }, 
+  {
+    "pk": 100, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Boerne", 
+      "phone": "830-249-9128", 
+      "state": "Texas", 
+      "user": 358, 
+      "full_name": "Vaughan's Funeral Home", 
+      "address": "319 E. San Antonio St.", 
+      "zip_code": "78006"
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Salem", 
+      "phone": "541-364-2257", 
+      "state": "", 
+      "user": 292, 
+      "full_name": "Virgil T. Golden Funeral Service & Oakleaf Crematory", 
+      "address": "605 Commercial St. S.E.", 
+      "zip_code": "97301"
+    }
+  }, 
+  {
+    "pk": 136, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Merrill", 
+      "phone": "715-536-4646", 
+      "state": "Wis.", 
+      "user": 394, 
+      "full_name": "Waid Funeral Home", 
+      "address": "301 South Eagle Drive", 
+      "zip_code": "54452"
+    }
+  }, 
+  {
+    "pk": 137, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Tillamook", 
+      "phone": "503-842-7557", 
+      "state": "", 
+      "user": 395, 
+      "full_name": "Waud's Funeral Home", 
+      "address": "1414 Third St.", 
+      "zip_code": "97141"
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Stayton", 
+      "phone": "541-769-2423", 
+      "state": "", 
+      "user": 259, 
+      "full_name": "Weddle Funeral Chapel", 
+      "address": "1777 N. 3rd Ave.", 
+      "zip_code": "97383"
+    }
+  }, 
+  {
+    "pk": 103, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Camp Verde", 
+      "phone": "928-567-3580", 
+      "state": "Ariz.", 
+      "user": 361, 
+      "full_name": "Wescott Funeral Home", 
+      "address": "631 S. 1 St.", 
+      "zip_code": "86322"
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Prineville", 
+      "phone": "541-416-9733", 
+      "state": "", 
+      "user": 261, 
+      "full_name": "Whispering Pines Funeral Home", 
+      "address": "185 NE 4th St.", 
+      "zip_code": "97754"
+    }
+  }, 
+  {
+    "pk": 64, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-236-4141", 
+      "state": "", 
+      "user": 322, 
+      "full_name": "Wilhelm's Portland Memorial Funeral Home", 
+      "address": "6705 S.E. 14th Ave.", 
+      "zip_code": "97202"
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Roseburg", 
+      "phone": "541-673-4455", 
+      "state": "", 
+      "user": 296, 
+      "full_name": "Wilson's Chapel of the Roses", 
+      "address": "965 W. Harvard Blvd.", 
+      "zip_code": "97471"
+    }
+  }, 
+  {
+    "pk": 113, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Coeur d'Alene", 
+      "phone": "208-664-3151", 
+      "state": "Idaho", 
+      "user": 370, 
+      "full_name": "Yates Funeral Home", 
+      "address": "744 N. Fourth St.", 
+      "zip_code": "83814"
+    }
+  }, 
+  {
+    "pk": 131, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Tigard", 
+      "phone": "503-639-1206", 
+      "state": "", 
+      "user": 389, 
+      "full_name": "Young's Funeral Home", 
+      "address": "11831 S.W. Pacific Highway", 
+      "zip_code": "97223"
+    }
+  }, 
+  {
+    "pk": 56, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Yuma", 
+      "phone": "928-782-9865", 
+      "state": "Ariz.", 
+      "user": 312, 
+      "full_name": "Yuma Mortuary & Crematory", 
+      "address": "551 W. 16th St.", 
+      "zip_code": "85364"
+    }
+  }, 
+  {
+    "pk": 97, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Portland", 
+      "phone": "503-287-1155", 
+      "state": "", 
+      "user": 355, 
+      "full_name": "Zeller Chapel of the Roses", 
+      "address": "2107 N.E. Broadway St.", 
+      "zip_code": "97232"
+    }
+  }
+]
