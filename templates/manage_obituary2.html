@@ -5,7 +5,6 @@
 <script type="text/javascript" src="{% admin_media_prefix %}js/admin/RelatedObjectLookups.js"></script>
 <script type="text/javascript" src="http://static.registerguard.com/colorbox/jquery.colorbox.js"></script>
 <script type="text/javascript" src="http://rg-assets.s3.amazonaws.com/v3.5/js/registerguard.js"></script>
-<script type="text/javascript" src="http://static.registerguard.com/noblecount/jquery.NobleCount.js"></script>
 {% endblock %}
 
 {% block css %}
@@ -114,7 +113,7 @@
 				{{ form.obituary_body.errors }}
 				{{ form.obituary_body }}
 				{% if form.obituary_body.help_text %}<p>{{ form.obituary_body.help_text|safe }}</p>{% endif %}
-				<p id="estimator"><span id="obit_text_count"></span> characters so far ... Estimated cost: <span id="obit_text_cost">0</span></p>
+				<p id="estimator"><span id="obit_text_count"></span> characters. Estimated cost: <span id="obit_text_cost">0</span></p>
 			</td>
 		</tr>
 		
@@ -290,7 +289,7 @@ $(document).ready(function() {
         } else if (count > 3102 && count <= 3308) {
             val = '187.50, length of approximately 9 1/2"';
         // 10"
-        } else if (count > 3308 && count <= 3052) {
+        } else if (count > 3308 && count <= 3502) {
             val = '200.00, length of approximately 10"';
         // 10 1/2"
         } else if (count > 3502 && count <= 3716) {
@@ -344,7 +343,7 @@ $(document).ready(function() {
         } else if (count > 6860 && count <= 8057) {
             val = '475.00, length of approximately 18"';
         } else {
-            val = '475.00, approximate length is more than 21". You must make some edits.';
+            val = '475.00, approximate length is more than 21". You may have to make some edits';
         }
         
         $cost.html('$' + val + '.');
