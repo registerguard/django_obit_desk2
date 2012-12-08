@@ -75,12 +75,27 @@ class ObituaryForm(ModelForm):
     
     class Meta:
         model = Obituary
-        exclude = ('funeral_home', 'prepaid_by', 'obituary_in_system', 'obituary_has_run', 'obituary_publish_date',)
+        exclude = ('funeral_home', 'prepaid_by', 'obituary_in_system', 'obituary_has_run', )
     
     def clean(self):
+        DEADLINE_LOOKUP = (
+            (0, 82),  # Monday   ->  82 hours (2 p.m. previous Thursday)
+            (1, 82),  # Tuesday   -> 82 hours (2 p.m. previous Friday)
+            (2, 106), # Wednesday -> 106 hours (2 p.m. previous Friday)
+            (3, 58),  # Thursday  -> 58 hours (2 p.m. previous Monday)
+            (4, 58),  # Friday    -> 58 hours (2 p.m. previous Tuesday)
+            (5, 82),  # Saturday  -> 82 hours (2 p.m. previous Tuesday)
+            (6, 82),  # Sunday    -> 82 hours (2 p.m. previous Wednesday)
+        )
+        
         cleaned_data = self.cleaned_data
         desired_pub_date = cleaned_data.get("obituary_publish_date")
-        if desired_pub_date > 
+        if desired_pub_date:
+            desired_pub_date = datetime.datetime.combine(desired_pub_date, datetime.time(0, 0))
+            submission_deadline = desired_pub_date - datetime.timedelta(hours=DEADLINE_LOOKUP[desired_pub_date.weekday()][1])
+            # Convert date into datetime so we can compare it to datetime.datetime.now()
+            if submission_deadline < datetime.datetime.now():
+                raise forms.ValidationError("The deadline for your requested publication date was %s." % (submission_deadline.strftime('%I:%M %p, %A, %B %d, %Y')))
         return cleaned_data
 
 class ObituaryAdminForm(forms.ModelForm):

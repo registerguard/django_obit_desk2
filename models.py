@@ -266,21 +266,24 @@ class Obituary(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, related_name='obit_user2')
     death_notice = models.OneToOneField(Death_notice, primary_key=True, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
     prepaid_by = models.CharField(max_length=325, blank=True)
-    date_of_birth = models.DateField(help_text=u'YYYY-MM-DD format')
+    date_of_birth = models.DateField(blank=True, null=True, help_text=u'YYYY-MM-DD format')
     family_contact = models.CharField(max_length=126)
     family_contact_phone = models.CharField(max_length=12)
-    obituary_body = models.TextField()
+    obituary_body = models.TextField(help_text=u'Information you may want to include: education, military,  career/work experience,  hobbies, volunteerism, awards, clubs, marriage and divorce, survivors, predeceased by, cause of death, date of birth, service information, remembrances.')
     mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive up to 10 copies of this obituary.')
     number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
     photo = ImageField(upload_to=obit_file_name, blank=True)
     photo_two = ImageField(upload_to=obit_file_name, blank=True)
     # Survivors
-    status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact The Register-Guard newsroom.</p>')
+    status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact your Register-Guard classified representative.</p>')
     
     obituary_in_system = models.BooleanField(u'Obit in DT?')
 #     obituary_has_run = models.BooleanField(u'Obit has run?')
-    obituary_publish_date = models.DateField(blank=True, null=True)
+    obituary_publish_date = models.DateField(blank=True, null=True, help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
     obituary_created = models.DateTimeField(auto_now_add=True)
+    
+    flag = models.BooleanField(blank=True)
+    service_insignia = models.CharField(max_length=300, blank=True, help_text=u"Enter the relevant branch or branches of service.")
     
     class Meta:
         verbose_name = 'Obituary'
