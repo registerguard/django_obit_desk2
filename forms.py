@@ -71,7 +71,7 @@ class ObituaryForm(ModelForm):
     required_css_class = 'required'
     
     death_notice = forms.ModelChoiceField(Death_notice.objects, widget = SelectWithPopUp2)
-    date_of_birth = forms.DateField(widget=CalendarWidget())
+    date_of_birth = forms.DateField(widget=CalendarWidget(), required=False)
     
     class Meta:
         model = Obituary
