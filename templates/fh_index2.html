@@ -46,8 +46,13 @@
 	<h3>Obituaries</h3>
 	{% for obituary in obituaries %}
 	<div class="clear">
-		<div style="float: left; margin-right: 12px;">{% if obituary.photo.name %}<a href="http://{{ obituary.photo.storage.bucket }}.{{ obituary.photo.storage.connection.server }}/{{ obituary.photo.name }}">{% endif %}{{ obituary.admin_thumbnail|safe }}{% if obituary.photo.name %}</a>{% endif %}</div>
-		<p style="margin-left: 72px;"><a href="{% url manage_obituary2 obituary.pk %}">{{ obituary }}</a>, created {{ obituary.obituary_created|date:"l, N j, Y, P" }} <br>
+		{% if obituary.photo.name %}
+		<div style="float: left; margin-right: 12px;">
+			<a href="http://{{ obituary.photo.storage.bucket }}.{{ obituary.photo.storage.connection.server }}/{{ obituary.photo.name }}">{{ obituary.admin_thumbnail|safe }}</a>
+			{% if obituary.photo_two.name %}<br><a href="http://{{ obituary.photo_two.storage.bucket }}.{{ obituary.photo_two.storage.connection.server }}/{{ obituary.photo_two.name }}">{{ obituary.admin_thumbnail_two|safe }}</a>{% endif %}
+		</div>
+		{% endif %}
+		{% if obituary.photo.name %}<p style="margin-left: 72px;">{% endif %}<a href="{% url manage_obituary2 obituary.pk %}">{{ obituary }}</a>, created {{ obituary.obituary_created|date:"l, N j, Y, P" }} <br>
 		<b>Status: <a href="{% url manage_obituary2 obituary.pk %}#id_status">{{ obituary.get_status_display }}</a></b>{% if obituary.obituary_publish_date %}<br>
 		<b>Published in <i>The Register-Guard</i>:</b> <a href="http://www.registerguard.com/web/news/obituaries/" title="Register-Guard obituary index" onclick="javascript:window.open(this.href); return false;">{{ obituary.obituary_publish_date|date:"l, N j, Y" }}</a>{% endif %}</p>
 	</div>

@@ -45,7 +45,7 @@ class Death_noticeAdmin(admin.ModelAdmin):
 admin.site.register(Death_notice, Death_noticeAdmin)
 
 class ObituaryAdmin(admin.ModelAdmin):
-    list_display = ('death_notice', 'fh', 'user', 'ready_for_print', 'obituary_in_system', 'obituary_publish_date', 'service_date', 'admin_thumbnail', 'obituary_created', 'status', 'date_of_birth', )
+    list_display = ('death_notice', 'fh', 'user', 'ready_for_print', 'obituary_in_system', 'obituary_publish_date', 'service_date', 'admin_thumbnail', 'admin_thumbnail_two', 'obituary_created', 'status', 'date_of_birth', )
     list_editable = ('obituary_in_system', 'obituary_publish_date')
     search_fields = ['death_notice__last_name', 'death_notice__first_name',]
     date_hierarchy = 'obituary_created'
@@ -55,10 +55,6 @@ class ObituaryAdmin(admin.ModelAdmin):
     form = ObituaryAdminForm
     
     exclude = ('user',)
-    
-    # An artifact of unimplemented http://djangosnippets.org/snippets/2261/
-#     death_notice_fk_filter_related_only=True
-#     death_notice_fk_filter_name_field='city_of_residence'
     
     def save_model(self, request, obj, form, change):
         if getattr(obj, 'user', None) is None and not obj.obituary_created:

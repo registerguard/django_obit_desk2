@@ -246,8 +246,11 @@
 	
 	<div style="display: none;">
 		<div id="preview_ob">
-			{% if current_obit.photo.name %}<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="http://{{ current_obit.photo.storage.bucket }}.{{ current_obit.photo.storage.connection.server }}/{{ current_obit.photo.name }}">{% endif %}{{ current_obit.admin_thumbnail|safe }}{% if current_obit.photo.name %}</a></div>{% endif %}
-			{% if current_obit.photo_two.name %}<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="http://{{ current_obit.photo_two.storage.bucket }}.{{ current_obit.photo_two.storage.connection.server }}/{{ current_obit.photo_two.name }}">{% endif %}{{ current_obit.admin_thumbnail|safe }}{% if current_obit.photo_two.name %}</a></div>{% endif %}
+			{% if current_obit.photo.name %}
+				<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="http://{{ current_obit.photo.storage.bucket }}.{{ current_obit.photo.storage.connection.server }}/{{ current_obit.photo.name }}">{{ current_obit.admin_thumbnail|safe }}</a>
+				{% if current_obit.photo_two.name %}<br><a href="http://{{ current_obit.photo_two.storage.bucket }}.{{ current_obit.photo_two.storage.connection.server }}/{{ current_obit.photo_two.name }}">{{ current_obit.admin_thumbnail_two|safe }}</a>{% endif %}
+				</div>
+			{% endif %}
 			{{ obit_preview|safe }}
 		</div>
 	</div>

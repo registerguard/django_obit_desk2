@@ -33,6 +33,7 @@
 			margin-right: 14px;
 			margin-bottom: 8px;
 			float: left;
+			clear: left;
 		}
 		
 		#legacy {
@@ -50,6 +51,7 @@
 	<div id="obit_container">
 		<div id="obit_image">
 			{{ obit.admin_thumbnail|safe }}
+			{% if obit.admin_thumbnail_two %}<br>{{ obit.admin_thumbnail_two|safe }}{% endif %}
 		</div>
 		<div id="print_obit">
 			{{ obit_string|safe }}

@@ -378,6 +378,15 @@ class Obituary(models.Model):
     admin_thumbnail.short_description = u'Thumbnail'
     admin_thumbnail.allow_tags = True
     
+    def admin_thumbnail_two(self):
+        if self.photo_two:
+            cbim = Thumbnail(self.photo_two.name, 180, 180)
+            return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo_two.url, self.photo_two.storage.base_url, cbim)
+        else:
+            return u'(No photo)'
+    admin_thumbnail_two.short_description = u'Thumbnail two'
+    admin_thumbnail_two.allow_tags = True
+    
     ##
     ## MODEL ATTRIBUTES FOR THE OBITUARY ADMIN
     ##
