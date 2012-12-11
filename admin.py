@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from django_obit_desk2.forms import ObituaryAdminForm
 from django_obit_desk2.models import Death_notice, Obituary, FuneralHomeProfile, \
-    Service, DeathNoticeOtherServices
+    Service, DeathNoticeOtherServices, ClassifiedRep
 
 class FuneralHomeProfileAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'user', 'city', 'state', 'phone', 'rg_rep',)
@@ -71,3 +71,13 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ('service', 'service_date_time',)
 
 admin.site.register(Service, ServiceAdmin)
+
+class ClassifiedRepAdmin(admin.ModelAdmin):
+    list_display = ('user', 'rg_rep_phone',)
+    list_editable = ('rg_rep_phone',)
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == 'user':
+            kwargs['queryset'] = User.objects.filter(groups='2').order_by('username')
+        return super(ClassifiedRepAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
+
+admin.site.register(ClassifiedRep, ClassifiedRepAdmin)

@@ -95,7 +95,47 @@ class ObituaryForm(ModelForm):
             submission_deadline = desired_pub_date - datetime.timedelta(hours=DEADLINE_LOOKUP[desired_pub_date.weekday()][1])
             # Convert date into datetime so we can compare it to datetime.datetime.now()
             if submission_deadline < datetime.datetime.now():
-                raise forms.ValidationError("The deadline for your requested publication date was %s." % (submission_deadline.strftime('%I:%M %p, %A, %B %d, %Y')))
+            
+                right_now = datetime.datetime.now()
+                
+                # BEFORE 2 p.m. on a MONDAY
+                if right_now.hour <= 14 and right_now.weekday() == 0:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=3)
+                # AFTER 2 p.m. on a MONDAY
+                elif right_now.hour > 14 and right_now.weekday() == 0:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=4)
+                # BEFORE 2 p.m. on TUESDAY
+                elif right_now.hour <=14 and right_now.weekday() == 1:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=3)
+                # AFTER 2 p.m. on TUESDAY
+                elif right_now.hour > 14 and right_now.weekday() == 1:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=5)
+                # BEFORE 2 p.m. on WEDNESDAY
+                elif right_now.hour <=14 and right_now.weekday() == 2:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=4)
+                # AFTER 2 p.m. on WEDNESDAY
+                elif right_now.hour > 14 and right_now.weekday() == 2:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=5)
+                # BEFORE 2 p.m. on THURSDAY
+                elif right_now.hour <=14 and right_now.weekday() == 3:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=4)
+                # AFTER 2 p.m. on THURSDAY
+                elif right_now.hour > 14 and right_now.weekday() == 3:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=5)
+                # BEFORE 2 p.m. on FRIDAY
+                elif right_now.hour <=14 and right_now.weekday() == 4:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=4)
+                # AFTER 2 p.m. on FRIDAY
+                elif right_now.hour > 14 and right_now.weekday() == 4:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=6)
+                # It's SATURDAY
+                elif  right_now.weekday() == 5:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=5)
+                # It's SUNDAY
+                elif  right_now.weekday() == 6:
+                    next_pub_date = right_now.date() + datetime.timedelta(days=4)
+                    
+                raise forms.ValidationError("The deadline for your requested publication date was %s.  If submit now, the soonest available publication date is %s." % (submission_deadline.strftime('%I:%M %p, %A, %B %d, %Y'), next_pub_date.strftime('%A, %B %d, %Y')) )
         return cleaned_data
 
 class ObituaryAdminForm(forms.ModelForm):

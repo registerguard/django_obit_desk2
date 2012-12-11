@@ -39,6 +39,10 @@ class baseOtherServices(models.Model):
     def __unicode__(self):
         return self.description
 
+class ClassifiedRep(models.Model):
+    user = models.OneToOneField(User, related_name='rg_rep')
+    rg_rep_phone = models.CharField(max_length=32, blank=True)
+
 class FuneralHomeProfile(models.Model):
     STATES = (
         ('Alaska', 'Alaska',),
@@ -95,7 +99,7 @@ class FuneralHomeProfile(models.Model):
     state = models.CharField(max_length=6, choices=STATES, blank=True, help_text=u'Leave blank if located in Oregon')
     zip_code = models.CharField(max_length=32, blank=True)
     phone = models.CharField(max_length=14, blank=True)
-    rg_rep = models.ForeignKey(User, related_name='rg_rep', blank=True, null=True)
+    rg_rep = models.ForeignKey(ClassifiedRep, blank=True, null=True)
     
     class Meta:
         ordering = ('full_name',)
@@ -258,6 +262,48 @@ class Obituary(models.Model):
         'STAFF': '$50',
     }
     
+    
+    def next_available_pub_date():
+        right_now = datetime.datetime.now()
+        
+        # BEFORE 2 p.m. on a MONDAY
+        if right_now.hour <= 14 and right_now.weekday() == 0:
+            next_pub_date = right_now.date() + datetime.timedelta(days=3)
+        # AFTER 2 p.m. on a MONDAY
+        elif right_now.hour > 14 and right_now.weekday() == 0:
+            next_pub_date = right_now.date() + datetime.timedelta(days=4)
+        # BEFORE 2 p.m. on TUESDAY
+        elif right_now.hour <=14 and right_now.weekday() == 1:
+            next_pub_date = right_now.date() + datetime.timedelta(days=3)
+        # AFTER 2 p.m. on TUESDAY
+        elif right_now.hour > 14 and right_now.weekday() == 1:
+            next_pub_date = right_now.date() + datetime.timedelta(days=5)
+        # BEFORE 2 p.m. on WEDNESDAY
+        elif right_now.hour <=14 and right_now.weekday() == 2:
+            next_pub_date = right_now.date() + datetime.timedelta(days=4)
+        # AFTER 2 p.m. on WEDNESDAY
+        elif right_now.hour > 14 and right_now.weekday() == 2:
+            next_pub_date = right_now.date() + datetime.timedelta(days=5)
+        # BEFORE 2 p.m. on THURSDAY
+        elif right_now.hour <=14 and right_now.weekday() == 3:
+            next_pub_date = right_now.date() + datetime.timedelta(days=4)
+        # AFTER 2 p.m. on THURSDAY
+        elif right_now.hour > 14 and right_now.weekday() == 3:
+            next_pub_date = right_now.date() + datetime.timedelta(days=5)
+        # BEFORE 2 p.m. on FRIDAY
+        elif right_now.hour <=14 and right_now.weekday() == 4:
+            next_pub_date = right_now.date() + datetime.timedelta(days=4)
+        # AFTER 2 p.m. on FRIDAY
+        elif right_now.hour > 14 and right_now.weekday() == 4:
+            next_pub_date = right_now.date() + datetime.timedelta(days=6)
+        # It's SATURDAY
+        elif  right_now.weekday() == 5:
+            next_pub_date = right_now.date() + datetime.timedelta(days=5)
+        # It's SUNDAY
+        elif  right_now.weekday() == 6:
+            next_pub_date = right_now.date() + datetime.timedelta(days=4)
+        return next_pub_date
+    
     def obit_file_name(instance, filename):
         (orig_name, orig_ext) = path.splitext(filename)
 #         return 'obit_images/ob.%s.%s%s' % (instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
@@ -269,17 +315,17 @@ class Obituary(models.Model):
     date_of_birth = models.DateField(blank=True, null=True, help_text=u'YYYY-MM-DD format')
     family_contact = models.CharField(max_length=126)
     family_contact_phone = models.CharField(max_length=12)
-    obituary_body = models.TextField(help_text=u'Information you may want to include: education, military,  career/work experience,  hobbies, volunteerism, awards, clubs, marriage and divorce, survivors, predeceased by, cause of death, date of birth, service information, remembrances.')
+    obituary_body = models.TextField(help_text=u'<span style="color: blue;">Information you may want to include: education, military,  career/work experience,  hobbies, volunteerism, awards, clubs, marriage and divorce, survivors, predeceased by, cause of death, date of birth, service information, remembrances.</span>')
     mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive up to 10 copies of this obituary.')
     number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
     photo = ImageField(upload_to=obit_file_name, blank=True)
-    photo_two = ImageField(upload_to=obit_file_name, blank=True)
+    photo_two = ImageField(help_text=u'For a second photo there is an additional charge of approximately $50.', upload_to=obit_file_name, blank=True)
     # Survivors
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact your Register-Guard classified representative.</p>')
     
     obituary_in_system = models.BooleanField(u'Obit in DT?')
 #     obituary_has_run = models.BooleanField(u'Obit has run?')
-    obituary_publish_date = models.DateField(blank=True, null=True, help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
+    obituary_publish_date = models.DateField(default=next_available_pub_date(), blank=True, null=True, help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
     obituary_created = models.DateTimeField(auto_now_add=True)
     
     flag = models.BooleanField(blank=True)
@@ -383,7 +429,7 @@ class Obituary(models.Model):
             cbim = Thumbnail(self.photo_two.name, 180, 180)
             return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo_two.url, self.photo_two.storage.base_url, cbim)
         else:
-            return u'(No photo)'
+            return u'' # Don't want to display "(No photo)" when there's no second photo.
     admin_thumbnail_two.short_description = u'Thumbnail two'
     admin_thumbnail_two.allow_tags = True
     

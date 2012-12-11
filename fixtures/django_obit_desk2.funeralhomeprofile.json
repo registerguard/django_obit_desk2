@@ -78,19 +78,6 @@
     }
   }, 
   {
-    "pk": 132, 
-    "model": "django_obit_desk2.funeralhomeprofile", 
-    "fields": {
-      "city": "Palo Cedro", 
-      "phone": "530-547-4444", 
-      "state": "Calif.", 
-      "user": 390, 
-      "full_name": "Allen & Dahl Funeral Chapel", 
-      "address": "9100 Deschutes Road", 
-      "zip_code": "96073"
-    }
-  }, 
-  {
     "pk": 91, 
     "model": "django_obit_desk2.funeralhomeprofile", 
     "fields": {
@@ -101,6 +88,19 @@
       "full_name": "Allen & Dahl Funeral Chapel", 
       "address": "2655 Eureka Way", 
       "zip_code": "96001"
+    }
+  }, 
+  {
+    "pk": 132, 
+    "model": "django_obit_desk2.funeralhomeprofile", 
+    "fields": {
+      "city": "Palo Cedro", 
+      "phone": "530-547-4444", 
+      "state": "Calif.", 
+      "user": 390, 
+      "full_name": "Allen & Dahl Funeral Chapel", 
+      "address": "9100 Deschutes Road", 
+      "zip_code": "96073"
     }
   }, 
   {
