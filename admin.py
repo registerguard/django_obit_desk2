@@ -11,7 +11,7 @@ class FuneralHomeProfileAdmin(admin.ModelAdmin):
     
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "rg_rep":
-            kwargs["queryset"] = User.objects.filter(groups='2').order_by('username')
+            kwargs["queryset"] = ClassifiedRep.objects.filter(user__groups='2').order_by('user__username')
         return super(FuneralHomeProfileAdmin, self).formfield_for_foreignkey(db_field, request, **kwargs)
 
 admin.site.register(FuneralHomeProfile, FuneralHomeProfileAdmin)

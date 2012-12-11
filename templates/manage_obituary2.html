@@ -225,7 +225,7 @@
 				{{ form.status.errors }}
 				{{ form.status }}
 				{% if form.status.help_text %}<p>{{ form.status.help_text|safe }}</p>{% endif %}
-				{% if current_obit.death_notice.funeral_home.fh_user2.rg_rep %}<p>Your classifed advertising representative is {{ current_obit.death_notice.funeral_home.fh_user2.rg_rep.get_full_name }}.</p>{% endif %}
+				{% if current_obit.death_notice.funeral_home.fh_user2.rg_rep %}<p>Your classifed advertising representative is {{ current_obit.death_notice.funeral_home.fh_user2.rg_rep.user.get_full_name }}, {{ current_obit.death_notice.funeral_home.fh_user2.rg_rep.rg_rep_phone }}.</p>{% endif %}
 			</td>
 		</tr>
 		

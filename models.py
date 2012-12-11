@@ -42,6 +42,9 @@ class baseOtherServices(models.Model):
 class ClassifiedRep(models.Model):
     user = models.OneToOneField(User, related_name='rg_rep')
     rg_rep_phone = models.CharField(max_length=32, blank=True)
+    
+    def __unicode__(self):
+        return self.user.username
 
 class FuneralHomeProfile(models.Model):
     STATES = (
