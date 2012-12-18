@@ -319,7 +319,7 @@ class Obituary(models.Model):
     family_contact = models.CharField(max_length=126)
     family_contact_phone = models.CharField(max_length=12)
     obituary_body = models.TextField(help_text=u'<span style="color: blue;">Information you may want to include: education, military,  career/work experience,  hobbies, volunteerism, awards, clubs, marriage and divorce, survivors, predeceased by, cause of death, date of birth, service information, remembrances.</span>')
-    mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive up to 10 copies of this obituary.')
+    mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive 10 copies of this obituary.')
     number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
     photo = ImageField(upload_to=obit_file_name, blank=True)
     photo_two = ImageField(help_text=u'For a second photo there is an additional charge of approximately $50.', upload_to=obit_file_name, blank=True)
