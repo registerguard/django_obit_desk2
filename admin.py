@@ -52,6 +52,15 @@ class ObituaryAdmin(admin.ModelAdmin):
     ordering = ('-obituary_created',)
     save_on_top = True
     
+    class Media:
+        js = (
+        'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js',
+        'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js',
+        'http://www3.registerguard.com/hosted/jquery/js/jquery.cookie.js',
+        'http://go.registerguard.com/static/obituary2/lengthEstimator.js',
+        )
+        # /rgcalendar/www/static/obituary2/lengthEstimator.js
+    
     form = ObituaryAdminForm
     
     exclude = ('user',)
@@ -73,8 +82,8 @@ class ServiceAdmin(admin.ModelAdmin):
 admin.site.register(Service, ServiceAdmin)
 
 class ClassifiedRepAdmin(admin.ModelAdmin):
-    list_display = ('user', 'rg_rep_phone',)
-    list_editable = ('rg_rep_phone',)
+    list_display = ('user', 'rg_rep_phone', 'email', )
+    list_editable = ('rg_rep_phone', 'email',)
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'user':
             kwargs['queryset'] = User.objects.filter(groups='2').order_by('username')
