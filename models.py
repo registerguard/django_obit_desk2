@@ -423,14 +423,21 @@ class Obituary(models.Model):
             orig = Obituary.objects.get(pk=self.pk)
             if orig.status == 'drft' and self.status == 'live':
                 message_subj = 'Obituary for %s	 %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
-                message_email = u'Here\'s the text:\n\n\n %s'% self.obituary_body
+                message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
+                
+                if self.flag:
+                    message_email = '* Flag insignia requested.\n\n' +  message_email
+                
+                if self.service_insignia:
+                    message_email = ('* Service insignia requested: %s' % self.service_insignia) + '\n\n' + message_email
+                
                 try:
                     class_rep = self.death_notice.funeral_home.fh_user2.rg_rep.user.email
                 except AttributeError:
                     class_rep = None
                 
                 if self.death_notice.funeral_home.fh_user2.rg_rep.user.email:
-                    to_email = [class_rep,]
+                    to_email = [class_rep, 'john.heasly@registerguard.com',]
                     
                     '''
                     If there's a photo, attach it
