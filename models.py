@@ -418,7 +418,8 @@ class Obituary(models.Model):
         '''
         Check for change of status from draft to live and notifying appropriate classified representative
         '''
-        # http://stackoverflow.com/questions/1355150/django-when-saving-how-can-you-check-if-a-field-has-changed
+        
+# http://stackoverflow.com/questions/1355150/django-when-saving-how-can-you-check-if-a-field-has-changed
         if self.pk is not None:
             orig = Obituary.objects.get(pk=self.pk)
             if orig.status == 'drft' and self.status == 'live':
