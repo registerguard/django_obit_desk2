@@ -421,6 +421,7 @@ class Obituary(models.Model):
         
 '''
 The self. pk is of the Death_notice, not the obituary ... 
+So what that means is there *is* a Death_notice self.pk but that's not the Obituary class pk ... Hrmm ...
 '''
 # http://stackoverflow.com/questions/1355150/django-when-saving-how-can-you-check-if-a-field-has-changed
 #         if self.pk is not None:
