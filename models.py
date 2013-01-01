@@ -419,42 +419,45 @@ class Obituary(models.Model):
         Check for change of status from draft to live and notifying appropriate classified representative
         '''
         
+'''
+The self. pk is of the Death_notice, not the obituary ... 
+'''
 # http://stackoverflow.com/questions/1355150/django-when-saving-how-can-you-check-if-a-field-has-changed
-        if self.pk is not None:
-            orig = Obituary.objects.get(pk=self.pk)
-            if orig.status == 'drft' and self.status == 'live':
-                message_subj = 'Obituary for %s	 %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
-                message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
-                
-                if self.flag:
-                    message_email = '* Flag insignia requested.\n\n' +  message_email
-                
-                if self.service_insignia:
-                    message_email = ('* Service insignia requested: %s' % self.service_insignia) + '\n\n' + message_email
-                
-                try:
-                    class_rep = self.death_notice.funeral_home.fh_user2.rg_rep.user.email
-                except AttributeError:
-                    class_rep = None
-                
-                if self.death_notice.funeral_home.fh_user2.rg_rep.user.email:
-                    to_email = [class_rep, 'john.heasly@registerguard.com',]
-                    
-                    '''
-                    If there's a photo, attach it
-                    '''
-                    if self.photo:
-                        img_class_message = EmailMessage()
-                        img_class_message.subject, img_class_message.body, img_class_message.to = message_subj, message_email, to_email
-                        img_class_message.attach(path.split(self.photo.name)[1], self.photo.read(), 'image/jpg')
-                        '''
-                        If there's a second photot, attach it too.
-                        '''
-                        if self.photo_two:
-                            img_class_message.attach(path.split(self.photo_two.name)[1], self.photo_two.read(), 'image/jpg')
-                        img_class_message.send(fail_silently=False)
-                    else:
-                        datatuple = (message_subj, message_email, from_email, to_email,), # <- This trailing comma's vital!
+#         if self.pk is not None:
+#             orig = Obituary.objects.get(pk=self.pk)
+#             if orig.status == 'drft' and self.status == 'live':
+#                 message_subj = 'Obituary for %s	 %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+#                 message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
+#                 
+#                 if self.flag:
+#                     message_email = '* Flag insignia requested.\n\n' +  message_email
+#                 
+#                 if self.service_insignia:
+#                     message_email = ('* Service insignia requested: %s' % self.service_insignia) + '\n\n' + message_email
+#                 
+#                 try:
+#                     class_rep = self.death_notice.funeral_home.fh_user2.rg_rep.user.email
+#                 except AttributeError:
+#                     class_rep = None
+#                 
+#                 if self.death_notice.funeral_home.fh_user2.rg_rep.user.email:
+#                     to_email = [class_rep, 'john.heasly@registerguard.com',]
+#                     
+#                     '''
+#                     If there's a photo, attach it
+#                     '''
+#                     if self.photo:
+#                         img_class_message = EmailMessage()
+#                         img_class_message.subject, img_class_message.body, img_class_message.to = message_subj, message_email, to_email
+#                         img_class_message.attach(path.split(self.photo.name)[1], self.photo.read(), 'image/jpg')
+#                         '''
+#                         If there's a second photot, attach it too.
+#                         '''
+#                         if self.photo_two:
+#                             img_class_message.attach(path.split(self.photo_two.name)[1], self.photo_two.read(), 'image/jpg')
+#                         img_class_message.send(fail_silently=False)
+#                     else:
+#                         datatuple = (message_subj, message_email, from_email, to_email,), # <- This trailing comma's vital!
         
         if datatuple:
             send_mass_mail(datatuple)
