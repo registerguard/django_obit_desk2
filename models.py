@@ -418,12 +418,13 @@ class Obituary(models.Model):
                 '''
                 Check for change of status from draft to live and notifying appropriate classified representative
                 '''
-                
-                '''
-                The self. pk is of the Death_notice, not the obituary ... 
-                So what that means is there *is* a Death_notice self.pk but that's not the Obituary class pk ... Hrmm ...
-                '''
-# http://stackoverflow.com/questions/1355150/django-when-saving-how-can-you-check-if-a-field-has-changed
+        # http://stackoverflow.com/questions/1355150/django-when-saving-how-can-you-check-if-a-field-has-changed
+        '''
+        Can't check state of Obituary using self.pk as the Obituary has a 
+        OneToOneField relationship to the Death Notice, so they share a pk, so 
+        we use the self.obituary_created field to see if the Obituary's in the 
+        database.
+        '''
         if self.obituary_created is not None:
             orig = Obituary.objects.get(pk=self.pk)
             if orig.status == 'drft' and self.status == 'live':
