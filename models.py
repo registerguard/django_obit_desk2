@@ -428,7 +428,7 @@ class Obituary(models.Model):
         if self.obituary_created is not None:
             orig = Obituary.objects.get(pk=self.pk)
             if orig.status == 'drft' and self.status == 'live':
-                message_subj = 'Obituary for %s	 %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
                 message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
                 
                 if self.flag:
@@ -453,7 +453,7 @@ class Obituary(models.Model):
                         img_class_message.subject, img_class_message.body, img_class_message.to = message_subj, message_email, to_email
                         img_class_message.attach(path.split(self.photo.name)[1], self.photo.read(), 'image/jpg')
                         '''
-                        If there's a second photot, attach it too.
+                        If there's a second photo, attach it too.
                         '''
                         if self.photo_two:
                             img_class_message.attach(path.split(self.photo_two.name)[1], self.photo_two.read(), 'image/jpg')
