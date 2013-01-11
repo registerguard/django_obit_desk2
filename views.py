@@ -145,12 +145,14 @@ def manage_obituary2(request, obituary_id=None):
     if request.method == 'POST':
         if request.POST.has_key('delete') and obituary_id:
             current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            first_name = current_obit.death_notice.first_name
+            last_name = current_obit.death_notice.last_name
             current_obit.delete()
             msg = ugettext('The %(verbose_name)s for %(first)s %(last)s was deleted.') % \
                 {
                     'verbose_name': Obituary._meta.verbose_name,
-                    'first': current_obit.death_notice,
-                    'last': current_obit.death_notice.last_name,
+                    'first': first_name,
+                    'last': last_name,
                 }
             messages.success(request, msg, fail_silently=False)
             return HttpResponseRedirect(reverse('death_notice_index2'))
