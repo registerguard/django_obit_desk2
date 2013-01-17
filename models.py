@@ -425,9 +425,28 @@ class Obituary(models.Model):
         we use the self.obituary_created field to see if the Obituary's in the 
         database.
         '''
-        if self.obituary_created is not None:
-            orig = Obituary.objects.get(pk=self.pk)
-            if orig.status == 'drft' and self.status == 'live':
+        
+        '''
+        This two-part obituary_created or self.status/self.obituary_created 
+        test is to catch Obituaries that have changed state from 'Draft' to 
+        'Submitted' from both saved-exist-in-the-database or Saved on initial 
+        form filling out.
+        '''
+        if self.obituary_created is not None or (self.status == 'live' and self.obituary_created == None):
+            try:
+                orig = Obituary.objects.get(pk=self.pk)
+            except Obituary.DoesNotExist:
+                orig = None
+            
+            '''
+            This 
+            ( self.status/self.obituary_created ) or ( orig.status/self.status )
+            bit is the second part of the machinery to catch the change from 
+            'Draft' to 'Submitted' Obituaries for both the 
+            saved-in-the-database and those that are 'Submitted" on initial 
+            Save.
+            '''
+            if  (self.status =='live' and self.obituary_created == None) or (orig.status == 'drft' and self.status == 'live'):
                 message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
                 message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
                 
