@@ -134,7 +134,7 @@ class Death_notice(models.Model):
     no_service_planned = models.BooleanField(u'No service planned?', blank=True, help_text=u'Check if NO SERVICE IS PLANNED.')
     remembrances = models.CharField(u'Remembrances to ... ', max_length=255, blank=True, help_text=u'(This item typically used when there won\'t be an obituary, but the deceased has selected an organization.)')
     death_notice_in_system = models.BooleanField()
-    death_notice_has_run = models.BooleanField()
+#     death_notice_has_run = models.BooleanField()
     death_notice_created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Death Notice is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> a Death Notice has been submitted, you <i style="font-weight: bold;">MUST</i> contact The Register-Guard newsroom.</p>')
     
@@ -329,7 +329,7 @@ class Obituary(models.Model):
     
     obituary_in_system = models.BooleanField(u'Obit in DT?')
 #     obituary_has_run = models.BooleanField(u'Obit has run?')
-    obituary_publish_date = models.DateField(default=next_available_pub_date(), blank=True, null=True, help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
+    obituary_publish_date = models.DateField(default=next_available_pub_date(), help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
     obituary_created = models.DateTimeField(auto_now_add=True)
     
     flag = models.BooleanField(blank=True)
