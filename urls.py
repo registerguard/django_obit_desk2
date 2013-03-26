@@ -1,8 +1,9 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm
 from django.views.generic.simple import direct_to_template
-from django_obit_desk2.views import deaths2, fh_index2, logout_view2, manage_death_notice2, \
-    manage_obituary2, billing2, print_obituary2, hard_copies_manifest2, billing_excel2
+from django_obit_desk2.views import deaths2, fh_index2, logout_view2, \
+    manage_death_notice2, manage_obituary2, billing2, print_obituary2, \
+    hard_copies_manifest2, billing_excel2, death_notice_count
 
 urlpatterns = list()
 
@@ -30,4 +31,5 @@ urlpatterns += patterns('',
     url(r'^billing/$', billing2, name='billing2'),
     url(r'^billing/excel/$', billing2, {'excel_response': True}, name='billing_excel2'),
     url(r'^hard-copies/$', hard_copies_manifest2, name='hard-copies2'),
+    url(r'^death-notices/$', death_notice_count, name='death-notice-count'),
 )

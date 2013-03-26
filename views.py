@@ -322,3 +322,21 @@ def hard_copies_manifest2(request):
         'list': have_run_list,
     }
     return render_to_response('hard_copies_manifest.html', response_dict, context_instance=RequestContext(request))
+
+@login_required
+def death_notice_count(request):
+    today = datetime.date.today()
+    first = datetime.date(day=1, month=today.month, year=today.year)
+    lastMonthEnd = first - datetime.timedelta(days=1)
+    lastMonthStart = datetime.date(day=1, month=lastMonthEnd.month, year=lastMonthEnd.year)
+    dn_count = Death_notice.objects.filter(death_notice_created__gte=lastMonthStart, death_notice_created__lte=lastMonthEnd).count()
+    dn_count_in_system = Death_notice.objects.filter(death_notice_created__gte=lastMonthStart, death_notice_created__lte=lastMonthEnd, death_notice_in_system=True).count()
+    
+    response_dict = {
+        'last_month_start': lastMonthStart,
+        'last_month_end': lastMonthEnd,
+        'dn_count': dn_count,
+        'dn_count_in_system': dn_count_in_system,
+    }
+    return render_to_response('death_notice_count.html', response_dict, context_instance=RequestContext(request))
+    
