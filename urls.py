@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm
-from django.views.generic.simple import direct_to_template
+from django.views.generic import TemplateView
 from django_obit_desk2.views import deaths2, fh_index2, logout_view2, \
     manage_death_notice2, manage_obituary2, billing2, print_obituary2, \
     hard_copies_manifest2, billing_excel2, death_notice_count
@@ -11,7 +11,7 @@ urlpatterns = list()
 Dirty hack: Uncomment following three lines for maintenance mode.
 '''
 # urlpatterns = patterns('',
-#     url(r'^.*$', direct_to_template, {'template': 'maintenance.html'})
+#     url(r'^.*$', TemplateView.as_view(template_name="maintenance.html"), name='maintenance'),
 # )
 
 urlpatterns += patterns('',
