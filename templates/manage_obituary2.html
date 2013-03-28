@@ -292,130 +292,193 @@
 // Closure:
 $(document).ready(function() {
     
+    /*
+    So this appears to be a function named 'counter' that does two things:
+    1.) returns the length of any DOM element passed to it, a required argument
+    2.) stuffs that count into the #obit_text_count span
+    */
     // Count characters in $el:
     var counter = function($el) {
         
         // Get count:
-        var count = $el.val().length;
+        if(typeof $el.val() !='undefined') {
+            var count = $el.val().length;
+        } else {
+            var count = null;
+        }
         
         // Spit count into span:
-        $("#obit_text_count").text(count);
-        
+        if($el.attr('name') == 'obituary_body') {
+            $("#obit_text_count").text(count);
+        }
         return count; // Return the count.
         
     },
     
-    coster = function(count) {
+    /*
+    Down at the bottom of this chunk of JavaScript, on every keystroke, this 
+    'coster' function is called and, given a count, returns a jQuery cost 
+    string.
+    */
+    coster = function(count, first_photo_count, second_photo_count) {
         
         var val = '0';
         
         // 4" or less
         if (count <= 163) {
-            val = '50.00, length of 4 total inches';
+            price = 50;
+            column_inch = 4;
         // 5"
         } else if (count > 163 && count <= 350) {
-            val = '75.00, length of 5 total inches';
+            price = 75;
+            column_inch = 5;
         // 6"
         } else if (count > 350 && count <= 538) {
-            val = '100.00, length of 6 total inches';
+            price = 100;
+            column_inch = 6;
         // 7"
         } else if (count > 538 && count <= 725) {
-            val = '125.00, length of 7 total inches';
+            price = 125;
+            column_inch = 7;
         // 8"
         } else if (count > 725 && count <= 913) {
-            val = '150.00, length of 8 total inches';
+            price = 150;
+            column_inch = 8;
         // 9"
         } else if (count > 913 && count <= 1100) {
-            val = '175.00, length of 9 total inches';
+            price = 175;
+            column_inch = 9;
         // 10"
         } else if (count > 1100 && count <= 1288) {
-            val = '200.00, length of 10 total inches';
+            price = 200;
+            column_inch = 10;
         // 11"
         } else if (count > 1288 && count <= 1475) {
-            val = '225.00, length of 11 total inches';
+            price = 225;
+            column_inch = 11;
         // 12"
         } else if (count > 1475 && count <= 1663) {
-            val = '250.00, length of 12 total inches';
+            price = 250;
+            column_inch = 12;
         // 13"
         } else if (count > 1663 && count <= 1850) {
-            val = '275.00, length of 13 total inches';
+            price = 275;
+            column_inch = 13;
         // 14"
         } else if (count > 1850 && count <= 2038) {
-            val = '300.00, length of 14 total inches';
+            price = 300;
+            column_inch = 14;
         // 15"
         } else if (count > 2038 && count <= 2225) {
-            val = '325.00, length of 15 total inches';
+            price = 325;
+            column_inch = 15;
         // 16"
         } else if (count > 2225 && count <= 2413) {
-            val = '350.00, length of 16 total inches';
+            price = 350;
+            column_inch = 16;
         // 17"
         } else if (count > 2413 && count <= 2600) {
-            val = '375.00, length of 17 total inches';
+            price = 375;
+            column_inch = 17;
         // 18"
         } else if (count > 2600 && count <= 2788) {
-            val = '400.00, length of 18 total inches';
+            price = 400;
+            column_inch = 18;
         // 19"
         } else if (count > 2788 && count <= 2975) {
-            val = '425.00, length of 19 total inches';
+            price = 425;
+            column_inch = 19;
         // 20"
         } else if (count > 2975 && count <= 3163) {
-            val = '450.00, length of 20 total inches';
+            price = 450;
+            column_inch = 20;
         // 21"
         } else if (count > 3163 && count <= 3350) {
-            val = '475.00, length of 21 total inches';
+            price = 475;
+            column_inch = 21;
         // 22"
         } else if (count > 3350 && count <= 3538) {
-            val = '500.00, length of 22 total inches';
+            price = 500;
+            column_inch = 22;
         // 23"
         } else if (count > 3538 && count <= 3725) {
-            val = '525.00, length of 23 total inches';
+            price = 525;
+            column_inch = 23;
         // 24"
         } else if (count > 3725 && count <= 3913) {
-            val = '550.00, length of 24 total inches';
+            price = 550;
+            column_inch = 24;
         // 25"
         } else if (count > 3913 && count <= 4100) {
-            val = '575.00, length of 25 total inches';
+            price = 575;
+            column_inch = 25;
         // 26"
         } else if (count > 4100 && count <= 4288) {
-            val = '600.00, length of 26 total inches';
+            price = 600;
+            column_inch = 26;
         // 27"
         } else if (count > 4288 && count <= 4475) {
-            val = '625.00, length of 27 total inches';
+            price = 625;
+            column_inch = 27;
         // 28"
         } else if (count > 4475 && count <= 4663) {
-            val = '650.00, length of 28 total inches';
+            price = 650;
+            column_inch = 28;
         // 29"
         } else if (count > 4663 && count <= 4850) {
-            val = '675.00, length of 29 total inches';
+            price = 675;
+            column_inch = 29;
         // 30"
         } else if (count > 4850 && count <= 5038) {
-            val = '700.00, length of 30 total inches';
+            price = 700;
+            column_inch = 30;
         // 31"
         } else if (count > 5038 && count <= 5225) {
-            val = '725.00, length of 31 total inches';
+            price = 725;
+            column_inch = 31;
         // 32"
         } else if (count > 5225 && count <= 5413) {
-            val = '750.00, length of 32 total inches';
+            price = 750;
+            column_inch = 32;
         // 33"
         } else if (count > 5413 && count <= 5600) {
-            val = '775.00, length of 33 total inches';
+            price = 775;
+            column_inch = 33;
         // 34"
         } else if (count > 5600 && count <= 5788) {
-            val = '800.00, length of 34 total inches';
+            price = 800;
+            column_inch = 34;
         // 35"
         } else if (count > 5788 && count <= 5975) {
-            val = '825.00, length of 35 total inches';
+            price = 825;
+            column_inch = 35;
         // 36"
         } else if (count > 5975 && count <= 6163) {
-            val = '850.00, length of 36 total inches';
+            price = 850;
+            column_inch = 36;
         // More than 36" and less than 21"
         } else if (count > 6163 && count <= 6725) {
-            val = '1000.00, length of 36 total inches';
+            price = 1000;
+            column_inch = 36;
         } else {
-            val = '1000.00, length is more than 42 total inches. You may need to make some edits.';
+            val = '1000.00, length is more than 42 total inches. You may need to make some edits';
+            price = 1000;
+            column_inch = 42;
         }
         
-        $cost.html('$' + val + '.');
+        if(column_inch < 37) {
+            if(typeof first_photo_count !='undefined' && typeof second_photo_count !='undefined' && second_photo_count != null) {
+                val = '$' + String((price + 100)) + '.00, length of ' + column_inch + ' total inches and two photos.';
+            } else if(typeof first_photo_count !='undefined' && first_photo_count != null) {
+                val = '$' + String((price + 50)) + '.00, length of ' + column_inch + ' total inches and one photo.';
+            } else {
+               val = '$' + String((price + 50)) + '.00, length of ' + column_inch + ' total inches.';
+            }
+        } else {
+           val = '<b>Length is more that 36 total inches.</b> Please contact your Register-Guard classified representative.'
+        }
+        
+        $cost.html(val);
         
     },
     
@@ -425,29 +488,29 @@ $(document).ready(function() {
     // Cache the cost element:
     $cost = $('#obit_text_cost'),
     
-    // Cache the first picture element;
-    $picture_one = $('#id_photo');
+    // Cache the first picture element:
+    $picture_one = $('#photo-clear_id'),
     
     // Cache the second picture element;
-    $picture_two = $('#id_photo_two');
+    $picture_two = $('#photo_two-clear_id'),
     
     // Initialize counter value on load:
     count = counter($obit), // Call the counter() function.
     
-    // Initialize the cost value on load:
-    cost = coster(count);
-    
     // Initialize image one on load:
-    image_one = coster();
+    first_photo_count = counter($picture_one);
     
     // Initialize image two on load:
-    image_two = coster();
+    second_photo_count = counter($picture_two);
+    
+    // Initialize the cost value on load:
+    cost = coster(count, first_photo_count, second_photo_count);
     
     // Key strokes?
     $obit.on('keyup', function () {
         
         // Key has been pressed!
-        coster(counter($(this))); // Call the counter & coster() functions.
+        coster(counter($(this)), first_photo_count, second_photo_count); // Call the counter & coster() functions.
         
     });
     
