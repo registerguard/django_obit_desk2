@@ -2224,6 +2224,27 @@
     }
   }, 
   {
+    "pk": 1023, 
+    "model": "django_obit_desk2.death_notice", 
+    "fields": {
+      "status": "drft", 
+      "first_name": "Alice", 
+      "last_name": "Addertongue", 
+      "middle_name": "", 
+      "remembrances": "", 
+      "funeral_home": 288, 
+      "age": 34, 
+      "city_of_residence": "Eugene", 
+      "age_unit": 1, 
+      "death_notice_in_system": false, 
+      "death_notice_created": "2013-03-28 17:05:40", 
+      "no_service_planned": false, 
+      "nickname": "", 
+      "formerly_of": "", 
+      "death_date": "2013-03-19"
+    }
+  }, 
+  {
     "pk": 1022, 
     "model": "django_obit_desk2.death_notice", 
     "fields": {
@@ -2473,27 +2494,6 @@
       "nickname": "", 
       "formerly_of": "", 
       "death_date": "2013-03-27"
-    }
-  }, 
-  {
-    "pk": 1010, 
-    "model": "django_obit_desk2.death_notice", 
-    "fields": {
-      "status": "drft", 
-      "first_name": "Test", 
-      "last_name": "Teset", 
-      "middle_name": "", 
-      "remembrances": "", 
-      "funeral_home": 288, 
-      "age": 32, 
-      "city_of_residence": "Eugene", 
-      "age_unit": 1, 
-      "death_notice_in_system": false, 
-      "death_notice_created": "2013-03-27 12:58:07", 
-      "no_service_planned": false, 
-      "nickname": "", 
-      "formerly_of": "", 
-      "death_date": "2013-03-25"
     }
   }, 
   {
@@ -24099,10 +24099,34 @@
     }
   }, 
   {
+    "pk": 1022, 
+    "model": "django_obit_desk2.obituary", 
+    "fields": {
+      "status": "drft", 
+      "submitted_by": "", 
+      "obituary_created": "2013-03-28 16:55:23", 
+      "family_contact": "Linda Lattymer", 
+      "mailing_address": "1192 39th St. \r\nSpringfield, OR 97478", 
+      "family_contact_phone": "541-747-9554", 
+      "photo_two": "", 
+      "obituary_publish_date": "2013-04-02", 
+      "prepaid_by": "", 
+      "flag": false, 
+      "date_of_birth": "1942-03-08", 
+      "user": null, 
+      "photo": "", 
+      "number_of_copies": null, 
+      "service_insignia": "", 
+      "obituary_in_system": false, 
+      "obituary_body": "Ernest Lattymer, 71, of Springfield, died on March 27th at his residence.  He was born to Hobert and Sylvia (Cobble) Morrow in Prairie City, Oregon on March 8, 1942.  He married Linda Ellingburg in Springfield on January 27, 1977.\r\nErnest worked as a mill worker and heavy equipment operator for Stone Forest Products.  He loved fishing, hunting and playing chess.  Ernest also was the captain of a pool team in Springfield. \r\nErnest is survived by his spouse, Linda; daughters, Linda McMullen of South Carolina, Juanita Vensen of Alaska, Lawana Durand of Ohio, Rose Buckholz, Christina Lattymer, Leona Lattymer, and Mary Lattymer, all of Springfield; son, Ernest Jamie Lattymer of Springfield; sisters, Clara Lattymer of Prairie City, Cleo Larkin of North Powder, and Gene Hanlon of West Fir; 26 grandchildren and 4 great-grandchildren.  \r\nA memorial service will be held at a later date.\r\nArrangements by Major Family Funeral Home of Springfield. \r\n"
+    }
+  }, 
+  {
     "pk": 940, 
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-28 16:07:06", 
       "family_contact": "Esther James", 
       "mailing_address": "3220 Crescent Avenue, Eugene, OR 97408", 
@@ -24125,6 +24149,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-28 15:35:38", 
       "family_contact": "Leslie McCauley", 
       "mailing_address": "", 
@@ -24147,6 +24172,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-28 14:25:49", 
       "family_contact": "Jacqueline Koffman", 
       "mailing_address": "", 
@@ -24169,6 +24195,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-28 13:36:45", 
       "family_contact": "Joy Cheri Wearin", 
       "mailing_address": "40262 McKenzie Hwy \r\nSpringfield, OR 97478", 
@@ -24191,6 +24218,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-27 14:15:15", 
       "family_contact": "Patricia A. Schlosser", 
       "mailing_address": "1328 34th St \r\nSpringfield, OR. 97478", 
@@ -24209,32 +24237,11 @@
     }
   }, 
   {
-    "pk": 1010, 
-    "model": "django_obit_desk2.obituary", 
-    "fields": {
-      "status": "drft", 
-      "obituary_created": "2013-03-27 12:58:38", 
-      "family_contact": "Me", 
-      "mailing_address": "", 
-      "family_contact_phone": "Me", 
-      "photo_two": "", 
-      "obituary_publish_date": "2013-04-10", 
-      "prepaid_by": "", 
-      "flag": false, 
-      "date_of_birth": null, 
-      "user": null, 
-      "photo": "", 
-      "number_of_copies": null, 
-      "service_insignia": "", 
-      "obituary_in_system": false, 
-      "obituary_body": "Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa skla \r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaaHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\n\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa\r\nHere is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j a;lkjaa Here is some test text. and now it is!  akljadk akl;j \r\n"
-    }
-  }, 
-  {
     "pk": 1008, 
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-27 09:16:14", 
       "family_contact": "Cheri Jung", 
       "mailing_address": "5402 S. Thomson Ave\r\nTacoma, WA 98408", 
@@ -24257,6 +24264,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 16:09:49", 
       "family_contact": "Patricia Brown", 
       "mailing_address": "1600 Rhodedendron Drive, #131, Florence, OR, 97439", 
@@ -24279,6 +24287,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 16:00:55", 
       "family_contact": "Richard Eberle", 
       "mailing_address": "1255 Throne Drive\r\nEugene, OR 97404", 
@@ -24301,6 +24310,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 13:59:01", 
       "family_contact": "Carolyn Eden", 
       "mailing_address": "90638 Alvadore Rd.\r\nJunction City, Oreogn 97448", 
@@ -24323,6 +24333,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 13:30:57", 
       "family_contact": "Shade Nelson", 
       "mailing_address": "2765 Polk Street, Eugene, Oregon 97405", 
@@ -24345,6 +24356,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 11:17:06", 
       "family_contact": "Dixie Willcut", 
       "mailing_address": "37319 Parsons Creek Road, Springfield, OR 97478", 
@@ -24367,6 +24379,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 10:58:51", 
       "family_contact": "Jerrilyn Rains", 
       "mailing_address": "1111 Mockingbird Lane, TV Land 111111", 
@@ -24389,6 +24402,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 10:41:07", 
       "family_contact": "James Ray", 
       "mailing_address": "793 Smith St.\r\nHarrisburg, OR 97446", 
@@ -24411,6 +24425,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-26 09:13:28", 
       "family_contact": "Margaret Dunlap", 
       "mailing_address": "1125 W. 18th Ave.\r\nEugene, OR 97402", 
@@ -24433,6 +24448,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-25 15:17:09", 
       "family_contact": "Mike Huey ", 
       "mailing_address": "461 Chantecler Drive, Fremont, CA 94539", 
@@ -24455,6 +24471,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-25 15:08:48", 
       "family_contact": "Lana Toureen", 
       "mailing_address": "Lana Toureen\r\n234 South 11th St.\r\nCottage Grove, OR 97424", 
@@ -24477,6 +24494,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-25 14:40:25", 
       "family_contact": "Ray Osuna", 
       "mailing_address": "29915 Kelso Rd.\r\nEugene, OR 97402", 
@@ -24499,6 +24517,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-25 14:00:00", 
       "family_contact": "Lynn Barnes", 
       "mailing_address": "25294 Hwy 99E\r\nHalsey, OR 97348", 
@@ -24521,6 +24540,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-25 11:51:28", 
       "family_contact": "Charlotte Stirling", 
       "mailing_address": "2642 Central Blvd., Eugene, Oregon 97403", 
@@ -24543,6 +24563,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-25 11:19:20", 
       "family_contact": "Linda Ochs", 
       "mailing_address": "26855 Powell Road, Eugene, Oregon 97405", 
@@ -24565,6 +24586,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-22 12:53:57", 
       "family_contact": "David Kutschara", 
       "mailing_address": "1702 Best Lane\r\nEugene, OR 97401", 
@@ -24587,6 +24609,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-21 13:40:25", 
       "family_contact": "John Jongsma", 
       "mailing_address": "85486 Pine Grove Road, Eugene, OR, 97405", 
@@ -24609,6 +24632,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-21 13:28:11", 
       "family_contact": "Sandra Swenson ", 
       "mailing_address": "151 Blackfoot Ave \r\nEugene, OR. 97404", 
@@ -24631,6 +24655,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-21 12:31:58", 
       "family_contact": "Larry Badten", 
       "mailing_address": "33838 E. River Drive, Creswell, OR 97426", 
@@ -24653,6 +24678,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-21 09:14:51", 
       "family_contact": "Jim Warren", 
       "mailing_address": "2548 N. 35th Place\r\nSpringfield, OR 97477", 
@@ -24675,6 +24701,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-19 16:23:15", 
       "family_contact": "Joan Doering", 
       "mailing_address": "1699 N. Terry #72, Eugene, Oregon 97402", 
@@ -24697,6 +24724,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-19 11:39:40", 
       "family_contact": "Memory Toman", 
       "mailing_address": "283 Knapp Lane \r\nEugene, OR 97404", 
@@ -24719,6 +24747,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-19 10:53:47", 
       "family_contact": "Brooks McIntyre", 
       "mailing_address": "915 Park Hurst Lane\r\nSandy Ut 84094", 
@@ -24741,6 +24770,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-19 09:52:25", 
       "family_contact": "Leonard Lonigan", 
       "mailing_address": "3347 Storey Blvd., Eugene, Oregon 97405", 
@@ -24763,6 +24793,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-18 16:09:40", 
       "family_contact": "Suzy Peurach", 
       "mailing_address": "2264 N Vernon St.\r\nArlington Virginia 22207", 
@@ -24785,6 +24816,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-18 11:47:18", 
       "family_contact": "David Carlson", 
       "mailing_address": "17648 Fitch Drive\r\nSherwood, OR 97140", 
@@ -24807,6 +24839,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-18 10:48:05", 
       "family_contact": "Bonnie Herron", 
       "mailing_address": "Bonnie Herron\r\n121 Andrew Drive\r\nCottage Grove, OR 97424", 
@@ -24829,6 +24862,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-18 10:38:01", 
       "family_contact": "Bernice Hartwig", 
       "mailing_address": "25303 Eldale Drive, Eugene, Oregon 97402", 
@@ -24851,6 +24885,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-18 09:31:58", 
       "family_contact": "Erin Palayo", 
       "mailing_address": "4858 Amazon Drive\r\nEugene OR 97405", 
@@ -24873,6 +24908,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-18 09:05:39", 
       "family_contact": "Thomas Acacher", 
       "mailing_address": "91922 River Road, Junction City, OR 97448", 
@@ -24895,6 +24931,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-16 12:52:42", 
       "family_contact": "Rose Smith", 
       "mailing_address": "84681 Pheasant Ln\r\nPleasant Hill, OR 97455", 
@@ -24917,6 +24954,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-15 16:01:51", 
       "family_contact": "Lucy Barrett", 
       "mailing_address": "1612 Unity Court\r\nJunction City, OR 97448", 
@@ -24939,6 +24977,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-15 14:28:30", 
       "family_contact": "Sharon Andreason", 
       "mailing_address": "1852 Mary Lee Lane\r\nEugene, OR 97402", 
@@ -24961,6 +25000,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-15 10:21:52", 
       "family_contact": "Karen Obie", 
       "mailing_address": "", 
@@ -24983,6 +25023,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-15 10:04:23", 
       "family_contact": "Darrell Willis", 
       "mailing_address": "300 39th Street, Springfield, OR, 97477", 
@@ -25005,6 +25046,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-15 09:43:33", 
       "family_contact": "Ginger Jennings", 
       "mailing_address": "5011 SE Harney Dr. \r\nPortland, OR 97206", 
@@ -25027,6 +25069,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-14 15:25:18", 
       "family_contact": "Erma Ratterree", 
       "mailing_address": "P.O.Box 668\r\nMarcola, OR 97454", 
@@ -25049,6 +25092,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-14 15:24:25", 
       "family_contact": "Eric Scott", 
       "mailing_address": "", 
@@ -25071,6 +25115,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-14 13:03:23", 
       "family_contact": "Barbara Stater", 
       "mailing_address": "2151 Burchwood Avenue\r\nEugene, OR 97401", 
@@ -25093,6 +25138,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-14 12:08:24", 
       "family_contact": "Kerry Winningham", 
       "mailing_address": "PO Box 174, Blue River, OR, 97413", 
@@ -25115,6 +25161,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-14 11:00:11", 
       "family_contact": "Patricia Daily", 
       "mailing_address": "PO BOX 145  Crystal, MI 48818", 
@@ -25137,6 +25184,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-14 10:41:25", 
       "family_contact": "Martin Nice", 
       "mailing_address": "2481 Panarama \r\nEugene, OR. 97405", 
@@ -25159,6 +25207,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-13 10:50:58", 
       "family_contact": "Denise Boyer", 
       "mailing_address": "2785 Taito Street Eugene, OR 97404", 
@@ -25181,6 +25230,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-12 16:37:51", 
       "family_contact": "Katrina Thomason", 
       "mailing_address": "28174 Cottage Grove - Lorane Road\r\nCottage Grove, OR 97424", 
@@ -25203,6 +25253,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-12 13:18:48", 
       "family_contact": "Elnora Cowger", 
       "mailing_address": "85519 Dilley Lane\r\nEugene, OR 97405", 
@@ -25225,6 +25276,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-12 12:01:25", 
       "family_contact": "Katie", 
       "mailing_address": "", 
@@ -25247,6 +25299,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-12 10:30:54", 
       "family_contact": "Bob Halterman", 
       "mailing_address": "2230 Pierce ST\r\nEugene OR 97405", 
@@ -25269,6 +25322,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-12 10:26:54", 
       "family_contact": "Judy Newman", 
       "mailing_address": "91 East 48th Street, Eugene, Oregon 97405", 
@@ -25291,6 +25345,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-12 09:31:32", 
       "family_contact": "Connie Tish", 
       "mailing_address": "29027 Crow Road, Eugene, OR, 97402", 
@@ -25313,6 +25368,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 16:04:37", 
       "family_contact": "Aileen Day", 
       "mailing_address": "34778 Mathews Road, Eugene, Oregon 97405", 
@@ -25335,6 +25391,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 13:00:18", 
       "family_contact": "Paul Wilcox", 
       "mailing_address": "3220 Crescent Avenue, #13, Eugene, OR, 97408", 
@@ -25357,6 +25414,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 12:53:01", 
       "family_contact": "Nancy Davies", 
       "mailing_address": "P.O. Box 1387, Veneta, OR 97487", 
@@ -25379,6 +25437,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 11:45:57", 
       "family_contact": "Michelle Johnson", 
       "mailing_address": "6025 Belinda Dr. NE\r\nRockford, MI 49341", 
@@ -25401,6 +25460,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 11:26:05", 
       "family_contact": "Steve Stormont", 
       "mailing_address": "1597 Kelly Blvd., Springfield, Oregon 97477", 
@@ -25423,6 +25483,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 11:00:48", 
       "family_contact": "Katie", 
       "mailing_address": "", 
@@ -25445,6 +25506,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 10:47:45", 
       "family_contact": "Cindy Shirley", 
       "mailing_address": "6352 F Street  Springfield, OR 97478", 
@@ -25467,6 +25529,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-11 10:43:49", 
       "family_contact": "Kelly Garrick-wife", 
       "mailing_address": "1605 Scandia Street\r\nEugene, OR 97402", 
@@ -25489,6 +25552,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-08 15:32:22", 
       "family_contact": "John Schreiner", 
       "mailing_address": "PO Box 5452, Eugene, Oregon 97402", 
@@ -25511,6 +25575,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-08 14:37:20", 
       "family_contact": "Butch Miller", 
       "mailing_address": "85474 McBeth Road\r\nEugene, OR 97405", 
@@ -25533,6 +25598,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-07 12:21:57", 
       "family_contact": "Jason Gauntlett", 
       "mailing_address": "36 Sandalwood Loop,  Creswell, OR  97426", 
@@ -25555,6 +25621,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-06 15:09:49", 
       "family_contact": "Lana Davis", 
       "mailing_address": "1865 N. Danebo Avenue, Eugene, OR, 97402", 
@@ -25577,6 +25644,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-05 15:56:02", 
       "family_contact": "Katie", 
       "mailing_address": "", 
@@ -25599,6 +25667,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-05 15:27:45", 
       "family_contact": "Tillie Hunter", 
       "mailing_address": "160 W. Anchor Avenue\r\nEugene, OR 97404", 
@@ -25621,6 +25690,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-05 11:22:51", 
       "family_contact": "Mike Crowson", 
       "mailing_address": "6044 Mondavi Lane\r\nEugene, OR 97402", 
@@ -25643,6 +25713,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-05 10:28:38", 
       "family_contact": "Millie Ramsey", 
       "mailing_address": "90980 Donni Lane\r\nJunction City, OR 97448", 
@@ -25665,6 +25736,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-05 09:19:43", 
       "family_contact": "John Paulson", 
       "mailing_address": "2372 Oakway Terrace, Eugene, Oregon 97401", 
@@ -25687,6 +25759,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-04 16:27:58", 
       "family_contact": "Connie Downey", 
       "mailing_address": "658 S. 57th Street  Space 36  Springfield, OR 97478", 
@@ -25709,6 +25782,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-04 15:38:08", 
       "family_contact": "Judy Levins", 
       "mailing_address": "Judy Levins\r\nP. O. Box 75\r\nDrain, Oregon 97435", 
@@ -25731,6 +25805,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-04 10:29:16", 
       "family_contact": "Phyllis Quall ", 
       "mailing_address": "3355 N. Delta HWY #30\r\nEugene, OR. 97408", 
@@ -25753,6 +25828,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-04 10:06:10", 
       "family_contact": "Ben Howell", 
       "mailing_address": "226 Quincy Ave.   Cottage Grove, OR  97424", 
@@ -25775,6 +25851,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-01 16:33:11", 
       "family_contact": "Ed or Valerie Heegard", 
       "mailing_address": "19967 Heron Loop, Bend, OR 97702", 
@@ -25797,6 +25874,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-01 11:38:33", 
       "family_contact": "Robert Park", 
       "mailing_address": "3800 Concord Avenue, Eugene, OR, 97402", 
@@ -25819,6 +25897,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-03-01 09:39:44", 
       "family_contact": "Neal Stianson", 
       "mailing_address": "1125 58th Street Spc.40\r\nSpringfield, OR 97478", 
@@ -25841,6 +25920,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-28 13:41:56", 
       "family_contact": "Mike Estagin", 
       "mailing_address": "687 N 60th Street\r\nSpringfield, OR 97478", 
@@ -25863,6 +25943,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-28 11:33:06", 
       "family_contact": "Candyce Franklin", 
       "mailing_address": "Candyce Franklin\r\n89192 Old Mohawk Road\r\nSpringfield, OR 97478", 
@@ -25885,6 +25966,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-28 11:27:39", 
       "family_contact": "Sandra Rice", 
       "mailing_address": "", 
@@ -25907,6 +25989,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-27 16:34:28", 
       "family_contact": "Karen Burling", 
       "mailing_address": "399 North 71st St. Springfield, OR 97478", 
@@ -25929,6 +26012,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-27 13:47:52", 
       "family_contact": "Diane Hunter", 
       "mailing_address": "3317 Riverplace Drive, Eugene, Oregon 97401", 
@@ -25951,6 +26035,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-27 10:08:02", 
       "family_contact": "Autumn Parks", 
       "mailing_address": "1411 Hayes Street  Hollywood, Florida 33020\r\n\r\nPlease send Ten copies", 
@@ -25973,6 +26058,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-26 15:39:06", 
       "family_contact": "Donna Hernandez", 
       "mailing_address": "11 Lani Way\r\nTalent, Oregon 97450", 
@@ -25995,6 +26081,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-26 10:57:44", 
       "family_contact": "Carmella J. DeLong", 
       "mailing_address": "4690 Fuller Avenue, Eugene, OR 97402", 
@@ -26017,6 +26104,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-25 15:13:09", 
       "family_contact": "Patricia Cairns", 
       "mailing_address": "", 
@@ -26039,6 +26127,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-25 11:27:47", 
       "family_contact": "Sherry Drake ", 
       "mailing_address": "", 
@@ -26061,6 +26150,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-25 10:46:30", 
       "family_contact": "Alan Purvis", 
       "mailing_address": "5362 Via Vicente, Yorba Linda, CA 92887", 
@@ -26083,6 +26173,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-25 10:36:56", 
       "family_contact": "Betty Sandford", 
       "mailing_address": "1800 Lakewood Ct #159\r\nEugene, OR. 97402", 
@@ -26105,6 +26196,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-25 10:35:16", 
       "family_contact": "Jane King", 
       "mailing_address": "2110 Hubbard Lane, Eugene, Oregon 97403", 
@@ -26127,6 +26219,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-22 14:20:01", 
       "family_contact": "Wanda Gangle", 
       "mailing_address": "3290 Spearmint Street, Eugene, OR, 97404", 
@@ -26149,6 +26242,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-22 11:39:26", 
       "family_contact": "Linda Stahl", 
       "mailing_address": "33443 Molitor Ranch Rd., Cottage Grove, OR 97424", 
@@ -26171,6 +26265,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-22 09:53:14", 
       "family_contact": "Katie", 
       "mailing_address": "", 
@@ -26193,6 +26288,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-21 15:03:01", 
       "family_contact": "Jan Carrigan ", 
       "mailing_address": "2460 20th Street  Springfield, Oregon 97477", 
@@ -26215,6 +26311,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-21 14:07:27", 
       "family_contact": "Millicent Gagnon", 
       "mailing_address": "29333 garrard Ave.\r\nFrontenac, MN 55026", 
@@ -26237,6 +26334,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-21 10:34:35", 
       "family_contact": "Winona Carlson", 
       "mailing_address": "115 T Street\r\nSpringfield, Oregon 97477", 
@@ -26259,6 +26357,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-21 10:31:31", 
       "family_contact": "Sandra Oldham", 
       "mailing_address": "99 W. F Street #29, Creswell, OR 97426", 
@@ -26281,6 +26380,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-21 10:05:11", 
       "family_contact": "Holly Herbert", 
       "mailing_address": "2180 Woodacres Drive, Eugene, Oregon 97401", 
@@ -26303,6 +26403,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-21 09:49:44", 
       "family_contact": "Gregory Etchison", 
       "mailing_address": "2117 Sunrise Circle, Wenatchee, WA 98801", 
@@ -26325,6 +26426,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-20 15:29:45", 
       "family_contact": "Iona Kline", 
       "mailing_address": "658 S. 57th Street, #28, Springfield, OR, 97478", 
@@ -26347,6 +26449,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-20 15:25:21", 
       "family_contact": "Don Bowers", 
       "mailing_address": "306 SW Washington St.\r\nAlbany, OR 97321", 
@@ -26369,6 +26472,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-20 12:01:07", 
       "family_contact": "Georgie Harrison", 
       "mailing_address": "3355 N. Delta Hwy., #118, Eugene, OR 97408", 
@@ -26391,6 +26495,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-19 09:50:19", 
       "family_contact": "Mike Payne", 
       "mailing_address": "221 49th Street\r\nSpringfield OR 97478", 
@@ -26413,6 +26518,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-18 16:30:06", 
       "family_contact": "Sharon Garrick", 
       "mailing_address": "PO Box 1224 \r\nOakridge, OR 97463", 
@@ -26435,6 +26541,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-18 13:52:34", 
       "family_contact": "Butch Bamford", 
       "mailing_address": "92165 Alderwood Drive\r\nCheshire, OR 97419", 
@@ -26457,6 +26564,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-18 13:07:12", 
       "family_contact": "Dan Feddersen", 
       "mailing_address": "4855 G Street, Springfield, OR, 97478", 
@@ -26479,6 +26587,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-18 10:41:49", 
       "family_contact": "Barbara Puryear", 
       "mailing_address": "88931 Lois Ln\r\nElmira, OR. 97437", 
@@ -26501,6 +26610,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-18 10:36:47", 
       "family_contact": "Anna Seeley", 
       "mailing_address": "3916 Pam Street, Eugene, Oregon 97402", 
@@ -26523,6 +26633,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-18 10:12:23", 
       "family_contact": "Ken Jameson", 
       "mailing_address": "670 Harold Street, Eugene, OR, 97402", 
@@ -26545,6 +26656,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-18 09:59:22", 
       "family_contact": "Lucille Beisel", 
       "mailing_address": "32097 Peppermint Lane, Eugene, Oregon 97408", 
@@ -26567,6 +26679,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-15 15:49:39", 
       "family_contact": "Max Wall", 
       "mailing_address": "24611 Alpine Road\r\nMonroe, OR 97456", 
@@ -26589,6 +26702,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-15 11:10:32", 
       "family_contact": "Ada Grimes", 
       "mailing_address": "1477 Hayden Bridge Road, Springfield, Oregon 97477", 
@@ -26611,6 +26725,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-15 10:02:41", 
       "family_contact": "katie", 
       "mailing_address": "", 
@@ -26633,6 +26748,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-14 15:06:49", 
       "family_contact": "Kristy Miller", 
       "mailing_address": "1427 Mill St.\r\nSpringfield, OR 97477", 
@@ -26655,6 +26771,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-14 14:15:09", 
       "family_contact": "Ruth Sherman", 
       "mailing_address": "1660 J St.\r\nSpringfield, OR 97477", 
@@ -26677,6 +26794,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-14 10:45:17", 
       "family_contact": "Shirley Brown ", 
       "mailing_address": "554 N 70th St\r\nSpringfield, OR. 97478", 
@@ -26699,6 +26817,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-13 09:01:43", 
       "family_contact": "Sara Heacock", 
       "mailing_address": "6893 Main Street, Springfield, OR, 97478", 
@@ -26721,6 +26840,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-12 11:03:30", 
       "family_contact": "Joyce Zerangue", 
       "mailing_address": "PO Box 2, Creswell, Oregon 97426", 
@@ -26743,6 +26863,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-12 09:15:57", 
       "family_contact": "Marcia Johnson", 
       "mailing_address": "PO Box 457, Creswell, OR, 97426", 
@@ -26765,6 +26886,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 16:49:17", 
       "family_contact": "Lena Duncan", 
       "mailing_address": "5325 B Street, Springfield, OR, 97478", 
@@ -26787,6 +26909,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 16:01:24", 
       "family_contact": "Patrick Rigel", 
       "mailing_address": "2038 Amirante Street, Eugene, OR, 97402", 
@@ -26809,6 +26932,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 15:09:55", 
       "family_contact": "John Bowman ", 
       "mailing_address": "9143 Piccadilly Circle\r\nWindsor, CA. 95492", 
@@ -26831,6 +26955,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 14:16:13", 
       "family_contact": "Danny Keller", 
       "mailing_address": "1527 Juhl St.\r\nEugene, OR 97402", 
@@ -26853,6 +26978,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 12:46:17", 
       "family_contact": "Cathy Teem", 
       "mailing_address": "82305 Hillview Rd.\r\nCreswell, OR 97426", 
@@ -26875,6 +27001,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 11:06:14", 
       "family_contact": "Ron Marshall", 
       "mailing_address": "1623 21st St\r\nSpringfield, Oregon 97477", 
@@ -26897,6 +27024,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 10:57:26", 
       "family_contact": "Lisa Walters", 
       "mailing_address": "3572 Preston St.\r\nEugene, OR 97401", 
@@ -26919,6 +27047,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 09:48:13", 
       "family_contact": "Gregg Long", 
       "mailing_address": "1533 Grand Avenue Medford, OR 97520", 
@@ -26941,6 +27070,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-11 09:44:59", 
       "family_contact": "Nellie Lane", 
       "mailing_address": "975 Priceboro Rd.\r\nHarrisburg, OR 97456", 
@@ -26963,6 +27093,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-09 15:16:41", 
       "family_contact": "Margie Hanna", 
       "mailing_address": "Margie Hanna\r\nP.O. Box 1384\r\nVeneta, OR 97487", 
@@ -26985,6 +27116,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-08 16:04:39", 
       "family_contact": "Anita Lewis", 
       "mailing_address": "89874 Hill Rd. \r\nSpringfield, OR 97478", 
@@ -27007,6 +27139,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-08 15:25:27", 
       "family_contact": "Laverne Medlock", 
       "mailing_address": "37461 Wheeler Rd. \r\nDexter, OR 97431", 
@@ -27029,6 +27162,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-08 13:17:11", 
       "family_contact": "Lane Memorial Gardens", 
       "mailing_address": "", 
@@ -27051,6 +27185,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-08 12:54:29", 
       "family_contact": "Mark Anderson", 
       "mailing_address": "1312 Audel Avenue, Eugene, Oregon 97404", 
@@ -27073,6 +27208,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-08 09:21:18", 
       "family_contact": "Sherrie Warthen", 
       "mailing_address": "572 Cascade Drive, Springfield, OR 97478", 
@@ -27095,6 +27231,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-07 15:34:50", 
       "family_contact": "Eva McDonald", 
       "mailing_address": "1585 Acacia Avenue\r\nEugene, Oregon", 
@@ -27117,6 +27254,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-07 15:04:32", 
       "family_contact": "Christina VanCura", 
       "mailing_address": "1199 N. Terry St Sp #145\r\nEugene, OR. 97402", 
@@ -27139,6 +27277,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-07 11:10:50", 
       "family_contact": "Shandy Haaby", 
       "mailing_address": "6983 A. St\r\nSpringfield, OR. 97478", 
@@ -27161,6 +27300,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-06 14:02:24", 
       "family_contact": "Charlotte Williams", 
       "mailing_address": "33069 Gibson Lane, Creswell, OR 97426", 
@@ -27183,6 +27323,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-06 10:49:03", 
       "family_contact": "Karen Warner", 
       "mailing_address": "1071 'J' Street #1, Springfield, Oregon 97477", 
@@ -27205,6 +27346,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-06 10:47:41", 
       "family_contact": "Dana Wagner", 
       "mailing_address": "4800 Barger #37\r\nEugene OR 97402", 
@@ -27227,6 +27369,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-06 10:36:54", 
       "family_contact": "Ernita Quick", 
       "mailing_address": "36390 Tinker Road\r\nPleasant Hill, OR 97455", 
@@ -27249,6 +27392,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-05 16:31:52", 
       "family_contact": "Joan Winsor", 
       "mailing_address": "1699 N Terry E/O 02 #393\r\nEugene OR. 97402", 
@@ -27271,6 +27415,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-05 15:31:52", 
       "family_contact": "Jane Harlor", 
       "mailing_address": "2809 Tomahawk Lane, Eugene, Oregon 97401", 
@@ -27293,6 +27438,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-05 14:56:40", 
       "family_contact": "David Bullard", 
       "mailing_address": "3955 Dorchester Lane, Eugene, Oregon 97401", 
@@ -27315,6 +27461,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-05 13:00:34", 
       "family_contact": "Missy Blomquist", 
       "mailing_address": "78543 Cedar Park Rd.\r\nCottage Grove, OR  97424", 
@@ -27337,6 +27484,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-05 12:54:53", 
       "family_contact": "Teresa Myrmo", 
       "mailing_address": "2640 Suncrest Avenue\r\nEugene, OR. 97405", 
@@ -27359,6 +27507,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-05 10:21:03", 
       "family_contact": "Doug Paul", 
       "mailing_address": "1800 Lakewood Court, Space 34, Eugene, OR, 97402", 
@@ -27381,6 +27530,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-04 15:34:14", 
       "family_contact": "Kim Owsley", 
       "mailing_address": "PO Box 471, Lowell, OR, 97452", 
@@ -27403,6 +27553,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-04 13:43:09", 
       "family_contact": "Dennis Prociw", 
       "mailing_address": "1530 Clearwater, Springfield, OR, 97478", 
@@ -27425,6 +27576,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-04 13:30:18", 
       "family_contact": "Darrold Olson", 
       "mailing_address": "PO Box 1182, McMinville, Oregon 97128", 
@@ -27447,6 +27599,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-04 12:43:25", 
       "family_contact": "Richard Cronk", 
       "mailing_address": "481 42nd St.\r\nSpringfield, OR 97478", 
@@ -27469,6 +27622,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-04 12:14:59", 
       "family_contact": "Lloyd George", 
       "mailing_address": "1469 Piper Lane\r\nEugene OR 97401", 
@@ -27491,6 +27645,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-04 11:34:40", 
       "family_contact": "Jackie Crowson", 
       "mailing_address": "", 
@@ -27513,6 +27668,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-02 11:17:34", 
       "family_contact": "Patricia Cunningham", 
       "mailing_address": "Patricia Cunnningham\r\n1229 SE 26th Street\r\nTroutdale, OR 97060", 
@@ -27535,6 +27691,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-01 15:38:09", 
       "family_contact": "Patrick Lamb", 
       "mailing_address": "1275 Edgewater Lane, Cottage Grove, OR 97424", 
@@ -27557,6 +27714,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-01 15:03:47", 
       "family_contact": "Larry Lucas", 
       "mailing_address": "2566 Elysium Avenue, Eugene, OR 97401", 
@@ -27579,6 +27737,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-01 11:12:04", 
       "family_contact": "Jeffery Hart", 
       "mailing_address": "1289 Winery Lane\r\nEugene, OR 97404", 
@@ -27601,6 +27760,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-02-01 08:42:52", 
       "family_contact": "Cindy Leighton", 
       "mailing_address": "1668 Jean Court, Eugene, Oregon 97402", 
@@ -27623,6 +27783,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-31 14:19:35", 
       "family_contact": "Banti Winslow", 
       "mailing_address": "2107 Wilson Court, Cottage Grove, OR 97424", 
@@ -27645,6 +27806,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-31 12:03:50", 
       "family_contact": "Arlene Green", 
       "mailing_address": "688 St. Andrews Loop \r\nCreswell, OR 97426", 
@@ -27667,6 +27829,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-30 12:19:54", 
       "family_contact": "Dale Slaughter", 
       "mailing_address": "274 Waite Street, Eugene, OR, 97402", 
@@ -27689,6 +27852,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-30 11:46:28", 
       "family_contact": "Bob Englund Jr.", 
       "mailing_address": "37736 Upper Camp Creek Road Springfield, Or. 97478", 
@@ -27711,6 +27875,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-29 15:27:00", 
       "family_contact": "Maggie Pachl", 
       "mailing_address": "1181 S. 39th Street, Springfield, Oregon 97478", 
@@ -27733,6 +27898,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-29 12:01:48", 
       "family_contact": "Julia Hess", 
       "mailing_address": "", 
@@ -27755,6 +27921,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-29 11:46:54", 
       "family_contact": "Wayne Hatton", 
       "mailing_address": "", 
@@ -27777,6 +27944,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-28 15:37:31", 
       "family_contact": "Mary Laws", 
       "mailing_address": "Mary Laws\r\n215 River Loop #2\r\nEugene, OR 97404", 
@@ -27799,6 +27967,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-28 15:16:07", 
       "family_contact": "Beverly Sager", 
       "mailing_address": "1360 Parker Street, Springfield, OR, 97477", 
@@ -27821,6 +27990,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-28 12:21:28", 
       "family_contact": "James Stephenson", 
       "mailing_address": "420 Lynbrook Drive, Eugene, Oregon 97404", 
@@ -27843,6 +28013,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-28 12:05:33", 
       "family_contact": "Daniel Patten", 
       "mailing_address": "Daniel Patten\r\n76700 Vaughn Creek Road\r\nDorena, OR 97434", 
@@ -27865,6 +28036,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-27 16:04:40", 
       "family_contact": "Doris Callahan", 
       "mailing_address": "4705 Manzanita Street Eugene, OR 97405", 
@@ -27887,6 +28059,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-25 16:25:42", 
       "family_contact": "Elke Green", 
       "mailing_address": "6695 Jacob Lane, Springfield, OR, 97478", 
@@ -27909,6 +28082,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-25 16:21:50", 
       "family_contact": "Sandra Wiltermood", 
       "mailing_address": "80076 Hazelton Rd., Cottage Grove, OR 97424", 
@@ -27931,6 +28105,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-25 15:09:33", 
       "family_contact": "Ed Chaffin", 
       "mailing_address": "39139 Eagles Rest Road\r\nDexter, OR 97431", 
@@ -27953,6 +28128,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-25 14:57:06", 
       "family_contact": "Shirley Mold", 
       "mailing_address": "1350 Fir Acres Dr. \r\nEugene, OR. 97401", 
@@ -27975,6 +28151,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-25 12:38:38", 
       "family_contact": "Carroll Turner", 
       "mailing_address": "65 Heritage Avenue\r\nEugene, OR 97404", 
@@ -27997,6 +28174,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-24 12:56:48", 
       "family_contact": "Lynda Sage", 
       "mailing_address": "504 Laksonen Loop, Springfield, OR 97477", 
@@ -28019,6 +28197,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-24 12:21:07", 
       "family_contact": "Marge Barber", 
       "mailing_address": "1625 Henderson Ave. #", 
@@ -28041,6 +28220,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-23 12:29:18", 
       "family_contact": "Jeanne Walker", 
       "mailing_address": "2350 W 23rd Place, Eugene, OR 97405", 
@@ -28063,6 +28243,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-23 10:30:18", 
       "family_contact": "Victoria James", 
       "mailing_address": "2870 Suffolk Court, Eugene, OR 97401", 
@@ -28085,6 +28266,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-23 08:26:23", 
       "family_contact": "Adele Glover", 
       "mailing_address": "", 
@@ -28107,6 +28289,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-22 16:52:34", 
       "family_contact": "Karen Duran", 
       "mailing_address": "2687 Dover Drive\r\nEugene, OR 97404", 
@@ -28129,6 +28312,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-22 13:41:42", 
       "family_contact": "Loren Crabtree", 
       "mailing_address": "90820 Coburg Road, Eugene, OR, 97408", 
@@ -28151,6 +28335,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-22 12:31:42", 
       "family_contact": "Connie Haley", 
       "mailing_address": "4865 Main Street, #309\r\nSpringfield, OR 97478", 
@@ -28173,6 +28358,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-22 10:58:58", 
       "family_contact": "Randy Hughey", 
       "mailing_address": "720 Lochaven Ave., Springfield, OR 97477", 
@@ -28195,6 +28381,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-22 09:32:49", 
       "family_contact": "Larry Hoagland", 
       "mailing_address": "83284 Hoagland Lane\r\nCreswell OR 97426", 
@@ -28217,6 +28404,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-21 11:23:02", 
       "family_contact": "Sheree OR ", 
       "mailing_address": "1348 Piper Lane\r\nEugene OR 97401", 
@@ -28239,6 +28427,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-21 11:22:42", 
       "family_contact": "Norval Shurtliff", 
       "mailing_address": "4325 NE 125PL #210\r\nPortland, OR 97230", 
@@ -28261,6 +28450,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-20 12:55:15", 
       "family_contact": "Arlene Kinley", 
       "mailing_address": "2753 3rd St.\r\nSpringfield, OR 97477", 
@@ -28283,6 +28473,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-19 16:12:50", 
       "family_contact": "Shirley Ward", 
       "mailing_address": "2435 Marjorie Ave\r\nEugene, OR. 97408", 
@@ -28305,6 +28496,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-18 17:19:26", 
       "family_contact": "Andreasons", 
       "mailing_address": "", 
@@ -28327,6 +28519,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-18 15:56:28", 
       "family_contact": "Carol Lockard", 
       "mailing_address": "32811 E Maple St.\r\nCoburg OR 97408", 
@@ -28349,6 +28542,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-17 16:33:43", 
       "family_contact": "Barbara Harris", 
       "mailing_address": "2161 Debra Drive, Springfield, OR, 97477", 
@@ -28371,6 +28565,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-17 13:15:51", 
       "family_contact": "Lyle G. Wilson", 
       "mailing_address": "27610 Snyder Road\r\nJunction City, OR 97448", 
@@ -28393,6 +28588,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-17 11:40:00", 
       "family_contact": "David Debysingh", 
       "mailing_address": "33570 Cedar Park Place, Cottage Grove, OR 97424", 
@@ -28415,6 +28611,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-17 11:01:00", 
       "family_contact": "Shirley Reising", 
       "mailing_address": "24574 Paradise Drive\r\nJunction City, OR 97448", 
@@ -28437,6 +28634,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-16 11:30:04", 
       "family_contact": "John Lawder ", 
       "mailing_address": "", 
@@ -28459,6 +28657,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-16 10:31:23", 
       "family_contact": "Janet Baker", 
       "mailing_address": "850 Territorial St\r\nHarrisburg, OR. 97446", 
@@ -28481,6 +28680,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-16 09:28:16", 
       "family_contact": "Dixie Lee Sult", 
       "mailing_address": "4198 Lancaster Drive\r\nEugene OR 97404", 
@@ -28503,6 +28703,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-15 16:20:27", 
       "family_contact": "Shelly McGuffin Norman", 
       "mailing_address": "889 Waite Street\r\nEugene, OR 97402", 
@@ -28525,6 +28726,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-15 13:11:20", 
       "family_contact": "Alan & Roslyn Burch ", 
       "mailing_address": "92891 River Rd\r\nJunction City, OR. 97448", 
@@ -28547,6 +28749,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-15 12:49:37", 
       "family_contact": "Katie Booth", 
       "mailing_address": "", 
@@ -28569,6 +28772,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-15 11:04:04", 
       "family_contact": "Lawrence Schmidt", 
       "mailing_address": "2695 S. M Street\r\nSpringfield OR 97477", 
@@ -28591,6 +28795,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-15 10:33:23", 
       "family_contact": "Steve Peterson", 
       "mailing_address": "PO Box 653, Marcola, OR 97454", 
@@ -28613,6 +28818,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-15 10:22:24", 
       "family_contact": "Dana Legner", 
       "mailing_address": "506 N Danebo Ave \r\nEugene, OR. 97402", 
@@ -28635,6 +28841,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-15 09:45:08", 
       "family_contact": "Julie Davis", 
       "mailing_address": "2175 Ironwood St.\r\nEugene, Oregon 97401\r\n\r\n10-copies please.", 
@@ -28657,6 +28864,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-14 17:01:26", 
       "family_contact": "Marcia Caruso", 
       "mailing_address": "3052 Kentwood Drive, Eugene, OR 97401", 
@@ -28679,6 +28887,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-14 16:51:36", 
       "family_contact": "Howard Baker", 
       "mailing_address": "PO Box 42\r\nHalsey, OR. 97348", 
@@ -28701,6 +28910,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-14 16:43:42", 
       "family_contact": "John Lessar", 
       "mailing_address": "6355 C Street, Springfield, OR, 97478", 
@@ -28723,6 +28933,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-14 16:32:57", 
       "family_contact": "Steve Shaw", 
       "mailing_address": "38572 Kickbusch Lane\r\nSpringfield, Oregon 97478\r\n \r\n10-copies please.", 
@@ -28745,6 +28956,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-14 15:58:10", 
       "family_contact": "Kathy Rowland", 
       "mailing_address": "P. O. Box 729\r\nJunction City, Oregon 97448", 
@@ -28767,6 +28979,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-14 10:22:46", 
       "family_contact": "Sue Wotkyns", 
       "mailing_address": "SUE WOTKYNS\r\n2000 N. CRESCENT DRIVE\r\nFLAGSTAFF, AZ 86001\r\n\r\nYES, 10-OBITS, THANK YOU.", 
@@ -28789,6 +29002,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-14 09:22:05", 
       "family_contact": "Mary Lynn Fenner", 
       "mailing_address": "1895 Heitzman Way\r\nEugene, OR 97402", 
@@ -28811,6 +29025,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-11 14:12:28", 
       "family_contact": "Guy C. Lionberger", 
       "mailing_address": "PO Box 1097\r\nNorth Plains, OR 97133", 
@@ -28833,6 +29048,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-11 11:40:52", 
       "family_contact": "Loretta Morrell", 
       "mailing_address": "88823 Evers, Elmira, OR 97437", 
@@ -28855,6 +29071,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-10 17:57:07", 
       "family_contact": "Kelly Mills", 
       "mailing_address": "4280 Pullman Ave\r\nSalem, OR. 97302", 
@@ -28877,6 +29094,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-10 16:08:47", 
       "family_contact": "Linda Hughes", 
       "mailing_address": "6921 34th Ave SW\r\nSeattle, WA. 98126", 
@@ -28899,6 +29117,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-10 13:06:13", 
       "family_contact": "Alan L. Smith", 
       "mailing_address": "4055 Berrywood Dr. \r\nEugene, OR. 97404", 
@@ -28921,6 +29140,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-10 10:59:29", 
       "family_contact": "Florene Werder", 
       "mailing_address": "", 
@@ -28943,6 +29163,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-09 15:29:29", 
       "family_contact": "Sharon Dickens", 
       "mailing_address": "Sharon Dickens\r\n2553 Game Farm Rd.\r\nSpringfield, oregon 97477\r\n\r\n10-copies", 
@@ -28965,6 +29186,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-09 14:40:48", 
       "family_contact": "Alice Bender", 
       "mailing_address": "269 Walnut Lane, Eugene, Oregon 97401", 
@@ -28987,6 +29209,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-09 13:46:51", 
       "family_contact": "Joyce McCullough", 
       "mailing_address": "2170 Patrick Court, Cottage Grove, OR 97424", 
@@ -29009,6 +29232,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-09 10:13:33", 
       "family_contact": "Eleanor Semon", 
       "mailing_address": "8820 Eola Hills Road, Amity, OR, 97101", 
@@ -29031,6 +29255,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-09 09:55:12", 
       "family_contact": "Diane Beuerman ", 
       "mailing_address": "2505 Alder St \r\nEugene, OR. 97405", 
@@ -29053,6 +29278,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-09 09:21:44", 
       "family_contact": "Hillary Barnes", 
       "mailing_address": "310 Ful View Drive, Eugene, Oregon 97405", 
@@ -29075,6 +29301,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-08 10:51:50", 
       "family_contact": "541-337-2645", 
       "mailing_address": "PO Box 8036, Coburg, Oregon 97408", 
@@ -29097,6 +29324,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-08 08:13:04", 
       "family_contact": "Daniel Gardner", 
       "mailing_address": "571 Yakima St. S. \r\nVale OR 97918", 
@@ -29119,6 +29347,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-07 19:12:01", 
       "family_contact": "Marilyn Powers", 
       "mailing_address": "PO BOX 20488\r\nWICKENBURG AZ 85358", 
@@ -29141,6 +29370,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-07 15:13:52", 
       "family_contact": "Darrel Wilde", 
       "mailing_address": "PO Box  674\r\nJunction City Oregon 97448", 
@@ -29163,6 +29393,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-07 15:07:37", 
       "family_contact": "Robert Logan", 
       "mailing_address": "44220 McKenzie Hwy., Leaburg, OR 97489", 
@@ -29185,6 +29416,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-07 14:31:26", 
       "family_contact": "Zofia Miller", 
       "mailing_address": "2310 Rocky Lane\r\nEugene, OR  97401", 
@@ -29207,6 +29439,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-07 11:05:08", 
       "family_contact": "Michael Monroe", 
       "mailing_address": "4284 Hyacinth, Eugene, OR, 97404", 
@@ -29229,6 +29462,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-07 10:12:25", 
       "family_contact": "Bonnie Todis", 
       "mailing_address": "1013 E 22nd Ave \r\nEugene OR 97405", 
@@ -29251,6 +29485,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-04 16:32:22", 
       "family_contact": "Dana Peterson", 
       "mailing_address": "P.O. Box 867\r\nCottage Grove, OR 97424", 
@@ -29273,6 +29508,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-04 13:35:33", 
       "family_contact": "Dr. David Haffner", 
       "mailing_address": "3268 NW COUNTRYMAN, \r\nALBANY, OR 97321", 
@@ -29295,6 +29531,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-04 11:53:22", 
       "family_contact": "Kathleen Fox", 
       "mailing_address": "22943 Christian Road\r\nVeneta, OR 97487", 
@@ -29317,6 +29554,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-04 10:10:20", 
       "family_contact": "Meg Myalls", 
       "mailing_address": "5885 Leeds Road - Hoffman Estates, IL 60192", 
@@ -29339,6 +29577,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-03 17:03:26", 
       "family_contact": "Larry Denny", 
       "mailing_address": "4082 Interlake Rd., Bradley, CA 93426", 
@@ -29361,6 +29600,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-03 14:32:51", 
       "family_contact": "CURT THOMAS", 
       "mailing_address": "CURT THOMAS,  1025 S 6TH ST,  #86, HARRISBURG OR 97446", 
@@ -29383,6 +29623,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-03 12:56:07", 
       "family_contact": "Steve Slusher", 
       "mailing_address": "", 
@@ -29405,6 +29646,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-03 12:07:38", 
       "family_contact": "Janet Reynolds", 
       "mailing_address": "94608 Johnson Rd.  \r\nMarcola OR 97454", 
@@ -29427,6 +29669,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-03 11:53:43", 
       "family_contact": "Bill Parson", 
       "mailing_address": "78307 Cedar Park Rd., Cottage Grove, OR 97424", 
@@ -29449,6 +29692,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-03 09:52:27", 
       "family_contact": "Dianne Sorro", 
       "mailing_address": "1454 Roundup Dr\r\nEugene, OR. 97401", 
@@ -29471,6 +29715,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-02 17:34:24", 
       "family_contact": "Terry Burgess", 
       "mailing_address": "33738 McKenzie View Drive, Eugene, OR 97408", 
@@ -29493,6 +29738,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-02 15:05:34", 
       "family_contact": "Deborah Duke", 
       "mailing_address": "Deborah Duke \r\n2470 Lariat Meadows\r\nEugene, Oregon 97401", 
@@ -29515,6 +29761,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-02 13:11:34", 
       "family_contact": "Aaren Gushwa", 
       "mailing_address": "2360 Holly Street, Anderson, CA 94007", 
@@ -29537,6 +29784,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-02 12:25:18", 
       "family_contact": "Theresa Coleman", 
       "mailing_address": "1159 Surrey Lane, Eugene, OR 97402", 
@@ -29559,6 +29807,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-02 12:05:43", 
       "family_contact": "Kathryn Anderson", 
       "mailing_address": "", 
@@ -29581,6 +29830,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2013-01-02 10:51:12", 
       "family_contact": "Pamela Leavitt", 
       "mailing_address": "1325 Brickley Road, Eugene, Oregon 97401", 
@@ -29603,6 +29853,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2012-12-31 12:05:26", 
       "family_contact": "Jule \"Jeff\" Kaspar, III", 
       "mailing_address": "PO Box 475\r\nJunction City, OR  97448", 
@@ -29625,6 +29876,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2012-12-31 11:19:48", 
       "family_contact": "Keith Van Atta", 
       "mailing_address": "7252 Garden Valley Road\r\nRoseburg, OR  97471", 
@@ -29647,6 +29899,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2012-12-28 14:27:46", 
       "family_contact": "Opal Powell", 
       "mailing_address": "35893 Ellington Drive, Springfield, OR, 97478", 
@@ -29669,6 +29922,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2012-12-28 11:21:11", 
       "family_contact": "Louise Wheeler", 
       "mailing_address": "2560 Calgary Street, Eugene, OR, 97408", 
@@ -29691,6 +29945,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "live", 
+      "submitted_by": "", 
       "obituary_created": "2012-12-27 14:17:11", 
       "family_contact": "Colleen Harvey", 
       "mailing_address": "23075 Sheffler Road, Elmira, OR, 97437", 
@@ -29713,6 +29968,7 @@
     "model": "django_obit_desk2.obituary", 
     "fields": {
       "status": "drft", 
+      "submitted_by": "", 
       "obituary_created": "2012-11-26 15:12:18", 
       "family_contact": "Test", 
       "mailing_address": "", 

@@ -220,6 +220,16 @@
 	
 	<table>
 		
+		<tr {% if form.submitted_by.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.submitted_by.label_tag }}:
+			</th>
+			<td>
+				{{ form.submitted_by.errors }}
+				{{ form.submitted_by }}
+				{% if form.submitted_by.help_text %}<p>{{ form.submitted_by.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
 		
 		<tr {% if form.status.field.required %}class="required"{% endif %}>
 			<th>

@@ -326,7 +326,7 @@ class Obituary(models.Model):
     photo_two = ImageField(help_text=u'For a each photo there is an additional charge of $50.', upload_to=obit_file_name, blank=True)
     # Survivors
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact your Register-Guard classified representative.</p>')
-    submitted_by = models.CharField(max_length=150, blank=True)
+    submitted_by = models.CharField(max_length=150, blank=True, null=True)
     
     obituary_in_system = models.BooleanField(u'Obit in DT?')
 #     obituary_has_run = models.BooleanField(u'Obit has run?')
