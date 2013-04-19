@@ -159,7 +159,8 @@ class Death_notice(models.Model):
             )
         elif not self.pk:
             # a new Death_notice
-            message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.funeralhomeprofile.full_name, self.first_name, self.last_name)
+#             message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.funeralhomeprofile.full_name, self.first_name, self.last_name)
+            message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.fh_user2.full_name, self.first_name, self.last_name)
             datatuple = (message_subj, message_email, from_email, to_email,), # <- This trailing comma's vital!
         
         if datatuple:

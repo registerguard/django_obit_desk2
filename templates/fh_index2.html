@@ -1,6 +1,6 @@
 {% extends "base_reader_form.html" %}
 
-{% block title %}Administration home page for {{ user.funeralhomeprofile.full_name }}{% endblock %}
+{% block title %}Administration home page for {{ user.fh_user2.full_name }}{% endblock %}
 
 {% block css %}
 <style type="text/css">
@@ -20,7 +20,7 @@
 		{% endfor %}
 	{% endif %}
 	
-	<p>Hello {{ user.funeralhomeprofile.full_name }}</p>
+	<p>Hello {{ user.fh_user2.full_name }}</p>
 	<p><a href="{% url logout2 %}">Logout</a>&nbsp;|&nbsp;<a href="{% url add_death_notice2 %}">Add death notice</a>&nbsp;|&nbsp;<a href={% url add_obituary2 %}>Add obituary</a></p>
 	
 	<h3>Deadlines</h3>

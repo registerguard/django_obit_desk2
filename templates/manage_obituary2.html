@@ -69,7 +69,7 @@
 	
 	<table>
 		<tr><td><a href="{% url death_notice_index2 %}">Home</a>&nbsp;|&nbsp;<a href="{% url logout2 %}">Logout</a></td></tr>
-		<tr><td>Hello {{ user.funeralhomeprofile.full_name }}</td></tr>
+		<tr><td>Hello {{ user.fh_user2.full_name }}</td></tr>
 	</table>
 	
 	{% if form.is_multipart %}
@@ -333,147 +333,424 @@ $(document).ready(function() {
     coster = function(count, first_photo_count, second_photo_count) {
         
         var val = '0';
+        var column_inch = 0;
+        var price = 0;
         
-        // 4" or less
-        if (count <= 163) {
-            price = 50;
-            column_inch = 4;
-        // 5"
-        } else if (count > 163 && count <= 350) {
-            price = 75;
-            column_inch = 5;
-        // 6"
-        } else if (count > 350 && count <= 538) {
-            price = 100;
-            column_inch = 6;
-        // 7"
-        } else if (count > 538 && count <= 725) {
-            price = 125;
-            column_inch = 7;
-        // 8"
-        } else if (count > 725 && count <= 913) {
-            price = 150;
-            column_inch = 8;
-        // 9"
-        } else if (count > 913 && count <= 1100) {
-            price = 175;
-            column_inch = 9;
-        // 10"
-        } else if (count > 1100 && count <= 1288) {
-            price = 200;
-            column_inch = 10;
-        // 11"
-        } else if (count > 1288 && count <= 1475) {
-            price = 225;
-            column_inch = 11;
-        // 12"
-        } else if (count > 1475 && count <= 1663) {
-            price = 250;
-            column_inch = 12;
-        // 13"
-        } else if (count > 1663 && count <= 1850) {
-            price = 275;
-            column_inch = 13;
-        // 14"
-        } else if (count > 1850 && count <= 2038) {
-            price = 300;
-            column_inch = 14;
-        // 15"
-        } else if (count > 2038 && count <= 2225) {
-            price = 325;
-            column_inch = 15;
-        // 16"
-        } else if (count > 2225 && count <= 2413) {
-            price = 350;
-            column_inch = 16;
-        // 17"
-        } else if (count > 2413 && count <= 2600) {
-            price = 375;
-            column_inch = 17;
-        // 18"
-        } else if (count > 2600 && count <= 2788) {
-            price = 400;
-            column_inch = 18;
-        // 19"
-        } else if (count > 2788 && count <= 2975) {
-            price = 425;
-            column_inch = 19;
-        // 20"
-        } else if (count > 2975 && count <= 3163) {
-            price = 450;
-            column_inch = 20;
-        // 21"
-        } else if (count > 3163 && count <= 3350) {
-            price = 475;
-            column_inch = 21;
-        // 22"
-        } else if (count > 3350 && count <= 3538) {
-            price = 500;
-            column_inch = 22;
-        // 23"
-        } else if (count > 3538 && count <= 3725) {
-            price = 525;
-            column_inch = 23;
-        // 24"
-        } else if (count > 3725 && count <= 3913) {
-            price = 550;
-            column_inch = 24;
-        // 25"
-        } else if (count > 3913 && count <= 4100) {
-            price = 575;
-            column_inch = 25;
-        // 26"
-        } else if (count > 4100 && count <= 4288) {
-            price = 600;
-            column_inch = 26;
-        // 27"
-        } else if (count > 4288 && count <= 4475) {
-            price = 625;
-            column_inch = 27;
-        // 28"
-        } else if (count > 4475 && count <= 4663) {
-            price = 650;
-            column_inch = 28;
-        // 29"
-        } else if (count > 4663 && count <= 4850) {
-            price = 675;
-            column_inch = 29;
-        // 30"
-        } else if (count > 4850 && count <= 5038) {
-            price = 700;
-            column_inch = 30;
-        // 31"
-        } else if (count > 5038 && count <= 5225) {
-            price = 725;
-            column_inch = 31;
-        // 32"
-        } else if (count > 5225 && count <= 5413) {
-            price = 750;
-            column_inch = 32;
-        // 33"
-        } else if (count > 5413 && count <= 5600) {
-            price = 775;
-            column_inch = 33;
-        // 34"
-        } else if (count > 5600 && count <= 5788) {
-            price = 800;
-            column_inch = 34;
-        // 35"
-        } else if (count > 5788 && count <= 5975) {
-            price = 825;
-            column_inch = 35;
-        // 36"
-        } else if (count > 5975 && count <= 6163) {
-            price = 850;
-            column_inch = 36;
-        // More than 36" and less than 21"
-        } else if (count > 6163 && count <= 6725) {
-            price = 1000;
-            column_inch = 36;
-        } else {
-            val = '1000.00, length is more than 42 total inches. You may need to make some edits';
-            price = 1000;
-            column_inch = 42;
+        if (first_photo_count == null && second_photo_count == null) {
+            // alert('No photos');
+            // 4" or less
+            if (count <= 750) {
+                price = 100;
+                column_inch = 4;
+            // 5"
+            } else if (count > 750 && count <= 938) {
+                price = 125;
+                column_inch = 5;
+            // 6"
+            } else if (count > 938 && count <= 1125) {
+                price = 150;
+                column_inch = 6;
+            // 7"
+            } else if (count > 1125 && count <= 1313) {
+                price = 175;
+                column_inch = 7;
+            // 8"
+            } else if (count > 1313 && count <= 1500) {
+                price = 200;
+                column_inch = 8;
+            // 9"
+            } else if (count > 1500 && count <= 1688) {
+                price = 225;
+                column_inch = 9;
+            // 10"
+            } else if (count > 1688 && count <= 1875) {
+                price = 250;
+                column_inch = 10;
+            // 11"
+            } else if (count > 1875 && count <= 2063) {
+                price = 275;
+                column_inch = 11;
+            // 12"
+            } else if (count > 2063 && count <= 2250) {
+                price = 300;
+                column_inch = 12;
+            // 13"
+            } else if (count > 2250 && count <= 2438) {
+                price = 325;
+                column_inch = 13;
+            // 14"
+            } else if (count > 2438 && count <= 2625) {
+                price = 350;
+                column_inch = 14;
+            // 15"
+            } else if (count > 2625 && count <= 2813) {
+                price = 375;
+                column_inch = 15;
+            // 16"
+            } else if (count > 2813 && count <= 3000) {
+                price = 400;
+                column_inch = 16;
+            // 17"
+            } else if (count > 3000 && count <= 3188) {
+                price = 425;
+                column_inch = 17;
+            // 18"
+            } else if (count > 3188 && count <= 3375) {
+                price = 450;
+                column_inch = 18;
+            // 19"
+            } else if (count > 3375 && count <= 3563) {
+                price = 475;
+                column_inch = 19;
+            // 20"
+            } else if (count > 3563 && count <= 3750) {
+                price = 500;
+                column_inch = 20;
+            // 21"
+            } else if (count > 3750 && count <= 3938) {
+                price = 525;
+                column_inch = 21;
+            // 22"
+            } else if (count > 3938 && count <= 4125) {
+                price = 550;
+                column_inch = 22;
+            // 23"
+            } else if (count > 4125 && count <= 4313) {
+                price = 575;
+                column_inch = 23;
+            // 24"
+            } else if (count > 4313 && count <= 4500) {
+                price = 600;
+                column_inch = 24;
+            // 25"
+            } else if (count > 4500 && count <= 4688) {
+                price = 625;
+                column_inch = 25;
+            // 26"
+            } else if (count > 4688 && count <= 4875) {
+                price = 650;
+                column_inch = 26;
+            // 27"
+            } else if (count > 4875 && count <= 5063) {
+                price = 675;
+                column_inch = 27;
+            // 28"
+            } else if (count > 5063 && count <= 5250) {
+                price = 700;
+                column_inch = 28;
+            // 29"
+            } else if (count > 5250 && count <= 5438) {
+                price = 725;
+                column_inch = 29;
+            // 30"
+            } else if (count > 5438 && count <= 5625) {
+                price = 750;
+                column_inch = 30;
+            // 31"
+            } else if (count > 5625 && count <= 5813) {
+                price = 775;
+                column_inch = 31;
+            // 32"
+            } else if (count > 5813 && count <= 6000) {
+                price = 800;
+                column_inch = 32;
+            // 33"
+            } else if (count > 6000 && count <= 6188) {
+                price = 825;
+                column_inch = 33;
+            // 34"
+            } else if (count > 6188 && count <= 6375) {
+                price = 850;
+                column_inch = 34;
+            // 35"
+            } else if (count > 6375 && count <= 6563) {
+                price = 875;
+                column_inch = 35;
+            // 42"
+            } else if (count > 6563 && count <= 7125) {
+                price = 900;
+                column_inch = 42;
+            // More than 21"
+            } else if (count > 7125) {
+                val = '1050.00, length is more than 42 total inches. You may need to make some edits';
+                price = 1050;
+                column_inch = 42;
+            }
+        } else if (first_photo_count && second_photo_count == null) {
+            // alert('One photo');
+            // 4" or less
+            if (count <= 163) {
+                price = 50;
+                column_inch = 4;
+            // 5"
+            } else if (count > 163 && count <= 350) {
+                price = 75;
+                column_inch = 5;
+            // 6"
+            } else if (count > 538 && count <= 725) {
+                price = 100;
+                column_inch = 6;
+            // 7"
+            } else if (count > 725 && count <= 913) {
+                price = 125;
+                column_inch = 7;
+            // 8"
+            } else if (count > 913 && count <= 1100) {
+                price = 150;
+                column_inch = 8;
+            // 9"
+            } else if (count > 1100 && count <= 1288) {
+                price = 175;
+                column_inch = 9;
+            // 10"
+            } else if (count > 1288 && count <= 1475) {
+                price = 200;
+                column_inch = 10;
+            // 11"
+            } else if (count > 1475 && count <= 1663) {
+                price = 225;
+                column_inch = 11;
+            // 12"
+            } else if (count > 1663 && count <= 1850) {
+                price = 250;
+                column_inch = 12;
+            // 13"
+            } else if (count > 1850 && count <= 2038) {
+                price = 275;
+                column_inch = 13;
+            // 14"
+            } else if (count > 2038 && count <= 2225) {
+                price = 300;
+                column_inch = 14;
+            // 15"
+            } else if (count > 2225 && count <= 2413) {
+                price = 325;
+                column_inch = 15;
+            // 16"
+            } else if (count > 2413 && count <= 2600) {
+                price = 350;
+                column_inch = 16;
+            // 17"
+            } else if (count > 2600 && count <= 2788) {
+                price = 375;
+                column_inch = 17;
+            // 18"
+            } else if (count > 2788 && count <= 2975) {
+                price = 400;
+                column_inch = 18;
+            // 19"
+            } else if (count > 2975 && count <= 3163) {
+                price = 425;
+                column_inch = 19;
+            // 20"
+            } else if (count > 3163 && count <= 3350) {
+                price = 450;
+                column_inch = 20;
+            // 21"
+            } else if (count > 3350 && count <= 3538) {
+                price = 475;
+                column_inch = 21;
+            // 22"
+            } else if (count > 3538 && count <= 3725) {
+                price = 500;
+                column_inch = 22;
+            // 23"
+            } else if (count > 3725 && count <= 3913) {
+                price = 525;
+                column_inch = 23;
+            // 24"
+            } else if (count > 3913 && count <= 4100) {
+                price = 550;
+                column_inch = 24;
+            // 25"
+            } else if (count > 4100 && count <= 4288) {
+                price = 575;
+                column_inch = 25;
+            // 26"
+            } else if (count > 4288 && count <= 4475) {
+                price = 600;
+                column_inch = 26;
+            // 27"
+            } else if (count > 4475 && count <= 4663) {
+                price = 625;
+                column_inch = 27;
+            // 28"
+            } else if (count > 4663 && count <= 4850) {
+                price = 650;
+                column_inch = 28;
+            // 29"
+            } else if (count > 4850 && count <= 5038) {
+                price = 675;
+                column_inch = 29;
+            // 30"
+            } else if (count > 5038 && count <= 5225) {
+                price = 700;
+                column_inch = 30;
+            // 31"
+            } else if (count > 5225 && count <= 5413) {
+                price = 725;
+                column_inch = 31;
+            // 32"
+            } else if (count > 5413 && count <= 5600) {
+                price = 750;
+                column_inch = 32;
+            // 33"
+            } else if (count > 5600 && count <= 5788) {
+                price = 775;
+                column_inch = 33;
+            // 34"
+            } else if (count > 5788 && count <= 5975) {
+                price = 800;
+                column_inch = 34;
+            // 35"
+            } else if (count > 5975 && count <= 6163) {
+                price = 825;
+                column_inch = 35;
+            // 36"
+            } else if (count > 6163 && count <= 6725) {
+                price = 850;
+                column_inch = 36;
+            } else {
+                val = '1050.00, length is more than 42 total inches. You may need to make some edits';
+                price = 1050;
+                column_inch = 42;
+            }
+        } else if (first_photo_count && second_photo_count) {
+            // alert('Two photos');
+            // 5" or less
+            if (count <= 138) {
+                price = 25;
+                column_inch = 5;
+            // 6"
+            } else if (count > 138 && count <= 325) {
+                price = 50;
+                column_inch = 6;
+            // 7"
+            } else if (count > 325 && count <= 513) {
+                price = 75;
+                column_inch = 7;
+            // 8"
+            } else if (count > 513 && count <= 700) {
+                price = 100;
+                column_inch = 8;
+            // 9"
+            } else if (count > 700 && count <= 888) {
+                price = 125;
+                column_inch = 9;
+            // 10"
+            } else if (count > 888 && count <= 1075) {
+                price = 150;
+                column_inch = 10;
+            // 11"
+            } else if (count > 1075 && count <= 1263) {
+                price = 175;
+                column_inch = 11;
+            // 12"
+            } else if (count > 1263 && count <= 1450) {
+                price = 200;
+                column_inch = 12;
+            // 13"
+            } else if (count > 1450 && count <= 1638) {
+                price = 225;
+                column_inch = 13;
+            // 14"
+            } else if (count > 1638 && count <= 1825) {
+                price = 250;
+                column_inch = 14;
+            // 15"
+            } else if (count > 1825 && count <= 2013) {
+                price = 275;
+                column_inch = 15;
+            // 16"
+            } else if (count > 2013 && count <= 2200) {
+                price = 300;
+                column_inch = 16;
+            // 17"
+            } else if (count > 2200 && count <= 2388) {
+                price = 325;
+                column_inch = 17;
+            // 18"
+            } else if (count > 2388 && count <= 2575) {
+                price = 350;
+                column_inch = 18;
+            // 19"
+            } else if (count > 2575 && count <= 2763) {
+                price = 375;
+                column_inch = 19;
+            // 20"
+            } else if (count > 2763 && count <= 2950) {
+                price = 400;
+                column_inch = 20;
+            // 21"
+            } else if (count > 2950 && count <= 3138) {
+                price = 425;
+                column_inch = 21;
+            // 22"
+            } else if (count > 3138 && count <= 3325) {
+                price = 450;
+                column_inch = 22;
+            // 23"
+            } else if (count > 3325 && count <= 3513) {
+                price = 475;
+                column_inch = 23;
+            // 24"
+            } else if (count > 3513 && count <= 3700) {
+                price = 500;
+                column_inch = 24;
+            // 25"
+            } else if (count > 3700 && count <= 3888) {
+                price = 525;
+                column_inch = 25;
+            // 26"
+            } else if (count > 3888 && count <= 4075) {
+                price = 550;
+                column_inch = 26;
+            // 27"
+            } else if (count > 4075 && count <= 4263) {
+                price = 575;
+                column_inch = 27;
+            // 28"
+            } else if (count > 4263 && count <= 4450) {
+                price = 600;
+                column_inch = 28;
+            // 29"
+            } else if (count > 4450 && count <= 4638) {
+                price = 625;
+                column_inch = 29;
+            // 30"
+            } else if (count > 4638 && count <= 4825) {
+                price = 650;
+                column_inch = 30;
+            // 31"
+            } else if (count > 4825 && count <= 5013) {
+                price = 675;
+                column_inch = 31;
+            // 32"
+            } else if (count > 5013 && count <= 5200) {
+                price = 700;
+                column_inch = 32;
+            // 33"
+            } else if (count > 5200 && count <= 5388) {
+                price = 725;
+                column_inch = 33;
+            // 34"
+            } else if (count > 5388 && count <= 5575) {
+                price = 750;
+                column_inch = 34;
+            // 35"
+            } else if (count > 5575 && count <= 5763) {
+                price = 775;
+                column_inch = 35;
+            // 42"
+            } else if (count > 5763 && count <= 6325) {
+                price = 800;
+                column_inch = 42;
+            // More than 21"
+            } else if (count > 6325) {
+                val = '1050.00, length is more than 42 total inches. You may need to make some edits';
+                price = 1050;
+                column_inch = 42;
+            }
         }
         
         if(column_inch < 37) {
