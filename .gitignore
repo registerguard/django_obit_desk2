@@ -1,3 +1,4 @@
 *.pyc
 *.DS_Store
 obituary_settings.py
+fixtures/django_obit_desk2.json
