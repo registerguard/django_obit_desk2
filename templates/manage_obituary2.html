@@ -807,7 +807,8 @@ $(document).ready(function() {
             } else if(first_photo_count != null && typeof first_photo_count !='undefined') {
                 val = '$' + String((price + 50)) + ', length of ' + column_inch + ' total inches and one photo.';
             } else {
-               val = '$' + String(price) + ', length of ' + column_inch + ' total inches.';
+//               val = '$' + String(price) + ', length of ' + column_inch + ' total inches.';
+               val = '$' + price.toFixed(2) + ', length of ' + column_inch + ' total inches.';
             }
         } else {
            val = '<b>Length is more that 36 total inches.</b> Please contact your Register-Guard classified representative.'
