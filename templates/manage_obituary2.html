@@ -506,28 +506,52 @@ $(document).ready(function() {
             if (count <= 160) {
                 price = 50;
                 column_inch = 4;
+            // 4½"
+            } else if (count > 160 && count <= 240) {
+                price = 62.50;
+                column_inch = 4.5;
             // 5"
-            } else if (count > 160 && count <= 350) {
+            } else if (count > 240 && count <= 350) {
                 price = 75;
                 column_inch = 5;
+            // 5½"
+            } else if (count > 350 && count <= 425) {
+                price = 87.50;
+                column_inch = 5.5;
             // 6"
-            } else if (count > 350 && count <= 475) {
+            } else if (count > 425 && count <= 475) {
                 price = 100;
                 column_inch = 6;
+            // 6½"
+            } else if (count > 475 && count <= 550) {
+                price = 112.50;
+                column_inch = 6.5;
             // 7"
-            } else if (count > 475 && count <= 625) {
+            } else if (count > 550 && count <= 625) {
                 price = 125;
                 column_inch = 7;
+            // 7½"
+            } else if (count > 625 && count <= 700) {
+                price = 137.50;
+                column_inch = 7.5;
             // 8"
-            } else if (count > 625 && count <= 775) {
+            } else if (count > 700 && count <= 775) {
                 price = 150;
                 column_inch = 8;
+            // 8½"
+            } else if (count > 775 && count <= 800) {
+                price = 162.50;
+                column_inch = 8.5;
             // 9"
-            } else if (count > 775 && count <= 950) {
+            } else if (count > 800 && count <= 950) {
                 price = 175;
                 column_inch = 9;
+            // 9½"
+            } else if (count > 950 && count <= 1150) {
+                price = 187.50;
+                column_inch = 9.5;
             // 10"
-            } else if (count > 950 && count <= 1200) {
+            } else if (count > 1150 && count <= 1200) {
                 price = 200;
                 column_inch = 10;
             // 11"
