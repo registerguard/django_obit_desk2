@@ -342,28 +342,52 @@ $(document).ready(function() {
             if (count <= 563) {
                 price = 100;
                 column_inch = 4;
+            // 4½" or less
+            } else if (count > 563 && count <= 660) {
+                price = 112.50;
+                column_inch = 4.5;
             // 5"
-            } else if (count > 563 && count <= 750) {
+            } else if (count > 660 && count <= 750) {
                 price = 125;
                 column_inch = 5;
+            // 5½"
+            } else if (count > 750 && count <= 825) {
+                price = 137.50;
+                column_inch = 5.5;
             // 6"
-            } else if (count > 750 && count <= 900) {
+            } else if (count > 825 && count <= 900) {
                 price = 150;
                 column_inch = 6;
+            // 6½"
+            } else if (count > 900 && count <= 935) {
+                price = 162.50;
+                column_inch = 6.5;
             // 7"
-            } else if (count > 900 && count <= 975) {
+            } else if (count > 935 && count <= 975) {
                 price = 175;
                 column_inch = 7;
+            // 7½"
+            } else if (count > 975 && count <= 1100) {
+                price = 187.50;
+                column_inch = 7.5;
             // 8"
-            } else if (count > 975 && count <= 1250) {
+            } else if (count > 1100 && count <= 1250) {
                 price = 200;
                 column_inch = 8;
+            // 8½"
+            } else if (count > 1250 && count <= 1294) {
+                price = 212.50;
+                column_inch = 8.5;
             // 9"
-            } else if (count > 1250 && count <= 1425) {
+            } else if (count > 1294 && count <= 1425) {
                 price = 225;
                 column_inch = 9;
+            // 9½"
+            } else if (count > 1425 && count <= 1550) {
+                price = 237.50;
+                column_inch = 9.5;
             // 10"
-            } else if (count > 1425 && count <= 1688) {
+            } else if (count > 1550 && count <= 1688) {
                 price = 250;
                 column_inch = 10;
             // 11"
@@ -759,11 +783,11 @@ $(document).ready(function() {
         
         if(column_inch < 37) {
             if(typeof first_photo_count !='undefined' && typeof second_photo_count !='undefined' && second_photo_count != null) {
-                val = '$' + String((price + 100)) + '.00, length of ' + column_inch + ' total inches and two photos.';
+                val = '$' + String((price + 100)) + ', length of ' + column_inch + ' total inches and two photos.';
             } else if(first_photo_count != null && typeof first_photo_count !='undefined') {
-                val = '$' + String((price + 50)) + '.00, length of ' + column_inch + ' total inches and one photo.';
+                val = '$' + String((price + 50)) + ', length of ' + column_inch + ' total inches and one photo.';
             } else {
-               val = '$' + String(price) + '.00, length of ' + column_inch + ' total inches.';
+               val = '$' + String(price) + ', length of ' + column_inch + ' total inches.';
             }
         } else {
            val = '<b>Length is more that 36 total inches.</b> Please contact your Register-Guard classified representative.'
