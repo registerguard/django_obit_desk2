@@ -803,9 +803,11 @@ $(document).ready(function() {
         
         if(column_inch < 37) {
             if(typeof first_photo_count !='undefined' && typeof second_photo_count !='undefined' && second_photo_count != null) {
-                val = '$' + String((price + 100)) + ', length of ' + column_inch + ' total inches and two photos.';
+//                val = '$' + String((price + 100)) + ', length of ' + column_inch + ' total inches and two photos.';
+                val = '$' + (price + 100).toFixed(2) + ', length of ' + column_inch + ' total inches and two photos.';
             } else if(first_photo_count != null && typeof first_photo_count !='undefined') {
-                val = '$' + String((price + 50)) + ', length of ' + column_inch + ' total inches and one photo.';
+//                val = '$' + String((price + 50)) + ', length of ' + column_inch + ' total inches and one photo.';
+                val = '$' + (price + 50).toFixed(2) + ', length of ' + column_inch + ' total inches and one photo.';
             } else {
 //               val = '$' + String(price) + ', length of ' + column_inch + ' total inches.';
                val = '$' + price.toFixed(2) + ', length of ' + column_inch + ' total inches.';
