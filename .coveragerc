@@ -1,0 +1,11 @@
+[run]
+include = 
+    django_obit_desk2/*
+
+[report]
+exclude_lines = 
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
