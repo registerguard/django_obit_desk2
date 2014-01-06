@@ -1,0 +1,11 @@
+# Tell Travis you want a Python environment to test in
+language: python
+python:
+  - "2.7"
+
+install:
+   # Install dependencies
+  - pip install coveralls
+
+after_success:
+  - coveralls
