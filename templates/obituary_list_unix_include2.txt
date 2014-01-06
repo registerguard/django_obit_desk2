@@ -1,4 +1,4 @@
 {% for ob in object_list %}<div id="obit-head">{{ ob.death_notice.first_name }} {% if ob.death_notice.nickname %}“{{ ob.death_notice.nickname }}”{% endif %} {{ ob.death_notice.middle_name }} {{ ob.death_notice.last_name }}<br><div id="born_died">{{ ob.date_of_birth|date:'Y' }} - {{ ob.death_notice.death_date|date:'Y' }}</div></div>
 {{ ob.obituary_body|safe }}
-{{ ob.bei_display|safe }}Arrangements by {{ ob.death_notice.funeral_home.funeralhomeprofile.full_name|safe }}{% if ob.death_notice.funeral_home.funeralhomeprofile.city %} in {{ ob.death_notice.funeral_home.funeralhomeprofile.city }}{% if ob.death_notice.funeral_home.funeralhomeprofile.state %}, {{ ob.death_notice.funeral_home.funeralhomeprofile.state }}{% endif %}{% endif %}.{% if ob.remembrances %} Remembrances to {{ ob.remembrances|safe }}.{% endif %}
+{{ ob.bei_display|safe }}
 {% endfor %}

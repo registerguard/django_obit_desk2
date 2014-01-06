@@ -12,7 +12,7 @@
 {% block content %}
 <div class="wrapper">
 	<p><a href="{% url death_notice_index2 %}">Home</a>&nbsp;|&nbsp;<a href="{% url logout2 %}">Logout</a></p>
-	<p>Hello {{ user.funeralhomeprofile.full_name }}</p>
+	<p>Hello {{ user.fh_user2.full_name }}</p>
 	
 	{% if messages %}
 		{% for message in messages %}
@@ -37,7 +37,7 @@
 	
 	<div style="display: none;">
 		<div id="preview_dn">
-			{% include "death_list_unix_include.txt" %}
+			{% include "death_list_unix_include2.txt" %}
 		</div>
 	</div>
 </div> <!-- /.wrapper -->

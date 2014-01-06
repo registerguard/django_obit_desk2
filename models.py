@@ -134,7 +134,7 @@ class Death_notice(models.Model):
     no_service_planned = models.BooleanField(u'No service planned?', blank=True, help_text=u'Check if NO SERVICE IS PLANNED.')
     remembrances = models.CharField(u'Remembrances to ... ', max_length=255, blank=True, help_text=u'(This item typically used when there won\'t be an obituary, but the deceased has selected an organization.)')
     death_notice_in_system = models.BooleanField()
-    death_notice_has_run = models.BooleanField()
+#     death_notice_has_run = models.BooleanField()
     death_notice_created = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Death Notice is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> a Death Notice has been submitted, you <i style="font-weight: bold;">MUST</i> contact The Register-Guard newsroom.</p>')
     
@@ -159,7 +159,8 @@ class Death_notice(models.Model):
             )
         elif not self.pk:
             # a new Death_notice
-            message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.funeralhomeprofile.full_name, self.first_name, self.last_name)
+#             message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.funeralhomeprofile.full_name, self.first_name, self.last_name)
+            message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.fh_user2.full_name, self.first_name, self.last_name)
             datatuple = (message_subj, message_email, from_email, to_email,), # <- This trailing comma's vital!
         
         if datatuple:
@@ -323,13 +324,14 @@ class Obituary(models.Model):
     mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive 10 copies of this obituary.')
     number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
     photo = ImageField(upload_to=obit_file_name, blank=True)
-    photo_two = ImageField(help_text=u'For a second photo there is an additional charge of approximately $50.', upload_to=obit_file_name, blank=True)
+    photo_two = ImageField(help_text=u'For a each photo there is an additional charge of $50.', upload_to=obit_file_name, blank=True)
     # Survivors
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact your Register-Guard classified representative.</p>')
+    submitted_by = models.CharField(max_length=150, blank=True, null=True)
     
     obituary_in_system = models.BooleanField(u'Obit in DT?')
 #     obituary_has_run = models.BooleanField(u'Obit has run?')
-    obituary_publish_date = models.DateField(default=next_available_pub_date(), blank=True, null=True, help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
+    obituary_publish_date = models.DateField(default=next_available_pub_date(), help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
     obituary_created = models.DateTimeField(auto_now_add=True)
     
     flag = models.BooleanField(blank=True)
@@ -425,10 +427,29 @@ class Obituary(models.Model):
         we use the self.obituary_created field to see if the Obituary's in the 
         database.
         '''
-        if self.obituary_created is not None:
-            orig = Obituary.objects.get(pk=self.pk)
-            if orig.status == 'drft' and self.status == 'live':
-                message_subj = 'Obituary for %s	 %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+        
+        '''
+        This two-part obituary_created or self.status/self.obituary_created 
+        test is to catch Obituaries that have changed state from 'Draft' to 
+        'Submitted' from both saved-exist-in-the-database or Saved on initial 
+        form filling out.
+        '''
+        if self.obituary_created is not None or (self.status == 'live' and self.obituary_created == None):
+            try:
+                orig = Obituary.objects.get(pk=self.pk)
+            except Obituary.DoesNotExist:
+                orig = None
+            
+            '''
+            This 
+            ( self.status/self.obituary_created ) or ( orig.status/self.status )
+            bit is the second part of the machinery to catch the change from 
+            'Draft' to 'Submitted' Obituaries for both the 
+            saved-in-the-database and those that are 'Submitted" on initial 
+            Save.
+            '''
+            if  (self.status =='live' and self.obituary_created == None) or (orig.status == 'drft' and self.status == 'live'):
+                message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
                 message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
                 
                 if self.flag:
@@ -453,7 +474,7 @@ class Obituary(models.Model):
                         img_class_message.subject, img_class_message.body, img_class_message.to = message_subj, message_email, to_email
                         img_class_message.attach(path.split(self.photo.name)[1], self.photo.read(), 'image/jpg')
                         '''
-                        If there's a second photot, attach it too.
+                        If there's a second photo, attach it too.
                         '''
                         if self.photo_two:
                             img_class_message.attach(path.split(self.photo_two.name)[1], self.photo_two.read(), 'image/jpg')

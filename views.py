@@ -145,12 +145,14 @@ def manage_obituary2(request, obituary_id=None):
     if request.method == 'POST':
         if request.POST.has_key('delete') and obituary_id:
             current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            first_name = current_obit.death_notice.first_name
+            last_name = current_obit.death_notice.last_name
             current_obit.delete()
             msg = ugettext('The %(verbose_name)s for %(first)s %(last)s was deleted.') % \
                 {
                     'verbose_name': Obituary._meta.verbose_name,
-                    'first': current_obit.death_notice,
-                    'last': current_obit.death_notice.last_name,
+                    'first': first_name,
+                    'last': last_name,
                 }
             messages.success(request, msg, fail_silently=False)
             return HttpResponseRedirect(reverse('death_notice_index2'))
@@ -320,3 +322,21 @@ def hard_copies_manifest2(request):
         'list': have_run_list,
     }
     return render_to_response('hard_copies_manifest.html', response_dict, context_instance=RequestContext(request))
+
+@login_required
+def death_notice_count(request):
+    today = datetime.date.today()
+    first = datetime.date(day=1, month=today.month, year=today.year)
+    lastMonthEnd = first - datetime.timedelta(days=1)
+    lastMonthStart = datetime.date(day=1, month=lastMonthEnd.month, year=lastMonthEnd.year)
+    dn_count = Death_notice.objects.filter(death_notice_created__gte=lastMonthStart, death_notice_created__lte=lastMonthEnd).count()
+    dn_count_in_system = Death_notice.objects.filter(death_notice_created__gte=lastMonthStart, death_notice_created__lte=lastMonthEnd, death_notice_in_system=True).count()
+    
+    response_dict = {
+        'last_month_start': lastMonthStart,
+        'last_month_end': lastMonthEnd,
+        'dn_count': dn_count,
+        'dn_count_in_system': dn_count_in_system,
+    }
+    return render_to_response('death_notice_count.html', response_dict, context_instance=RequestContext(request))
+    
