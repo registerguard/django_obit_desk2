@@ -15,6 +15,8 @@ Make sure you can send out an e-mail. (Elsewise, it'll bust on save().)
 
 Also, add recipients to obituary_settings.py, otherwise no e-mails will go out.
 
+Note to self: Run locally from virtualenv `test_root` with ssh tunnel to server.
+
 ===========
 Immediate To Do
 ===========
