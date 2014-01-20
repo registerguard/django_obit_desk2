@@ -5,7 +5,7 @@ from django.forms.models import inlineformset_factory
 from django_obit_desk2.widgets import SelectWithPopUp2
 from django_obit_desk2.models import Death_notice, Service, Obituary, \
     DeathNoticeOtherServices
-from django_obit_desk2.obituary_settings import DISPLAY_DAYS_BACK
+from django_obit_desk2.obituary_settings import DISPLAY_DAYS_BACK, INSIDE_OBIT_USERNAMES
 
 class ObitsCalendarDateTimeWidget(forms.DateTimeInput):
     class Media:
@@ -65,7 +65,10 @@ class ObituaryForm(ModelForm):
         days_ago = datetime.timedelta(days=DISPLAY_DAYS_BACK)
         
         super(ObituaryForm, self).__init__(*args, **kwargs)
-        self.fields['death_notice'].queryset = Death_notice.objects.filter(death_notice_created__gte=( datetime.datetime.now() - days_ago ),funeral_home=request.user).order_by('last_name',)
+        if request.user.username in INSIDE_OBIT_USERNAMES:
+            self.fields['death_notice'].queryset = Death_notice.objects.filter(death_notice_created__gte=( datetime.datetime.now() - days_ago )).order_by('last_name',)
+        else:
+            self.fields['death_notice'].queryset = Death_notice.objects.filter(death_notice_created__gte=( datetime.datetime.now() - days_ago ),funeral_home=request.user).order_by('last_name',)
     
     error_css_class = 'error'
     required_css_class = 'required'
