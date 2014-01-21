@@ -171,7 +171,10 @@ def manage_obituary2(request, obituary_id=None):
                 }
             messages.success(request, msg, fail_silently=False)
             
-            obituary = form.save()
+            obituary = form.save(commit=False)
+            obituary.user = request.user
+            obituary.save()
+            
             if request.POST.has_key('submit'):
                 return HttpResponseRedirect(reverse('death_notice_index2'))
             elif request.POST.has_key('submit_add'):
