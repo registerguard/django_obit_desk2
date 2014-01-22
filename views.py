@@ -148,7 +148,11 @@ def manage_obituary2(request, obituary_id=None):
     
     if request.method == 'POST':
         if request.POST.has_key('delete') and obituary_id:
-            current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            try:
+                current_obit = Obituary.objects.filter(user=request.user).get(pk=obituary_id)
+            except Obituary.DoesNotExist:
+                current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            
             first_name = current_obit.death_notice.first_name
             last_name = current_obit.death_notice.last_name
             current_obit.delete()
