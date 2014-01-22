@@ -6,6 +6,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
+from django.db.models import Q
 from django.db.models.loading import get_models, get_app, get_apps
 from django.forms.models import modelform_factory
 from django.http import HttpResponseRedirect, HttpResponseNotFound, HttpResponse
@@ -63,7 +64,7 @@ def fh_index2(request):
     if request.user.username in INSIDE_OBIT_USERNAMES:
         obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), user=request.user)
     else:
-        obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), death_notice__funeral_home__username=request.user.username, user=None)
+        obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), death_notice__funeral_home__username=request.user.username).filter( Q(user=None) | Q(user=request.user) )
     ObituaryFactoryFormSet = modelform_factory(Obituary)
     
     return render_to_response('fh_index2.html', {
