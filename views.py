@@ -19,7 +19,7 @@ from django_obit_desk2.forms import Death_noticeForm, ServiceFormSet, \
     ObituaryForm, DeathNoticeOtherServicesFormSet
 from django_obit_desk2.utils import output_cleanup_hack, adobe_to_web
 
-from obituary_settings import DISPLAY_DAYS_BACK
+from obituary_settings import DISPLAY_DAYS_BACK, INSIDE_OBIT_USERNAMES
 
 # Create your views here.
 
@@ -60,13 +60,17 @@ def fh_index2(request):
     days_ago = datetime.timedelta(days=DISPLAY_DAYS_BACK)
     
     death_notices = Death_notice.objects.filter(death_notice_created__gte=( datetime.datetime.now() - days_ago ), funeral_home__username=request.user.username)
-    obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), death_notice__funeral_home__username=request.user.username)
+    if request.user.username in INSIDE_OBIT_USERNAMES:
+        obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), user=request.user)
+    else:
+        obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), death_notice__funeral_home__username=request.user.username, user=None)
     ObituaryFactoryFormSet = modelform_factory(Obituary)
     
     return render_to_response('fh_index2.html', {
         'death_notices': death_notices,
         'obituaries': obituaries,
         'user': request.user,
+        'inside_obit_usernames': INSIDE_OBIT_USERNAMES,
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -158,7 +162,12 @@ def manage_obituary2(request, obituary_id=None):
             return HttpResponseRedirect(reverse('death_notice_index2'))
         
         if obituary_id:
-            current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            # try looking up obituary as if created by internal RG user ... 
+            try:
+                current_obit = Obituary.objects.filter(user=request.user).get(pk=obituary_id)
+            # ... if that fails, lookup obituary with requester as creating FH
+            except Obituary.DoesNotExist:
+                current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
         
         form = ObituaryForm(request, request.POST, request.FILES, instance=obituary)
         

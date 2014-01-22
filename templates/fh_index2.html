@@ -54,7 +54,12 @@
 		{% endif %}
 		{% if obituary.photo.name %}<p style="margin-left: 72px;">{% endif %}<a href="{% url manage_obituary2 obituary.pk %}">{{ obituary }}</a>, created {{ obituary.obituary_created|date:"l, N j, Y, P" }} <br>
 		<b>Status: <a href="{% url manage_obituary2 obituary.pk %}#id_status">{{ obituary.get_status_display }}</a></b>{% if obituary.obituary_publish_date %}<br>
-		<b>Published in <i>The Register-Guard</i>:</b> <a href="http://www.registerguard.com/web/news/obituaries/" title="Register-Guard obituary index" onclick="javascript:window.open(this.href); return false;">{{ obituary.obituary_publish_date|date:"l, N j, Y" }}</a>{% endif %}</p>
+		<b>Published in <i>The Register-Guard</i>:</b> <a href="http://www.registerguard.com/web/news/obituaries/" title="Register-Guard obituary index" onclick="javascript:window.open(this.href); return false;">{{ obituary.obituary_publish_date|date:"l, N j, Y" }}</a>{% endif %}
+		{% if user.username in inside_obit_usernames %}
+		</br>
+		<p><b>Death notice</b> from: <i>{{ obituary.death_notice.funeral_home.funeralhomeprofile.full_name }}</i>
+		{% endif %}
+		</p>
 	</div>
 	{% endfor %}
 	{% endif %}

@@ -449,7 +449,13 @@ class Obituary(models.Model):
             Save.
             '''
             if  (self.status =='live' and self.obituary_created == None) or (orig.status == 'drft' and self.status == 'live'):
-                message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                
+                # status of obituary based on an FH-created death notice changed by FH
+                if self.user == self.death_notice.funeral_home:
+                    message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                # status of obituary based on an FH-created death notice changed by internal R-G user
+                else:
+                    message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.user.get_full_name())
                 message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
                 
                 if self.flag:
