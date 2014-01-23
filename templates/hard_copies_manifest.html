@@ -47,7 +47,9 @@
 	</div> <!-- /#wrap -->
 	
 	<div class="navbar navbar-default navbar-fixed-bottom">
+		
 		<div class="container">
+			
 			{% if list.has_previous %}
 				<a href="?page={{ list.previous_page_number }}" class="navbar-btn btn pull-left">previous</a>
 			{% endif %}
@@ -59,7 +61,9 @@
 			{% if list.has_next %}
 				<a href="?page={{ list.next_page_number }}" class="navbar-btn btn pull-right">next</a>
 			{% endif%}
+			
 		</div>
+		
 	</div> <!-- /.navbar -->
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
