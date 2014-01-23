@@ -7,9 +7,26 @@
 	<body>
 		<table cellspacing="0" cellpadding="3">
 		<tr><th>&nbsp;</th><th>Name</th><th>Publication<br/>date</th><th>Number<br />of copies</th><th>Mailing<br/>address</th></tr>
-		{% for item in list %}
+		{% for item in list.object_list %}
 			<tr style="background: {% cycle '#fff' '#eee' %};"><td>{% if item.photo.name %}{{ item.admin_thumbnail|safe }}{% else %}&nbsp;{% endif %}</td><td>{{ item.death_notice.first_name }} {{ item.death_notice.last_name }}</td><td>{{ item.obituary_publish_date }}</td><td>{{ item.number_of_copies }}</td><td>{{ item.family_contact }}<br/>{{ item.mailing_address }}</td></tr>
 		{% endfor %}
 		</table>
+		
+		<div class="pagination">
+			<span class="step-links">
+				{% if list.has_previous %}
+					<a href="?page={{ list.previous_page_number }}">previous</a>
+				{% endif %}
+			</span>
+			
+			<span class="current">
+				Page {{ list.number }} of  {{ list.paginator.num_pages }}
+			</span>
+			
+			{% if list.has_next %}
+				<a href="?page={{ list.next_page_number }}">next</a>
+			{% endif%}
+		</div>
+		
 	</body>
 </html>

@@ -4,6 +4,7 @@ from django import forms
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
 from django.db.models import Q
@@ -335,8 +336,22 @@ def print_obituary2(request, obituary_id=None):
 @login_required
 def hard_copies_manifest2(request):
     have_run_list = Obituary.objects.filter(obituary_publish_date__isnull=False).order_by('-obituary_publish_date')
+    paginator = Paginator(have_run_list, 25)
+    
+    # Make sure page request is an int. If not, deliver first page.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+    
+    # If page request (9999) is out of range, deliver last page of results.
+    try:
+        obituaries = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        obituaries = paginator.page(paginator.num_pages)
+    
     response_dict = {
-        'list': have_run_list,
+        'list': obituaries,
     }
     return render_to_response('hard_copies_manifest.html', response_dict, context_instance=RequestContext(request))
 
