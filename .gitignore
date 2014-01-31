@@ -4,3 +4,4 @@ obituary_settings.py
 fixtures/django_obit_desk2.json
 fixtures/django_obit_desk2.newer.json
 fixtures/django_obit_desk2.old.json
+fixtures/django_obit_desk2.prev.json
