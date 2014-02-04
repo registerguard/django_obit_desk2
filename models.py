@@ -315,7 +315,7 @@ class Obituary(models.Model):
         return 'obits/%s/%s/ob.%s.%s%s' % (datetime.date.today().year, datetime.date.today().month, instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
     
     user = models.ForeignKey(User, null=True, blank=True, related_name='obit_user2')
-    death_notice = models.OneToOneField(Death_notice, primary_key=True, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
+    death_notice = models.ForeignKey(Death_notice, primary_key=True, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
     prepaid_by = models.CharField(max_length=325, blank=True)
     date_of_birth = models.DateField(blank=True, null=True, help_text=u'YYYY-MM-DD format')
     family_contact = models.CharField(max_length=126)

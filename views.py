@@ -178,6 +178,10 @@ def manage_obituary2(request, obituary_id=None):
         form = ObituaryForm(request, request.POST, request.FILES, instance=obituary)
         
         if form.is_valid():
+            obituary = form.save(commit=False)
+            obituary.user = request.user
+            obituary.save()
+            
             msg = ugettext('The %(verbose_name)s for %(first)s %(last)s was updated.') % \
                 {
                     'verbose_name': Obituary._meta.verbose_name,
@@ -185,10 +189,6 @@ def manage_obituary2(request, obituary_id=None):
                     'last': obituary.death_notice.last_name,
                 }
             messages.success(request, msg, fail_silently=False)
-            
-            obituary = form.save(commit=False)
-            obituary.user = request.user
-            obituary.save()
             
             if request.POST.has_key('submit'):
                 return HttpResponseRedirect(reverse('death_notice_index2'))
