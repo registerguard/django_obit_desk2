@@ -4,8 +4,10 @@ from django import forms
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
+from django.db.models import Q
 from django.db.models.loading import get_models, get_app, get_apps
 from django.forms.models import modelform_factory
 from django.http import HttpResponseRedirect, HttpResponseNotFound, HttpResponse
@@ -19,7 +21,7 @@ from django_obit_desk2.forms import Death_noticeForm, ServiceFormSet, \
     ObituaryForm, DeathNoticeOtherServicesFormSet
 from django_obit_desk2.utils import output_cleanup_hack, adobe_to_web
 
-from obituary_settings import DISPLAY_DAYS_BACK
+from obituary_settings import DISPLAY_DAYS_BACK, INSIDE_OBIT_USERNAMES
 
 # Create your views here.
 
@@ -60,13 +62,17 @@ def fh_index2(request):
     days_ago = datetime.timedelta(days=DISPLAY_DAYS_BACK)
     
     death_notices = Death_notice.objects.filter(death_notice_created__gte=( datetime.datetime.now() - days_ago ), funeral_home__username=request.user.username)
-    obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), death_notice__funeral_home__username=request.user.username)
+    if request.user.username in INSIDE_OBIT_USERNAMES:
+        obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), user=request.user)
+    else:
+        obituaries = Obituary.objects.filter(obituary_created__gte=( datetime.datetime.now() - days_ago ), death_notice__funeral_home__username=request.user.username).filter( Q(user=None) | Q(user=request.user) )
     ObituaryFactoryFormSet = modelform_factory(Obituary)
     
     return render_to_response('fh_index2.html', {
         'death_notices': death_notices,
         'obituaries': obituaries,
         'user': request.user,
+        'inside_obit_usernames': INSIDE_OBIT_USERNAMES,
     }, context_instance=RequestContext(request))
 
 @login_required
@@ -144,7 +150,11 @@ def manage_obituary2(request, obituary_id=None):
     
     if request.method == 'POST':
         if request.POST.has_key('delete') and obituary_id:
-            current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            try:
+                current_obit = Obituary.objects.filter(user=request.user).get(pk=obituary_id)
+            except Obituary.DoesNotExist:
+                current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            
             first_name = current_obit.death_notice.first_name
             last_name = current_obit.death_notice.last_name
             current_obit.delete()
@@ -158,11 +168,20 @@ def manage_obituary2(request, obituary_id=None):
             return HttpResponseRedirect(reverse('death_notice_index2'))
         
         if obituary_id:
-            current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
+            # try looking up obituary as if created by internal RG user ... 
+            try:
+                current_obit = Obituary.objects.filter(user=request.user).get(pk=obituary_id)
+            # ... if that fails, lookup obituary with requester as creating FH
+            except Obituary.DoesNotExist:
+                current_obit = Obituary.objects.filter(death_notice__funeral_home__username=request.user.username).get(pk=obituary_id)
         
         form = ObituaryForm(request, request.POST, request.FILES, instance=obituary)
         
         if form.is_valid():
+            obituary = form.save(commit=False)
+            obituary.user = request.user
+            obituary.save()
+            
             msg = ugettext('The %(verbose_name)s for %(first)s %(last)s was updated.') % \
                 {
                     'verbose_name': Obituary._meta.verbose_name,
@@ -171,7 +190,6 @@ def manage_obituary2(request, obituary_id=None):
                 }
             messages.success(request, msg, fail_silently=False)
             
-            obituary = form.save()
             if request.POST.has_key('submit'):
                 return HttpResponseRedirect(reverse('death_notice_index2'))
             elif request.POST.has_key('submit_add'):
@@ -318,8 +336,22 @@ def print_obituary2(request, obituary_id=None):
 @login_required
 def hard_copies_manifest2(request):
     have_run_list = Obituary.objects.filter(obituary_publish_date__isnull=False).order_by('-obituary_publish_date')
+    paginator = Paginator(have_run_list, 25)
+    
+    # Make sure page request is an int. If not, deliver first page.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+    
+    # If page request (9999) is out of range, deliver last page of results.
+    try:
+        obituaries = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        obituaries = paginator.page(paginator.num_pages)
+    
     response_dict = {
-        'list': have_run_list,
+        'list': obituaries,
     }
     return render_to_response('hard_copies_manifest.html', response_dict, context_instance=RequestContext(request))
 

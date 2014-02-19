@@ -315,7 +315,7 @@ class Obituary(models.Model):
         return 'obits/%s/%s/ob.%s.%s%s' % (datetime.date.today().year, datetime.date.today().month, instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
     
     user = models.ForeignKey(User, null=True, blank=True, related_name='obit_user2')
-    death_notice = models.OneToOneField(Death_notice, primary_key=True, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
+    death_notice = models.ForeignKey(Death_notice, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
     prepaid_by = models.CharField(max_length=325, blank=True)
     date_of_birth = models.DateField(blank=True, null=True, help_text=u'YYYY-MM-DD format')
     family_contact = models.CharField(max_length=126)
@@ -449,7 +449,13 @@ class Obituary(models.Model):
             Save.
             '''
             if  (self.status =='live' and self.obituary_created == None) or (orig.status == 'drft' and self.status == 'live'):
-                message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                
+                # status of obituary based on an FH-created death notice changed by FH
+                if self.user == self.death_notice.funeral_home:
+                    message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                # status of obituary based on an FH-created death notice changed by internal R-G user
+                else:
+                    message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.user.get_full_name())
                 message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
                 
                 if self.flag:
