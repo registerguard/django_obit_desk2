@@ -155,11 +155,10 @@ class Death_notice(models.Model):
         if(self.pk and self.status == 'live'):
 #             datatuple = None
             datatuple = (
-                ('Change made to *PREVIOUSLY-SUBMITTED* Death Notice by %s to %s %s death notice' % (self.funeral_home.funeralhomeprofile.full_name, self.first_name, self.last_name), message_email, from_email, to_email),
+                ('Change made to *PREVIOUSLY-SUBMITTED* Death Notice by %s to %s %s death notice' % (self.funeral_home.fh_user2.full_name, self.first_name, self.last_name), message_email, from_email, to_email),
             )
         elif not self.pk:
             # a new Death_notice
-#             message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.funeralhomeprofile.full_name, self.first_name, self.last_name)
             message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.fh_user2.full_name, self.first_name, self.last_name)
             datatuple = (message_subj, message_email, from_email, to_email,), # <- This trailing comma's vital!
         
@@ -387,13 +386,13 @@ class Obituary(models.Model):
                 
                 if self.user and (self.user.username in ('lcrossley', 'weeditor',)):
                     message_subj = '[Accounting] Obituary printed for %s %s' % (self.death_notice.first_name, self.death_notice.last_name)
-                    message_email = 'Add %s to the invoice of %s.' % (cost, self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                    message_email = 'Add %s to the invoice of %s.' % (cost, self.death_notice.funeral_home.fh_user2.full_name)
                 elif self.user and (self.user.username in ('wcarole', 'bholmes', 'bnelson', 'jhamilton', 'nkeller', 'phowells',)):
                     message_subj = '[Accounting] PRE-PAID obituary printed for %s %s' % (self.death_notice.first_name, self.death_notice.last_name)
-                    message_email = '%s for the %s obituary was prepaid: %s.' % (cost, self.death_notice.funeral_home.funeralhomeprofile.full_name, self.prepaid_by)
+                    message_email = '%s for the %s obituary was prepaid: %s.' % (cost, self.death_notice.funeral_home.fh_user2.full_name, self.prepaid_by)
                 else:
                     message_subj = '[Accounting] Obituary printed for %s %s' % (self.death_notice.first_name, self.death_notice.last_name)
-                    message_email = 'Add %s to the invoice of %s. (You can also check http://www.registerguard.com/web/news/obituaries/)' % (cost, self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                    message_email = 'Add %s to the invoice of %s. (You can also check http://www.registerguard.com/web/news/obituaries/)' % (cost, self.death_notice.funeral_home.fh_user2.full_name)
                 datatuple = (message_subj,  message_email, from_email, to_email,), # <- This trailing comma's vital!
         
         '''
@@ -452,7 +451,7 @@ class Obituary(models.Model):
                 
                 # status of obituary based on an FH-created death notice changed by FH
                 if self.user == self.death_notice.funeral_home:
-                    message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.funeralhomeprofile.full_name)
+                    message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.fh_user2.full_name)
                 # status of obituary based on an FH-created death notice changed by internal R-G user
                 else:
                     message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.user.get_full_name())
