@@ -12,7 +12,7 @@ import datetime
 from dateutil.parser import parse
 
 from obituary_settings import DN_OBIT_EMAIL_RECIPIENTS, BO_OBIT_EMAIL_RECIPIENTS, \
-    IMAGING_OBIT_EMAIL_RECIPIENTS, DISPLAY_DAYS_BACK
+    IMAGING_OBIT_EMAIL_RECIPIENTS, DISPLAY_DAYS_BACK, INSIDE_OBIT_USERNAMES
 
 # Create your models here.
 
@@ -387,7 +387,7 @@ class Obituary(models.Model):
                 if self.user and (self.user.username in ('lcrossley', 'weeditor',)):
                     message_subj = '[Accounting] Obituary printed for %s %s' % (self.death_notice.first_name, self.death_notice.last_name)
                     message_email = 'Add %s to the invoice of %s.' % (cost, self.death_notice.funeral_home.fh_user2.full_name)
-                elif self.user and (self.user.username in ('wcarole', 'bholmes', 'bnelson', 'jhamilton', 'nkeller', 'phowells',)):
+                elif self.user and (self.user.username in INSIDE_OBIT_USERNAMES):
                     message_subj = '[Accounting] PRE-PAID obituary printed for %s %s' % (self.death_notice.first_name, self.death_notice.last_name)
                     message_email = '%s for the %s obituary was prepaid: %s.' % (cost, self.death_notice.funeral_home.fh_user2.full_name, self.prepaid_by)
                 else:
