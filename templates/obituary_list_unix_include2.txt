@@ -1,4 +1,4 @@
-{% for ob in object_list %}<div id="obit-head">{{ ob.death_notice.first_name }} {% if ob.death_notice.nickname %}“{{ ob.death_notice.nickname }}”{% endif %} {{ ob.death_notice.middle_name }} {{ ob.death_notice.last_name }}<br><div id="born_died">{{ ob.date_of_birth|date:'Y' }} - {{ ob.death_notice.death_date|date:'Y' }}</div></div>
+{% for ob in object_list %}<div id="obit-head">{{ ob.death_notice.first_name }} {% if ob.death_notice.nickname %}“{{ ob.death_notice.nickname }}”{% endif %} {{ ob.death_notice.middle_name }} {{ ob.death_notice.last_name }}<br><div id="born_died">{% if ob.print_date_format %}{{ ob.date_of_birth|date:'F j, Y' }} - <br>{{ ob.death_notice.death_date|date:'F j, Y' }}{% else %}{{ ob.date_of_birth|date:'Y' }} - {{ ob.death_notice.death_date|date:'Y' }}{% endif %}</div></div>
 {{ ob.obituary_body|safe }}
 {{ ob.bei_display|safe }}
 {% endfor %}

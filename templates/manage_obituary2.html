@@ -113,6 +113,17 @@
 			</td>
 		</tr>
 		
+		<tr {% if form.print_date_format.field.required %}class="required"{% endif %}>
+			<th>
+				{{ form.print_date_format.label_tag }}:
+			</th>
+			<td>
+				{{ form.print_date_format.errors }}
+				{{ form.print_date_format }}
+				{% if form.print_date_format.help_text %}<p>{{ form.print_date_format.help_text|safe }}</p>{% endif %}
+			</td>
+		</tr>
+		
 		<tr {% if form.obituary_body.field.required %}class="required"{% endif %}>
 			<th>
 				{{ form.obituary_body.label_tag }}:

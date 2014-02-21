@@ -317,6 +317,7 @@ class Obituary(models.Model):
     death_notice = models.ForeignKey(Death_notice, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
     prepaid_by = models.CharField(max_length=325, blank=True)
     date_of_birth = models.DateField(blank=True, null=True, help_text=u'YYYY-MM-DD format')
+    print_date_format = models.BooleanField(help_text=u"<span style='color: blue;'>If the 'Month DD, YYYY - Month DD, YYYY' format for dates of birth and death is desired, check box, otherwise, just the years ('YYYY-YYYY') will be used.</span>", default=False)
     family_contact = models.CharField(max_length=126)
     family_contact_phone = models.CharField(max_length=12)
     obituary_body = models.TextField(help_text=u'<span style="color: blue;">Information you may want to include: education, military,  career/work experience,  hobbies, volunteerism, awards, clubs, marriage and divorce, survivors, predeceased by, cause of death, date of birth, service information, remembrances.</span>')
@@ -329,7 +330,6 @@ class Obituary(models.Model):
     submitted_by = models.CharField(max_length=150, blank=True, null=True)
     
     obituary_in_system = models.BooleanField(u'Obit in DT?')
-#     obituary_has_run = models.BooleanField(u'Obit has run?')
     obituary_publish_date = models.DateField(default=next_available_pub_date(), help_text=u"The date to be published, subject to print deadlines. If left empty, the next available date will be used.")
     obituary_created = models.DateTimeField(auto_now_add=True)
     
