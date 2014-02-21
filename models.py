@@ -464,7 +464,7 @@ class Obituary(models.Model):
                     message_email = ('* Service insignia requested: %s' % self.service_insignia) + '\n\n' + message_email
                 
                 try:
-                    class_rep = self.death_notice.funeral_home.fh_user2.rg_rep.user.email
+                    class_rep = self.user.email
                 except AttributeError:
                     class_rep = None
                 
