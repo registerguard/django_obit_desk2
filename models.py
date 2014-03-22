@@ -452,9 +452,12 @@ class Obituary(models.Model):
                 # status of obituary based on an FH-created death notice changed by FH
                 if self.user == self.death_notice.funeral_home:
                     message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.fh_user2.full_name)
+                    # Get the relevant class_rep, so we can notify via email
+                    class_rep_to_notify = self.death_notice.funeral_home.fh_user2.rg_rep
                 # status of obituary based on an FH-created death notice changed by internal R-G user
                 else:
                     message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.user.get_full_name())
+                    class_rep_to_notify = None
                 message_email = u'* Obituary text below:\n\n %s'% self.obituary_body
                 
                 if self.flag:
@@ -468,7 +471,9 @@ class Obituary(models.Model):
                 except AttributeError:
                     class_rep = None
                 
-                if class_rep:
+                if class_rep_to_notify:
+                    to_email = [class_rep, 'john.heasly@registerguard.com',]
+                elif class_rep:
                     to_email = [class_rep, 'john.heasly@registerguard.com',]
                     
                     '''
