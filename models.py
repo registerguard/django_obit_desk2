@@ -472,7 +472,7 @@ class Obituary(models.Model):
                     class_rep = None
                 
                 if class_rep_to_notify:
-                    to_email = [class_rep, 'john.heasly@registerguard.com',]
+                    to_email = [class_rep_to_notify, 'john.heasly@registerguard.com',]
                 elif class_rep:
                     to_email = [class_rep, 'john.heasly@registerguard.com',]
                     
