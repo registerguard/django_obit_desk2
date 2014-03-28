@@ -452,10 +452,13 @@ class Obituary(models.Model):
                 # status of obituary based on an FH-created death notice changed by FH
                 if self.user == self.death_notice.funeral_home:
                     message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.death_notice.funeral_home.fh_user2.full_name)
-                    # Get the relevant class_rep, so we can notify via email
-                    # (and make sure current user isn't a class rep)
-                    if self.user.username in INSIDE_OBIT_USERNAMES:
+                    # Get the relevant class_rep, so we can notify via email,
+                    # but also try/except check that FH has a rep ... it may not.
+                    try:
                         class_rep_to_notify = self.death_notice.funeral_home.fh_user2.rg_rep.email
+                    # FH has no rg_rep assigned, therefore no email to send.
+                    except AttributeError:
+                        pass
                 # status of obituary based on an FH-created death notice changed by internal R-G user
                 else:
                     message_subj = 'Obituary for %s %s has been released by %s' % (self.death_notice.first_name.strip(), self.death_notice.last_name.strip(), self.user.get_full_name())
