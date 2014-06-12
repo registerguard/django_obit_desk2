@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import date
 from cuddlybuddly.thumbnail.main import Thumbnail
 from sorl.thumbnail import get_thumbnail, ImageField
+from smtplib import SMTPDataError
 from os import path
 import datetime
 from dateutil.parser import parse
@@ -163,7 +164,10 @@ class Death_notice(models.Model):
             datatuple = (message_subj, message_email, from_email, to_email,), # <- This trailing comma's vital!
         
         if datatuple:
-            send_mass_mail(datatuple)
+            try:
+                send_mass_mail(datatuple)
+            except SMTPDataError:
+                pass
         super(Death_notice, self).save()
     
     def last_name_no_suffix(self):
