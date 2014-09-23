@@ -50,6 +50,7 @@ class ClassifiedRep(models.Model):
 
 class FuneralHomeProfile(models.Model):
     STATES = (
+        ('Ala.', 'Ala.'),
         ('Alaska', 'Alaska',),
         ('Ariz.', 'Ariz.',),
         ('Calif.', 'Calif.',),
