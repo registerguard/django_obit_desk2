@@ -503,7 +503,10 @@ class Obituary(models.Model):
                     datatuple = (message_subj, message_email, from_email, to_email,), # <- This trailing comma's vital!
         
         if datatuple:
-            send_mass_mail(datatuple)
+            try:
+                send_mass_mail(datatuple)
+            except SMTPDataError:
+                pass
         super(Obituary, self).save(*args, **kwargs)
     
     def admin_thumbnail(self):
