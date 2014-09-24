@@ -2,6 +2,7 @@
 
 from django.core.mail import send_mail, send_mass_mail, EmailMessage
 from django.db import models
+from django.db.models.base import ObjectDoesNotExist
 from django.contrib.humanize.templatetags.humanize import apnumber
 from django.contrib.auth.models import User
 from django.template.defaultfilters import date
@@ -155,10 +156,16 @@ class Death_notice(models.Model):
         datatuple = None
         
         if(self.pk and self.status == 'live'):
-#             datatuple = None
-            datatuple = (
-                ('Change made to *PREVIOUSLY-SUBMITTED* Death Notice by %s to %s %s death notice' % (self.funeral_home.fh_user2.full_name, self.first_name, self.last_name), message_email, from_email, to_email),
-            )
+            try:
+                datatuple = (
+                    ('Change made to *PREVIOUSLY-SUBMITTED* Death Notice by %s to %s %s death notice' % (self.funeral_home.fh_user2.full_name, self.first_name, self.last_name), message_email, from_email, to_email),
+                )
+            except FuneralHomeProfile.DoesNotExist, err:
+                message_email = message_email + '\n THIS FUNERAL HOME NEEDS A PROFILE CREATED!\nDo that here: http://projects.registerguard.com/admin/django_obit_desk2/funeralhomeprofile/'
+                datatuple = (
+                    ('Change made to *PREVIOUSLY-SUBMITTED* Death Notice by %s (<--FH NEEDS PROFILE!) to %s %s death notice' % (self.funeral_home.username, self.first_name, self.last_name), message_email, from_email, to_email),
+                )
+            
         elif not self.pk:
             # a new Death_notice
             message_subj = 'Death notice created by %s for %s %s' % (self.funeral_home.fh_user2.full_name, self.first_name, self.last_name)
