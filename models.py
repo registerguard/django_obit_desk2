@@ -215,6 +215,7 @@ class Service(models.Model):
         ('A celebration of life', 'celebration of life',),
         ('The funeral', 'funeral',),
         ('The funeral Mass', 'funeral Mass',),
+        ('The funeral followed by a reception', 'funeral followed by a reception',),
         ('The funeral service followed by the burial', 'funeral service followed by the burial',),
         ('A graveside service', 'graveside service',),
         ('A musical celebration of life', 'musical celebration of life',),
