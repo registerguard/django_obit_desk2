@@ -36,3 +36,8 @@ Odd Areas
 - "Length of residence in Lane County area:"
 - "Length of relationship:"
 - What do outside-of-area folk do?
+
+===========
+Schema
+===========
+.. image:: https://cloud.githubusercontent.com/assets/96007/4929379/6ef1e6e8-6552-11e4-805e-530c944a6202.png
