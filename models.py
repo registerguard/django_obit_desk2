@@ -54,6 +54,7 @@ class FuneralHomeProfile(models.Model):
         ('Ala.', 'Ala.'),
         ('Alaska', 'Alaska',),
         ('Ariz.', 'Ariz.',),
+        ('Ark.', 'Ark.',),
         ('Calif.', 'Calif.',),
         ('Colo.', 'Colo.',),
         ('Conn.', 'Conn.',),
