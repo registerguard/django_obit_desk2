@@ -52,7 +52,8 @@ def deaths2(request, model=None, file=None):
     data = data.replace('..', '.')
     data = data.replace('; ; ', '; ')
     data = data.replace('> ', '>')
-    r = HttpResponse(data, mimetype='text/plain;charset=utf-8')
+    data = data.encode('utf-16-le')
+    r = HttpResponse(data, mimetype='text/plain')
     r['Content-Disposition'] = 'attachment; filename=%s-[%s].txt;' % (model._meta.verbose_name_plural.lower().replace(' ', '-'), datetime.datetime.now().strftime('%Y-%m-%d-%I-%M-%S-%p'))
     return r
 
