@@ -294,7 +294,7 @@ def billing2(request, billing_month=None, excel_response=False):
         run_obits = Obituary.objects.filter(obituary_publish_date__isnull=False, obituary_publish_date__gte='2012-2-1').order_by('-obituary_publish_date')
     response_dict = {
         'ad_reps': ('wcarole', 'bholmes', 'bnelson', 'jhamilton', 'nkeller', 'phowells',),
-        'newsroom': ('sbecraft', 'weeditor',),
+        'newsroom': ('sbecraft', 'lcrossley', 'weeditor',),
         'run_obits': run_obits,
         'month': billing_month,
     }

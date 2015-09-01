@@ -399,7 +399,7 @@ class Obituary(models.Model):
                 else:
                     cost = self.COST['FH']
 
-                if self.user and (self.user.username in ('sbecraft', 'weeditor',)):
+                if self.user and (self.user.username in ('sbecraft', 'lcrossley', 'weeditor',)):
                     message_subj = '[Accounting] Obituary printed for %s %s' % (self.death_notice.first_name, self.death_notice.last_name)
                     message_email = 'Add %s to the invoice of %s.' % (cost, self.death_notice.funeral_home.fh_user2.full_name)
                 elif self.user and (self.user.username in INSIDE_OBIT_USERNAMES):
