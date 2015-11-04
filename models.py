@@ -151,7 +151,7 @@ class Death_notice(models.Model):
         return u'%s %s %s' % (self.first_name, self.middle_name, self.last_name)
 
     def save(self):
-        from_email = 'rgnews.registerguard.@gmail.com'
+        from_email = 'rgnews.registerguard@gmail.com'
         to_email = DN_OBIT_EMAIL_RECIPIENTS
         message_email = 'Go to the death notice admin page for further information.'
         datatuple = None
@@ -360,7 +360,7 @@ class Obituary(models.Model):
         return u'Obituary for %s %s' % (self.death_notice.first_name, self.death_notice.last_name)
 
     def save(self, *args, **kwargs):
-        from_email = 'obituary2.registerguard.@gmail.com'
+        from_email = 'obituary2.registerguard@gmail.com'
         to_email = DN_OBIT_EMAIL_RECIPIENTS
         message_email = 'Go to the obituary admin page for further information.'
         datatuple = ()
