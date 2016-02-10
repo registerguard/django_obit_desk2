@@ -22,7 +22,7 @@ class ServiceForm(ModelForm):
             'service_date_time': ObitsCalendarDateTimeWidget(),
         }
 
-ServiceFormSet = inlineformset_factory(Death_notice, 
+ServiceFormSet = inlineformset_factory(Death_notice,
     Service,
     form = ServiceForm,
     can_delete=True,
@@ -58,7 +58,7 @@ class Death_noticeForm(ModelForm):
     
     class Meta:
         model = Death_notice
-        exclude = ('funeral_home', 'death_notice_in_system', 'death_notice_has_run',)
+        exclude = ('funeral_home', 'remembrances', 'death_notice_in_system')
 
 class ObituaryForm(ModelForm):
     def __init__(self, request, *args, **kwargs):
@@ -144,8 +144,8 @@ class ObituaryForm(ModelForm):
 class ObituaryAdminForm(forms.ModelForm):
     # See http://stackoverflow.com/questions/1474135/django-admin-ordering-of-foreignkey-and-manytomanyfield-relations-referencing-u
     #
-    # For an alternative method for drop-down filtering/ordering of Admin 
-    # inline fields, see formfield_for_foreignkey override in 
+    # For an alternative method for drop-down filtering/ordering of Admin
+    # inline fields, see formfield_for_foreignkey override in
     # class Death_noticeAdmin in admin.py of this app.
     death_notice = forms.ModelChoiceField(queryset=Death_notice.objects.order_by('last_name'))
     
