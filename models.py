@@ -214,6 +214,7 @@ class Death_notice(models.Model):
 class Service(models.Model):
     SERVICES = (
         ('A celebration of life', 'celebration of life',),
+        ('A celebration of life is planned', 'celebration of life is planned',),
         ('The funeral', 'funeral',),
         ('The funeral Mass', 'funeral Mass',),
         ('The funeral followed by a reception', 'funeral followed by a reception',),
