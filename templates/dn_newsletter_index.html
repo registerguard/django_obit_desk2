@@ -1,0 +1,15 @@
+<div class="dns_by_date">
+	{% regroup dns by death_notice_created|date:'l, F j, Y' as dn_by_day %}
+
+	{% for dn in dn_by_day %}
+	<h1>{{ dn.grouper }}</h1>
+
+	<div class="dn">
+	{% for dn_obj in dn.list|dictsort:'last_name' %}
+		<h2>{{ dn_obj.first_name }} {{ dn_obj.last_name }}</h2>
+		{# <p>{{ dn.funeral_home.fh_user2.full_name }}</p> #}
+	{% endfor %}
+	</div> <!-- /.dn -->
+	{% endfor %}
+	
+</div> <!-- /.dns_by_date -->

@@ -372,3 +372,13 @@ def death_notice_count(request):
         'dn_count_in_system': dn_count_in_system,
     }
     return render_to_response('death_notice_count.html', response_dict, context_instance=RequestContext(request))
+
+def dn_newsletter_index(request, day_count=None):
+    today = datetime.date.today()
+    days_back = today - datetime.timedelta(days=int(day_count))
+
+    dns = Death_notice.objects.filter(death_notice_created__gte=days_back, status='live').order_by('-death_notice_created')
+
+    return render_to_response('dn_newsletter_index.html', {
+        'dns': dns,
+    }, context_instance=RequestContext(request))
