@@ -3,7 +3,7 @@ from django.contrib.auth.views import password_reset, password_reset_done, passw
 from django.views.generic import TemplateView
 from django_obit_desk2.views import deaths2, fh_index2, logout_view2, \
     manage_death_notice2, manage_obituary2, print_obituary2, \
-    hard_copies_manifest2, death_notice_count, dn_newsletter_index
+    hard_copies_manifest2, death_notice_count, dn_newsletter_index, DNDetail
 
 urlpatterns = list()
 
@@ -15,6 +15,7 @@ Dirty hack: Uncomment following three lines for maintenance mode.
 # )
 
 urlpatterns += patterns('',
+    url(r'^(?P<pk>\d+)/$', DNDetail.as_view(), name='dn_detail'),
     url(r'^deaths/(?P<death_notice_id>\d+)/$', manage_death_notice2, name='manage_death_notice2'),
     url(r'^deaths/$', manage_death_notice2, name='add_death_notice2'),
     url(r'^dn_newsletter/(?P<day_count>\d{1,2})/$', dn_newsletter_index, name='dn_newsletter_index'),

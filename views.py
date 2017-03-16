@@ -16,6 +16,7 @@ from django.template import RequestContext, loader
 from django.utils.html import escape
 from django.utils.translation import ugettext
 from django.views.generic.list_detail import object_list
+from django.views.generic import DetailView
 from django_obit_desk2.models import Death_notice, Obituary
 from django_obit_desk2.forms import Death_noticeForm, ServiceFormSet, \
     ObituaryForm, DeathNoticeOtherServicesFormSet
@@ -382,3 +383,7 @@ def dn_newsletter_index(request, day_count=None):
     return render_to_response('dn_newsletter_index.html', {
         'dns': dns,
     }, context_instance=RequestContext(request))
+
+class DNDetail(DetailView):
+    model = Death_notice
+    template_name = 'dn_detail.html'

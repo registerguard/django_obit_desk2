@@ -1,0 +1,94 @@
+{% extends "dox/bulldog_story.html" %}
+
+{% block body %}
+
+<article>
+
+    <header>
+
+        <div class="w_row">
+
+            <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+            <div class="w_col w_C640 w_D980">
+
+                <div class="wrap give">
+
+                    <hgroup>
+
+                        <h1>{{ object.first_name }} {{ object.last_name }}</h1>
+
+                    </hgroup>
+
+                </div> <!-- /.wrap -->
+
+            </div> <!-- /.w_col -->
+
+            <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+        </div> <!-- /.w_row -->
+
+        <hr>
+
+<div class="w_row">
+
+    <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+    <div class="w_col w_C640 w_D980">
+
+        <div class="fix">
+
+            <div id="meta">
+
+                <p class="byline name byline1">
+                    {{ object.byline|lower|title }}
+                </p>
+
+                <p class="byline organization byline2">
+                    {% firstof object.byline_title object.contributor %}
+                </p>
+
+                <p class="pub pub1">
+                    Updated: <time pubdate datetime="{{ object.death_notice_created }}">{{ object.death_notice_created|date:"P, N j" }}</time>
+                </p>
+
+                <!-- object published: {{ object.published }} object updated: {{ object.updated }} -->
+
+            </div> <!-- /#meta -->
+
+            {# Go to www.addthis.com/dashboard to customize your tools #}
+            <div class="sharing addthis_sharing_toolbox"></div>
+
+        </div> <!-- /.fix -->
+
+    </div> <!-- /.w_col -->
+
+    <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+</div> <!-- .w_row -->
+
+</header>
+
+<hr>
+
+<div class="w_row">
+
+<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+<div class="w_col w_C640 w_D980">
+
+    <div id="story">
+
+        {{ object.first_name }} {% if object.middle_name %}{{ object.middle_name }} {% endif %}{% if object.nickname %}“{{ object.nickname}}” {% endif %}{{ object.last_name }}, {{ object.age_unit_combo }}, of {{ object.city_of_residence }}{% if object.formerly_of %}, formerly of {{ object.formerly_of }}{% endif %}, died {{ object.death_date|date:"N j" }}.{% if object.service %} A {{ object.service.get_service_display }} will be {% if object.service.service_end_date_time %}from {{ object.service.service_date_time|date:"P" }} to {{ object.service.service_end_date_time|date:"P l, N j," }}{% else %}at {{ object.service.service_date_time|date:"P l, N j," }}{% endif %} at the {{ object.service.service_location|safe }}{% if object.service.service_city %} in {{ object.service.service_city }}{% endif %}.{% endif %}{% if object.deathnoticeotherservices%} A {{ object.deathnoticeotherservices.description }} will be at {{ object.deathnoticeotherservices.other_services_date_time|date:"P l, N j," }} at {{ object.deathnoticeotherservices.other_services_location }}.{% endif %}{% if object.no_service_planned %} No service is planned.{% endif %}{% if object.remembrances %} Remembrances to {{ object.remembrances }}.{% endif %} Arrangements by {{ object.funeral_home.fh_user2.full_name|safe }}{% if object.funeral_home.fh_user2.city %} in {{ object.funeral_home.fh_user2.city }}{% endif %}.
+
+    </div> <!-- /#story -->
+
+    <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+</div> <!-- /.w_col -->
+
+</div> <!-- /.w_row -->
+
+</article>
+
+{% endblock %}
