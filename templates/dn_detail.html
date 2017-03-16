@@ -40,16 +40,12 @@
 
             <div id="meta">
 
-                <p class="byline name byline1">
-                    {{ object.byline|lower|title }}
-                </p>
-
                 <p class="byline organization byline2">
-                    {% firstof object.byline_title object.contributor %}
+                    {{ object.funeral_home.fh_user2.full_name|safe }}
                 </p>
 
                 <p class="pub pub1">
-                    Updated: <time pubdate datetime="{{ object.death_notice_created }}">{{ object.death_notice_created|date:"P, N j" }}</time>
+                    Submitted: <time pubdate datetime="{{ object.death_notice_created }}">{{ object.death_notice_created|date:"P, N j" }}</time>
                 </p>
 
                 <!-- object published: {{ object.published }} object updated: {{ object.updated }} -->
@@ -90,5 +86,26 @@
 </div> <!-- /.w_row -->
 
 </article>
+
+<hr>
+
+<div class="split">
+
+    {% if object.get_previous_by_death_notice_created %}
+    <p class="split-first pointer">
+        {# <a href="?page={{ object.get_previous_by_death_notice_created }}">« Previous</a> #}
+        <a href="{% url dn_detail object.get_previous_by_death_notice_created.id %}">« {{ object.get_previous_by_death_notice_created.first_name }} {{ object.get_previous_by_death_notice_created.last_name }}</a>
+    </p>
+    {% endif %}
+
+    {% if object.get_next_by_death_notice_created %}
+    <p class="split-last pointer">
+        <a href="{% url dn_detail object.get_next_by_death_notice_created.id %}">{{ object.get_next_by_death_notice_created.first_name }} {{ object.get_next_by_death_notice_created.last_name }} »</a>
+    </p>
+    {% else %}
+        &nbsp;
+    {% endif %}
+
+</div> <!-- /.split -->
 
 {% endblock %}
