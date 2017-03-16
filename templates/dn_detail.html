@@ -40,10 +40,6 @@
 
             <div id="meta">
 
-                <p class="byline organization byline2">
-                    {{ object.funeral_home.fh_user2.full_name|safe }}
-                </p>
-
                 <p class="pub pub1">
                     Submitted: <time pubdate datetime="{{ object.death_notice_created }}">{{ object.death_notice_created|date:"P, N j" }}</time>
                 </p>
@@ -93,7 +89,6 @@
 
     {% if object.get_previous_by_death_notice_created %}
     <p class="split-first pointer">
-        {# <a href="?page={{ object.get_previous_by_death_notice_created }}">« Previous</a> #}
         <a href="{% url dn_detail object.get_previous_by_death_notice_created.id %}">« {{ object.get_previous_by_death_notice_created.first_name }} {{ object.get_previous_by_death_notice_created.last_name }}</a>
     </p>
     {% endif %}
