@@ -4,6 +4,7 @@ from django import forms
 from django.contrib import messages
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.sites.models import Site
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
@@ -382,6 +383,7 @@ def dn_newsletter_index(request, day_count=None):
 
     return render_to_response('dn_newsletter_index.html', {
         'dns': dns,
+        'site': Site.objects.get_current().name,
     }, context_instance=RequestContext(request))
 
 class DNDetail(DetailView):
