@@ -1,61 +1,87 @@
 {% extends "dox/bulldog_story.html" %}
 
+{% block head_title %}{{ object.first_name }} {{ object.last_name }} death notice {% endblock head_title %}
+
+{% block head_description %}Death notice for {{ object.first_name }} {{ object.last_name }}{% endblock head_description %}
+
+{% block head_keywords %}death, notice, {{ object.first_name }}, {{ object.last_name }}{% endblock head_keywords %}
+
+
+{% block head_ad_ids %}
+	// If desktop, serve weather widget
+	if (document.documentElement.clientWidth >= 1005){
+		googletag.defineSlot('/30582678/RGM/news/obituaries', [120, 60], 'ros-weather-widget')
+			.setTargeting('pos', ['rgm_weather_widget'])
+			.addService(googletag.pubads());
+	}
+
+	// Define ad units
+	googletag.defineSlot('/30582678/RGM/news/obituaries', [[320, 50], [728, 90]], 'leaderboard-top')
+		.setTargeting('pos', ['atf']) // Above the fold
+		.defineSizeMapping(mapping)
+		.addService(googletag.pubads());
+	googletag.defineSlot('/30582678/RGM/news/obituaries', [[320, 50], [728, 90]], 'leaderboard-bottom')
+		.setTargeting('pos', ['btf']) // Below the fold
+		.defineSizeMapping(mapping)
+		.addService(googletag.pubads());
+{% endblock head_ad_ids %}
+
 {% block body %}
 
 <article>
 
-    <header>
+	<header>
 
-        <div class="w_row">
+		<div class="w_row">
 
-            <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+			<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
 
-            <div class="w_col w_C640 w_D980">
+			<div class="w_col w_C640 w_D980">
 
-                <div class="wrap give">
+				<div class="wrap give">
 
-                    <hgroup>
+					<hgroup>
 
-                        <h1>{{ object.first_name }} {{ object.last_name }}</h1>
+						<h1>{{ object.first_name }} {{ object.last_name }}</h1>
 
-                    </hgroup>
+					</hgroup>
 
-                </div> <!-- /.wrap -->
+				</div> <!-- /.wrap -->
 
-            </div> <!-- /.w_col -->
+			</div> <!-- /.w_col -->
 
-            <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+			<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
 
-        </div> <!-- /.w_row -->
+		</div> <!-- /.w_row -->
 
-        <hr>
+		<hr>
 
 <div class="w_row">
 
-    <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+	<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
 
-    <div class="w_col w_C640 w_D980">
+	<div class="w_col w_C640 w_D980">
 
-        <div class="fix">
+		<div class="fix">
 
-            <div id="meta">
+			<div id="meta">
 
-                <p class="pub pub1">
-                    Submitted: <time pubdate datetime="{{ object.death_notice_created }}">{{ object.death_notice_created|date:"P, N j" }}</time>
-                </p>
+				<p class="pub pub1">
+					Submitted: <time pubdate datetime="{{ object.death_notice_created }}">{{ object.death_notice_created|date:"P, N j" }}</time>
+				</p>
 
-                <!-- object published: {{ object.published }} object updated: {{ object.updated }} -->
+				<!-- object published: {{ object.published }} object updated: {{ object.updated }} -->
 
-            </div> <!-- /#meta -->
+			</div> <!-- /#meta -->
 
-            {# Go to www.addthis.com/dashboard to customize your tools #}
-            <div class="sharing addthis_sharing_toolbox"></div>
+			{# Go to www.addthis.com/dashboard to customize your tools #}
+			<div class="sharing addthis_sharing_toolbox"></div>
 
-        </div> <!-- /.fix -->
+		</div> <!-- /.fix -->
 
-    </div> <!-- /.w_col -->
+	</div> <!-- /.w_col -->
 
-    <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+	<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
 
 </div> <!-- .w_row -->
 
@@ -69,13 +95,13 @@
 
 <div class="w_col w_C640 w_D980">
 
-    <div id="story">
+	<div id="story">
 
-        {{ object.first_name }} {% if object.middle_name %}{{ object.middle_name }} {% endif %}{% if object.nickname %}“{{ object.nickname}}” {% endif %}{{ object.last_name }}, {{ object.age_unit_combo }}, of {{ object.city_of_residence }}{% if object.formerly_of %}, formerly of {{ object.formerly_of }}{% endif %}, died {{ object.death_date|date:"N j" }}.{% if object.service %} A {{ object.service.get_service_display }} will be {% if object.service.service_end_date_time %}from {{ object.service.service_date_time|date:"P" }} to {{ object.service.service_end_date_time|date:"P l, N j," }}{% else %}at {{ object.service.service_date_time|date:"P l, N j," }}{% endif %} at the {{ object.service.service_location|safe }}{% if object.service.service_city %} in {{ object.service.service_city }}{% endif %}.{% endif %}{% if object.deathnoticeotherservices%} A {{ object.deathnoticeotherservices.description }} will be at {{ object.deathnoticeotherservices.other_services_date_time|date:"P l, N j," }} at {{ object.deathnoticeotherservices.other_services_location }}.{% endif %}{% if object.no_service_planned %} No service is planned.{% endif %}{% if object.remembrances %} Remembrances to {{ object.remembrances }}.{% endif %} Arrangements by {{ object.funeral_home.fh_user2.full_name|safe }}{% if object.funeral_home.fh_user2.city %} in {{ object.funeral_home.fh_user2.city }}{% endif %}.
+		{{ object.first_name }} {% if object.middle_name %}{{ object.middle_name }} {% endif %}{% if object.nickname %}“{{ object.nickname}}” {% endif %}{{ object.last_name }}, {{ object.age_unit_combo }}, of {{ object.city_of_residence }}{% if object.formerly_of %}, formerly of {{ object.formerly_of }}{% endif %}, died {{ object.death_date|date:"N j" }}.{% if object.service %} A {{ object.service.get_service_display }} will be {% if object.service.service_end_date_time %}from {{ object.service.service_date_time|date:"P" }} to {{ object.service.service_end_date_time|date:"P l, N j," }}{% else %}at {{ object.service.service_date_time|date:"P l, N j," }}{% endif %} at the {{ object.service.service_location|safe }}{% if object.service.service_city %} in {{ object.service.service_city }}{% endif %}.{% endif %}{% if object.deathnoticeotherservices%} A {{ object.deathnoticeotherservices.description }} will be at {{ object.deathnoticeotherservices.other_services_date_time|date:"P l, N j," }} at {{ object.deathnoticeotherservices.other_services_location }}.{% endif %}{% if object.no_service_planned %} No service is planned.{% endif %}{% if object.remembrances %} Remembrances to {{ object.remembrances }}.{% endif %} Arrangements by {{ object.funeral_home.fh_user2.full_name|safe }}{% if object.funeral_home.fh_user2.city %} in {{ object.funeral_home.fh_user2.city }}{% endif %}.
 
-    </div> <!-- /#story -->
+	</div> <!-- /#story -->
 
-    <div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+	<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
 
 </div> <!-- /.w_col -->
 
@@ -85,21 +111,67 @@
 
 <hr>
 
+<div class="w_row">
+
+	<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+	<div class="w_col w_C640 w_D980">
+
+	<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			#mc_embed_signup { background:#fff; clear:left; width:100%; }
+			#mc_embed_signup .head { margin: 0; padding: 0; }
+			#mc_embed_signup form { padding: 0; text-align: left; }
+			#mc_embed_signup .nlwrap { width: 100%; display: -webkit-flex; display: flex; -webkit-flex-direction: row; flex-direction: row; border: 1px solid #ABB0B2; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+			#mc_embed_signup input.email { -webkit-flex: 2 0 0; flex: 2 0 0; border: 0; border-radius: 3px 0 0 3px; height: auto; margin: 0; }
+			#mc_embed_signup #mc-embedded-subscribe { background: #0083D2; margin-bottom: 0; padding: 0; -webkit-flex: 1 0 0; flex: 1 0 0; border: 0; border-radius: 0 3px 3px 0; height: auto; }
+			#mc_embed_signup #mc-embedded-subscribe:hover { background: #18aeff; transition: background 1s;  }
+		</style>
+		
+		<!-- Begin MailChimp Signup Form -->
+		<div id="mc_embed_signup">
+
+		<form action="//registerguard.us2.list-manage.com/subscribe/post?u=b584d814634d9615bbcc3b673&amp;id=abe683da97" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate onsubmit="ga('send', 'event', 'Newsletter', 'RG Obituaries sign up', 'death notice');">
+			<div id="mc_embed_signup_scroll">
+				<h3 class="head"><a href="http://registerguard.com/newsletters" target="_blank">RG Obituaries</a></h3>
+				<small>Recent obituaries and death notices.</small>
+				<div style="position: absolute; left: -5000px;" aria-hidden="true">
+					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					<input type="text" name="b_b584d814634d9615bbcc3b673_abe683da97" tabindex="-1" value="">
+				</div>
+				<div class="nlwrap">
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" required>
+					<input type="submit" value="Sign up" name="subscribe" class="button subscribe" id="mc-embedded-subscribe">
+				</div>
+			</div>
+		</form>
+
+		</div> <!-- /#mc_embed_signup -->
+		<!--End mc_embed_signup-->
+
+	</div> <!-- /.w_col -->
+
+	<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
+
+</div> <!-- /.w_row -->
+
+<hr>
+
 <div class="split">
 
-    {% if object.get_previous %}
-    <p class="split-first pointer">
-        <a href="{% url dn_detail object.get_previous.id %}">« {{ object.get_previous.first_name }} {{ object.get_previous.last_name }}</a>
-    </p>
-    {% endif %}
+	{% if object.get_previous %}
+	<p class="split-first pointer">
+		<a href="{% url dn_detail object.get_previous.id %}">« {{ object.get_previous.first_name }} {{ object.get_previous.last_name }}</a>
+	</p>
+	{% endif %}
 
-    {% if object.get_next %}
-    <p class="split-last pointer">
-        <a href="{% url dn_detail object.get_next.id %}">{{ object.get_next.first_name }} {{ object.get_next.last_name }} »</a>
-    </p>
-    {% else %}
-        &nbsp;
-    {% endif %}
+	{% if object.get_next %}
+	<p class="split-last pointer">
+		<a href="{% url dn_detail object.get_next.id %}">{{ object.get_next.first_name }} {{ object.get_next.last_name }} »</a>
+	</p>
+	{% else %}
+		&nbsp;
+	{% endif %}
 
 </div> <!-- /.split -->
 
