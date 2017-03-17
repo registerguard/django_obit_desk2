@@ -87,15 +87,15 @@
 
 <div class="split">
 
-    {% if object.get_previous_by_death_notice_created %}
+    {% if object.get_previous %}
     <p class="split-first pointer">
-        <a href="{% url dn_detail object.get_previous_by_death_notice_created.id %}">« {{ object.get_previous_by_death_notice_created.first_name }} {{ object.get_previous_by_death_notice_created.last_name }}</a>
+        <a href="{% url dn_detail object.get_previous.id %}">« {{ object.get_previous.first_name }} {{ object.get_previous.last_name }}</a>
     </p>
     {% endif %}
 
-    {% if object.get_next_by_death_notice_created %}
+    {% if object.get_next %}
     <p class="split-last pointer">
-        <a href="{% url dn_detail object.get_next_by_death_notice_created.id %}">{{ object.get_next_by_death_notice_created.first_name }} {{ object.get_next_by_death_notice_created.last_name }} »</a>
+        <a href="{% url dn_detail object.get_next.id %}">{{ object.get_next.first_name }} {{ object.get_next.last_name }} »</a>
     </p>
     {% else %}
         &nbsp;

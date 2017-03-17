@@ -150,6 +150,12 @@ class Death_notice(models.Model):
     def __unicode__(self):
         return u'%s %s %s' % (self.first_name, self.middle_name, self.last_name)
 
+    def get_previous(self):
+        return self.get_previous_by_death_notice_created(status='live')
+
+    def get_next(self):
+        return self.get_next_by_death_notice_created(status='live')
+
     def save(self):
         from_email = 'rgnews.registerguard@gmail.com'
         to_email = DN_OBIT_EMAIL_RECIPIENTS
