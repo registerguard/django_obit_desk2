@@ -389,3 +389,6 @@ def dn_newsletter_index(request, day_count=None):
 class DNDetail(DetailView):
     model = Death_notice
     template_name = 'dn_detail.html'
+
+    def get_queryset(self):
+        return Death_notice.objects.filter(status='live')
