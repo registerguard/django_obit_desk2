@@ -26,6 +26,11 @@
 		.addService(googletag.pubads());
 {% endblock head_ad_ids %}
 
+{% block canonical_url %}
+	<link rel="canonical" href="http://{{ site }}{% url dn_detail object.id %}">
+	<meta property="og:url" content="http://{{ site }}{% url dn_detail object.id %}">
+{% endblock canonical_url %}
+
 {% block body %}
 
 <article>
@@ -64,7 +69,7 @@
 
 		<div class="fix">
 
-			<div id="meta">
+			<!-- <div id="meta"> -->
 
 				<p class="pub pub1">
 					Submitted: <time pubdate datetime="{{ object.death_notice_created }}">{{ object.death_notice_created|date:"P, N j" }}</time>
@@ -72,7 +77,7 @@
 
 				<!-- object published: {{ object.published }} object updated: {{ object.updated }} -->
 
-			</div> <!-- /#meta -->
+			<!-- </div> --><!-- /#meta -->
 
 			{# Go to www.addthis.com/dashboard to customize your tools #}
 			<div class="sharing addthis_sharing_toolbox"></div>
@@ -176,3 +181,11 @@
 </div> <!-- /.split -->
 
 {% endblock %}
+
+{% block footer_last %}
+
+	<!-- http://www.addthis.com/services/list -->
+	<script>var addthis_config={data_ga_property:'UA-882065-1',data_ga_social:true},addthis_share={url:'{{ request.get_full_path }}'};</script>
+	<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=registerguard"></script>
+
+{% endblock footer_last %}

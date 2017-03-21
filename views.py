@@ -390,5 +390,10 @@ class DNDetail(DetailView):
     model = Death_notice
     template_name = 'dn_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(DNDetail, self).get_context_data(**kwargs)
+        context['site'] = Site.objects.get_current().name
+        return context
+
     def get_queryset(self):
         return Death_notice.objects.filter(status='live')
