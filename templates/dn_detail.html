@@ -185,7 +185,7 @@
 {% block footer_last %}
 
 	<!-- http://www.addthis.com/services/list -->
-	<script>var addthis_config={data_ga_property:'UA-882065-1',data_ga_social:true},addthis_share={url:'{{ request.get_full_path }}'};</script>
+	<script>var addthis_config={data_ga_property:'UA-882065-1',data_ga_social:true},addthis_share={url:'{{ site }}{{ request.get_full_path }}'};</script>
 	<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=registerguard"></script>
 
 {% endblock footer_last %}
