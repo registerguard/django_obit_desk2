@@ -6,7 +6,7 @@
 
 	<div class="dn">
 	{% for dn_obj in dn.list|dictsort:'last_name' %}
-		<a href="http://{{ site }}{% url dn_detail dn_obj.id %}" target="_blank"><h2>{{ dn_obj.first_name }} {{ dn_obj.last_name }}</h2></a>
+		<a href="http://{{ site }}{% url dn_detail dn_obj.id %}?utm_source=RG_Obituaries&utm_medium=email&utm_campaign=RG_Obituaries_{{ dn_obj.death_notice_created|date:'Y-m-d' }}&utm_content=headline" target="_blank"><h2>{{ dn_obj.first_name }} {{ dn_obj.last_name }}</h2></a>
 		<p>{{ dn_obj.first_name }} {% if dn_obj.middle_name %}{{ dn_obj.middle_name }} {% endif %}{% if dn_obj.nickname %}“{{ dn_obj.nickname}}” {% endif %}{{ dn_obj.last_name }}, {{ dn_obj.age_unit_combo }}, of {{ dn_obj.city_of_residence }}{% if dn_obj.formerly_of %}, formerly of {{ dn_obj.formerly_of }}{% endif %} …</p>
 	{% endfor %}
 	</div> <!-- /.dn -->
