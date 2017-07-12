@@ -236,6 +236,7 @@ class Service(models.Model):
         ('A service followed by the burial', 'service followed by the burial',),
         ('A visitation', 'visitation',),
         ('A visitation followed by a funeral', 'visitation followed by the funeral',),
+        ('A wake', 'wake',),
     )
 
     death_notice = models.OneToOneField(Death_notice, blank=True, null=True)
