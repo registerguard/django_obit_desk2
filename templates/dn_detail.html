@@ -111,7 +111,7 @@
 		{% endif %}
 		{{ object.last_name }}, {{ object.age_unit_combo }}, of {{ object.city_of_residence }}{% if object.formerly_of %}, formerly of {{ object.formerly_of }}{% endif %}, 
 		died {{ object.death_date|date:"N j" }}.
-		{% if object.service and not object.service_date_time %}{# If "A service is planned." and there no other details. #}
+		{% if object.service and not object.service.service_date_time %}{# If "A service is planned." and there no other details. #}
 			A {{ object.service.get_service_display }}.
 		{% else %}
 			{% if object.service %} 
@@ -123,8 +123,7 @@
 				{% endif %}
 				at the {{ object.service.service_location|safe }}
 				{% if object.service.service_city %} 
-					in {{ object.service.service_city }}
-				{% endif %}.
+					in {{ object.service.service_city }}{% endif %}.
 			{% endif %}
 		{% endif %}
 		{% if object.deathnoticeotherservices%} A {{ object.deathnoticeotherservices.description }} will be at {{ object.deathnoticeotherservices.other_services_date_time|date:"P l, N j," }} at {{ object.deathnoticeotherservices.other_services_location }}.{% endif %}{% if object.no_service_planned %} No service is planned.{% endif %}{% if object.remembrances %} Remembrances to {{ object.remembrances }}.
