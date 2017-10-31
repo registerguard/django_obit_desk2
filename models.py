@@ -232,7 +232,7 @@ class Service(models.Model):
         ('A memorial service and reception', 'memorial service and reception',),
         ('A memorial service is planned', 'memorial service is planned',),
         ('A military graveside funeral', 'military graveside funeral',),
-        ('A private service', 'private service',),
+        ('A private service is planned', 'private service is planned',),
         ('A service followed by the burial', 'service followed by the burial',),
         ('A visitation', 'visitation',),
         ('A visitation followed by a funeral', 'visitation followed by the funeral',),
