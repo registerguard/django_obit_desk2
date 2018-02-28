@@ -11,11 +11,13 @@ examples.
 Add this to your urls.py:
 (r'^add/(?P<model_name>\w+)/$', 'obituary.views.add_new_model'),
 
-Make sure you can send out an e-mail. (Elsewise, it'll bust on save().)
+Make sure you can send out an e-mail. (Elsewise, it'll bust on `save()`)
 
-Also, add recipients to obituary_settings.py, otherwise no e-mails will go out.
+Also, add recipients to obituary_settings.py, otherwise no e-mails will go 
+out. To stop the email sending comment out `.send` lines.
 
-Note to self: Run locally from virtualenv `test_root` with ssh tunnel to server.
+Note to self: Run locally from virtualenv `test_root` with ssh tunnel to 
+server.
 
 ===========
 Immediate To Do
@@ -28,7 +30,8 @@ Other To Do
 ===========
 - Form factory for FH index view?
 - Wire up delete_old_items() in utils into cron job.
-- jQuery/Ajax lookup of Death notice remembrances on Obituary onselect of Death notice
+- jQuery/Ajax lookup of Death notice remembrances on Obituary onselect of 
+Death notice
 
 ===========
 Odd Areas
