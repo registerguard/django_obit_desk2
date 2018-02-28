@@ -12,7 +12,7 @@ Add this to your urls.py:
 ``(r'^add/(?P<model_name>\w+)/$', 'obituary.views.add_new_model'),``
 
 Make sure you can send out an e-mail. (Elsewise, it'll bust on ``save()`` 
- To stop the email sending comment out ``.send`` lines.)
+To stop the email sending comment out ``.send`` lines.)
 
 Also, add recipients to obituary_settings.py, otherwise no e-mails will go 
 out.
