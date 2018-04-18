@@ -47,10 +47,6 @@
 		width: 35em;
 	}
 	
-	#id_mailing_address {
-		width: 35em;
-	}
-	
 	#rg_class_rep {
 		color: blue;
 	}
@@ -204,7 +200,7 @@
 				{% if form.photo_two.help_text %}<p>{{ form.photo_two.help_text|safe }}</p>{% endif %}
 			</td>
 		</tr>
-		
+
 		<tr {% if form.family_contact_phone.field.required %}class="required"{% endif %}>
 			<th>
 				{{ form.family_contact_phone.label_tag }}:
@@ -215,18 +211,7 @@
 				{% if form.family_contact_phone.help_text %}<p>{{ form.family_contact_phone.help_text|safe }}</p>{% endif %}
 			</td>
 		</tr>
-		
-		<tr {% if form.mailing_address.field.required %}class="required"{% endif %}>
-			<th>
-				{{ form.mailing_address.label_tag }}:
-			</th>
-			<td>
-				{{ form.mailing_address.errors }}
-				{{ form.mailing_address }}
-				{% if form.mailing_address.help_text %}<p>{{ form.mailing_address.help_text|safe }}</p>{% endif %}
-			</td>
-		</tr>
-		
+
 	</table>
 	
 	<table>
