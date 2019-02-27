@@ -529,8 +529,12 @@ class Obituary(models.Model):
 
     def admin_thumbnail(self):
         if self.photo:
-            cbim = Thumbnail(self.photo.name, 180, 180)
-            return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo.url, self.photo.storage.base_url, cbim)
+            try:
+                cbim = get_thumbnail(self.photo.name, '180x180')
+                return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo.url, self.photo.storage.base_url, cbim)
+            except IOError:
+                return u'&nbsp;'
+
         else:
             return u'(No photo)'
     admin_thumbnail.short_description = u'Thumbnail'
