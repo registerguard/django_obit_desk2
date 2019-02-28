@@ -542,8 +542,11 @@ class Obituary(models.Model):
 
     def admin_thumbnail_two(self):
         if self.photo_two:
-            cbim = Thumbnail(self.photo_two.name, 180, 180)
-            return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo_two.url, self.photo_two.storage.base_url, cbim)
+            try:
+                cbim = get_thumbnail(self.photo_two.name, '180x180')
+                return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo_two.url, self.photo_two.storage.base_url, cbim)
+            except IOError:
+                return u'&nbsp;'
         else:
             return u'' # Don't want to display "(No photo)" when there's no second photo.
     admin_thumbnail_two.short_description = u'Thumbnail two'
