@@ -530,7 +530,7 @@ class Obituary(models.Model):
     def admin_thumbnail(self):
         if self.photo:
             try:
-                cbim = get_thumbnail(self.photo.name, '180x180')
+                cbim = Thumbnail(self.photo.name, 180, 180)
                 return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo.url, self.photo.storage.base_url, cbim)
             except IOError:
                 return u'&nbsp;'
@@ -543,7 +543,7 @@ class Obituary(models.Model):
     def admin_thumbnail_two(self):
         if self.photo_two:
             try:
-                cbim = get_thumbnail(self.photo_two.name, '180x180')
+                cbim = Thumbnail(self.photo_two.name, 180, 180)
                 return u'<a href="%s" target="_blank"><img src="%s%s"></a>' % (self.photo_two.url, self.photo_two.storage.base_url, cbim)
             except IOError:
                 return u'&nbsp;'
