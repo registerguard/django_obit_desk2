@@ -259,8 +259,8 @@
 	<div style="display: none;">
 		<div id="preview_ob">
 			{% if current_obit.photo.name %}
-				<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="http://{{ MEDIA_URL }}{{ current_obit.photo.name }}">{% thumbnail current_obit.photo.name 180 180 %}</a>
-				{% if current_obit.photo_two.name %}<br><a href="http://{{ MEDIA_URL }}{{ current_obit.photo_two.name }}">{% thumbnail current_obit.photo_two.name 180 180 %}</a>{% endif %}
+				<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="{{ MEDIA_URL }}/{{ current_obit.photo.name }}">{% thumbnail current_obit.photo.name 180 180 %}</a>
+				{% if current_obit.photo_two.name %}<br><a href="{{ MEDIA_URL }}/{{ current_obit.photo_two.name }}">{% thumbnail current_obit.photo_two.name 180 180 %}</a>{% endif %}
 				</div>
 			{% endif %}
 			{{ obit_preview|safe }}
