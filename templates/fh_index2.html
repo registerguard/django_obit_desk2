@@ -50,10 +50,10 @@
 		{% if obituary.photo.name %}
 		<div style="float: left; margin-right: 12px;">
 			{% thumbnail obituary.photo.name "180x180" as im %}
-				<a href="http://{{ MEDIA_URL }}{{ obituary.photo.name }}"><img src="{{ im.url }}" /></a>
+				<a href="{{ MEDIA_URL }}{{ obituary.photo.name }}"><img src="{{ im.url }}" /></a>
 			{% endthumbnail %}
-			{% thumbnail obituary.photo_two.name "180x180" as im %}
-				{% if obituary.photo_two.name %}<br><a href="http://{{ MEDIA_URL }}{{ obituary.photo_two.name }}"><img src="{{ im.url }}" /></a>{% endif %}
+			{% thumbnail obituary.photo_two.name "180x180" as im2 %}
+				{% if obituary.photo_two.name %}<br><a href="{{ MEDIA_URL }}{{ obituary.photo_two.name }}"><img src="{{ im2.url }}" /></a>{% endif %}
 			{% endthumbnail %}
 		</div>
 		{% endif %}
