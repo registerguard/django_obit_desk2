@@ -1,5 +1,6 @@
 {% extends "base_reader_form.html" %}
 {% load adminmedia %}
+{% load thumbnail_tags %}
 
 {% block js %}
 <script type="text/javascript" src="{% admin_media_prefix %}js/admin/RelatedObjectLookups.js"></script>
@@ -258,8 +259,8 @@
 	<div style="display: none;">
 		<div id="preview_ob">
 			{% if current_obit.photo.name %}
-				<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="http://{{ current_obit.photo.storage.bucket }}.{{ current_obit.photo.storage.connection.server }}/{{ current_obit.photo.name }}">{{ current_obit.admin_thumbnail|safe }}</a>
-				{% if current_obit.photo_two.name %}<br><a href="http://{{ current_obit.photo_two.storage.bucket }}.{{ current_obit.photo_two.storage.connection.server }}/{{ current_obit.photo_two.name }}">{{ current_obit.admin_thumbnail_two|safe }}</a>{% endif %}
+				<div id="obit_image" style="float: left; margin-right: 14px; margin-bottom: 8px; "><a href="http://{{ MEDIA_URL }}{{ current_obit.photo.name }}">{% thumbnail current_obit.photo.name 180 180 %}</a>
+				{% if current_obit.photo_two.name %}<br><a href="http://{{ MEDIA_URL }}{{ current_obit.photo_two.name }}">{% thumbnail current_obit.photo_two.name 180 180 %}</a>{% endif %}
 				</div>
 			{% endif %}
 			{{ obit_preview|safe }}

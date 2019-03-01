@@ -1,5 +1,5 @@
 {% extends "base_reader_form.html" %}
-{% load thumbnail_tags %}
+{% load thumbnail %}
 
 {% block title %}Administration home page for {{ user.fh_user2.full_name }}{% endblock %}
 
@@ -49,8 +49,12 @@
 	<div class="clear">
 		{% if obituary.photo.name %}
 		<div style="float: left; margin-right: 12px;">
-			<a href="http://{{ obituary.photo.storage.bucket_name }}.{{ obituary.photo.storage.connection.server_name }}/{{ obituary.photo.name }}"><img src="{{ MEDIA_URL }}{% thumbnail obituary.photo.name 180 180 %}" /></a>
-			{% if obituary.photo_two.name %}<br><a href="http://{{ obituary.photo_two.storage.bucket }}.{{ obituary.photo_two.storage.connection.server }}/{{ obituary.photo_two.name }}">{{ obituary.admin_thumbnail_two|safe }}</a>{% endif %}
+			{% thumbnail obituary.photo.name "180x180" as im %}
+				<a href="http://{{ MEDIA_URL }}{{ obituary.photo.name }}"><img src="{{ im.url }}" /></a>
+			{% endthumbnail %}
+			{% thumbnail obituary.photo_two.name "180x180" as im %}
+				{% if obituary.photo_two.name %}<br><a href="http://{{ MEDIA_URL }}{{ obituary.photo_two.name }}"><img src="{{ im.url }}" /></a>{% endif %}
+			{% endthumbnail %}
 		</div>
 		{% endif %}
 		{% if obituary.photo.name %}<p style="margin-left: 72px;">{% endif %}<a href="{% url manage_obituary2 obituary.pk %}">{{ obituary }}</a>, created {{ obituary.obituary_created|date:"l, N j, Y, P" }} <br>
