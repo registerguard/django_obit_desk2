@@ -1,4 +1,5 @@
 {% extends "base_reader_form.html" %}
+{% load thumbnail_tags %}
 
 {% block title %}Administration home page for {{ user.fh_user2.full_name }}{% endblock %}
 
@@ -48,7 +49,7 @@
 	<div class="clear">
 		{% if obituary.photo.name %}
 		<div style="float: left; margin-right: 12px;">
-			<a href="http://{{ obituary.photo.storage.bucket }}.{{ obituary.photo.storage.connection.server }}/{{ obituary.photo.name }}">{{ obituary.admin_thumbnail|safe }}</a>
+			<a href="http://{{ obituary.photo.storage.bucket_name }}.{{ obituary.photo.storage.connection.server_name }}/{{ obituary.photo.name }}"><img src="{{ MEDIA_URL }}{% thumbnail obituary.photo.name 180 180 %}" /></a>
 			{% if obituary.photo_two.name %}<br><a href="http://{{ obituary.photo_two.storage.bucket }}.{{ obituary.photo_two.storage.connection.server }}/{{ obituary.photo_two.name }}">{{ obituary.admin_thumbnail_two|safe }}</a>{% endif %}
 		</div>
 		{% endif %}

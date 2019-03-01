@@ -531,7 +531,7 @@ class Obituary(models.Model):
         if self.photo:
             try:
                 cbim = Thumbnail(self.photo.name, 180, 180)
-                return u'<a href="%s.s3.amazonaws.com" target="_blank"><img src="%s.s3.amazonaws.com%s"></a>' % (self.photo.url, self.photo.storage.base_url, cbim)
+                return u'<img src="http://cloudeugene_com.s3.amazonaws.com/%s">' % (cbim)
             except IOError:
                 return u'&nbsp;'
 
@@ -544,7 +544,7 @@ class Obituary(models.Model):
         if self.photo_two:
             try:
                 cbim = Thumbnail(self.photo_two.name, 180, 180)
-                return u'<a href="%s.s3.amazonaws.com" target="_blank"><img src="%s.s3.amazonaws.com%s"></a>' % (self.photo_two.url, self.photo_two.storage.base_url, cbim)
+                return u'<a href="%s" target="_blank"><img src="%s"></a>' % (self.photo_two.url, cbim)
             except IOError:
                 return u'&nbsp;'
         else:
