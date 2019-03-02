@@ -331,12 +331,12 @@ class Obituary(models.Model):
             next_pub_date = right_now.date() + datetime.timedelta(days=4)
         return next_pub_date
 
-    def obit_file_name(instance, filename, **kwargs):
+    def obit_file_name(instance, filename):
         (orig_name, orig_ext) = path.splitext(filename)
 #         return 'obit_images/ob.%s.%s%s' % (instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
         return 'obits/%s/%s/ob.%s.%s%s' % (datetime.date.today().year, datetime.date.today().month, instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
 
-    def obit_file_name_two(instance, filename, **kwargs):
+    def obit_file_name_two(instance, filename):
         (orig_name, orig_ext) = path.splitext(filename)
 #         return 'obit_images/ob.%s.%s%s' % (instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
         return 'obits/%s/%s/ob.%s.%s_1%s' % (datetime.date.today().year, datetime.date.today().month, instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
