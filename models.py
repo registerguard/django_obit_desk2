@@ -331,10 +331,15 @@ class Obituary(models.Model):
             next_pub_date = right_now.date() + datetime.timedelta(days=4)
         return next_pub_date
 
-    def obit_file_name(instance, filename):
+    def obit_file_name(instance, filename, **kwargs):
         (orig_name, orig_ext) = path.splitext(filename)
 #         return 'obit_images/ob.%s.%s%s' % (instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
         return 'obits/%s/%s/ob.%s.%s%s' % (datetime.date.today().year, datetime.date.today().month, instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
+
+    def obit_file_name_two(instance, filename, **kwargs):
+        (orig_name, orig_ext) = path.splitext(filename)
+#         return 'obit_images/ob.%s.%s%s' % (instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
+        return 'obits/%s/%s/ob.%s.%s_1%s' % (datetime.date.today().year, datetime.date.today().month, instance.death_notice.last_name.lower(), instance.death_notice.first_name.lower(), orig_ext)
 
     user = models.ForeignKey(User, null=True, blank=True, related_name='obit_user2')
     death_notice = models.ForeignKey(Death_notice, limit_choices_to ={'death_notice_created__gte': datetime.datetime.now() - datetime.timedelta(days=DISPLAY_DAYS_BACK) })
@@ -347,7 +352,7 @@ class Obituary(models.Model):
     mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive 10 copies of this obituary.')
     number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
     photo = ImageField(upload_to=obit_file_name, blank=True)
-    photo_two = ImageField(help_text=u'For a each photo there is an additional charge of $50.', upload_to=obit_file_name, blank=True)
+    photo_two = ImageField(help_text=u'For a each photo there is an additional charge of $50.', upload_to=obit_file_name_two, blank=True)
     # Survivors
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact your Register-Guard classified representative.</p>')
     submitted_by = models.CharField(max_length=150, blank=True, null=True)
@@ -530,8 +535,9 @@ class Obituary(models.Model):
     def admin_thumbnail(self):
         if self.photo:
             try:
-                cbim = Thumbnail(self.photo.name, 180, 180)
-                return u'<img src="//cloudeugene_com.s3.amazonaws.com/%s" />' % (cbim)
+                # cbim = Thumbnail(self.photo.name, 180, 180)
+                st_im = get_thumbnail(self.photo.name, "180x180")
+                return u'<img src="https://cloudeugene_com.s3.amazonaws.com/%s" />' % (st_im)
             except IOError:
                 return u'&nbsp;'
 
@@ -543,8 +549,9 @@ class Obituary(models.Model):
     def admin_thumbnail_two(self):
         if self.photo_two:
             try:
-                cbim = Thumbnail(self.photo_two.name, 180, 180)
-                return u'<img src="//cloudeugene_com.s3.amazonaws.com/%s" />' % (cbim)
+                # cbim = Thumbnail(self.photo_two.name, 180, 180)
+                st_im_two = get_thumbnail(self.photo_two.name, "180x180")
+                return u'<img src="https://cloudeugene_com.s3.amazonaws.com/%s" />' % (st_im_two)
             except IOError:
                 return u'&nbsp;'
         else:

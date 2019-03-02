@@ -50,11 +50,13 @@
 		{% if obituary.photo.name %}
 		<div style="float: left; margin-right: 12px;">
 			{% thumbnail obituary.photo.name "180x180" as im %}
-				<a href="{{ MEDIA_URL }}/{{ obituary.photo.name }}"><img src="{{ im.url }}" /></a>
+				<a href="{{ MEDIA_URL }}{{ obituary.photo.name }}" target="_blank" rel="noopener noreferrer"><img src="{{ im.url }}" /></a>
 			{% endthumbnail %}
-			{% thumbnail obituary.photo_two.name "180x180" as im2 %}
-				{% if obituary.photo_two.name %}<br><a href="{{ MEDIA_URL }}/{{ obituary.photo_two.name }}"><img src="{{ im2.url }}" /></a>{% endif %}
-			{% endthumbnail %}
+			{% if obituary.photo_two.name %}
+				{% thumbnail obituary.photo_two.name "180x180" as im2 %}
+					<br><a href="{{ MEDIA_URL }}{{ obituary.photo_two.name }}" target="_blank" rel="noopener noreferrer"><img src="{{ im2.url }}" /></a>
+				{% endthumbnail %}
+			{% endif %}
 		</div>
 		{% endif %}
 		{% if obituary.photo.name %}<p style="margin-left: 72px;">{% endif %}<a href="{% url manage_obituary2 obituary.pk %}">{{ obituary }}</a>, created {{ obituary.obituary_created|date:"l, N j, Y, P" }} <br>
