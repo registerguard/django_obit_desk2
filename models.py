@@ -351,8 +351,8 @@ class Obituary(models.Model):
     obituary_body = models.TextField(help_text=u'<span style="color: blue;">Information you may want to include: education, military,  career/work experience,  hobbies, volunteerism, awards, clubs, marriage and divorce, survivors, predeceased by, cause of death, date of birth, service information, remembrances.</span>')
     mailing_address = models.TextField(blank=True, help_text=u'Please include a mailing address in the space above if you would like to receive 10 copies of this obituary.')
     number_of_copies = models.IntegerField(choices=COPIES, blank=True, null=True, help_text=u'Number of copies you would like.', default=10)
-    photo = ImageField(upload_to=obit_file_name(), blank=True)
-    photo_two = ImageField(help_text=u'For a each photo there is an additional charge of $50.', upload_to=obit_file_name_two(), blank=True)
+    photo = ImageField(upload_to=obit_file_name, blank=True)
+    photo_two = ImageField(help_text=u'For a each photo there is an additional charge of $50.', upload_to=obit_file_name_two, blank=True)
     # Survivors
     status = models.CharField(max_length=4, choices=STATUS, default='drft', help_text=u'Only items with a status of \'Submitted to R-G\' will be picked up for publication in the newspaper. (If the Obituary is a work-in-progress, use the default \'Draft\' status.)</p><p><span style="color: black; font-weight: bold;">NOTE:</span> If you make a change <i style="font-weight: bold;">after</i> an Obituary has been submitted, you <i style="font-weight: bold;">MUST</i> contact your Register-Guard classified representative.</p>')
     submitted_by = models.CharField(max_length=150, blank=True, null=True)
