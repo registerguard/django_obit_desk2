@@ -11,7 +11,7 @@ class ObitsCalendarDateTimeWidget(forms.DateTimeInput):
     class Media:
         css = {'screen':('http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/overcast/jquery-ui.css',)}
         js = (
-            'http://static.registerguard.com/timepicker/jquery.timepicker.addon.js',
+            'http://cloud.registerguard.com/timepicker/jquery.timepicker.addon.js',
         )
 
 class ServiceForm(ModelForm):
