@@ -1,5 +1,9 @@
-import codecs, datetime
+import codecs
+import datetime
+import requests
+from lxml import objectify
 from dateutil import relativedelta
+
 from django import forms
 from django.contrib import messages
 from django.contrib.auth import logout
@@ -23,7 +27,7 @@ from django_obit_desk2.forms import Death_noticeForm, ServiceFormSet, \
     ObituaryForm, DeathNoticeOtherServicesFormSet
 from django_obit_desk2.utils import output_cleanup_hack, adobe_to_web
 
-from obituary_settings import DISPLAY_DAYS_BACK, INSIDE_OBIT_USERNAMES
+from obituary_settings import DISPLAY_DAYS_BACK, INSIDE_OBIT_USERNAMES, LEGACY_PW
 
 # Create your views here.
 
@@ -397,3 +401,19 @@ class DNDetail(DetailView):
 
     def get_queryset(self):
         return Death_notice.objects.filter(status='live')
+
+def next_generation_death_notice(request):
+    template_name = 'death_list_ngo.html'
+
+    url = 'https://www.legacy.com/services/notices.asp?Affiliate=registerguard&Password={}&RunDate=20190324'.format(LEGACY_PW)
+    response = requests.get(url)
+    doc = objectify.fromstring(response.text)
+    notices = doc['{urn:schemas-microsoft-com:xml-sql}query'].getchildren()
+
+
+    t = loader.get_template(template_name)
+    c = RequestContext(request, {'notices': notices})
+    data = t.render(c)
+    r = HttpResponse(data, mimetype='text/plain')
+    return r
+

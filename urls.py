@@ -3,7 +3,8 @@ from django.contrib.auth.views import password_reset, password_reset_done, passw
 from django.views.generic import TemplateView
 from django_obit_desk2.views import deaths2, fh_index2, logout_view2, \
     manage_death_notice2, manage_obituary2, print_obituary2, \
-    hard_copies_manifest2, death_notice_count, dn_newsletter_index, DNDetail
+    hard_copies_manifest2, death_notice_count, dn_newsletter_index, DNDetail, \
+    next_generation_death_notice
 
 urlpatterns = list()
 
@@ -25,7 +26,7 @@ urlpatterns += patterns('',
     url(r'^funeral-home/$', fh_index2, name='death_notice_index2'),
     url(r'^logout/$', logout_view2, name='logout2'),
     (r'^deaths/print/$', deaths2, {'model': 'Death_notice'}),
-    (r'^deaths/print/gh/$', deaths2, {'model': 'Death_notice', }),
+    (r'^deaths/print/gh/$', next_generation_death_notice,),
     (r'^obits/print/$', deaths2, {'model': 'Obituary'}),
     url(r'^password_reset/$', password_reset, name='password_reset2'),
     url(r'^password_reset_done/$', password_reset_done, name='password_reset_done2'),
