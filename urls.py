@@ -3,8 +3,7 @@ from django.contrib.auth.views import password_reset, password_reset_done, passw
 from django.views.generic import TemplateView
 from django_obit_desk2.views import deaths2, fh_index2, logout_view2, \
     manage_death_notice2, manage_obituary2, print_obituary2, \
-    hard_copies_manifest2, death_notice_count, dn_newsletter_index, DNDetail, \
-    next_generation_death_notice
+    hard_copies_manifest2, death_notice_count, dn_newsletter_index, DNDetail
 
 urlpatterns = list()
 
