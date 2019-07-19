@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm
 from django.views.generic import TemplateView
+from django.views.generic.simple import redirect_to
 from django_obit_desk2.views import deaths2, fh_index2, logout_view2, \
     manage_death_notice2, manage_obituary2, print_obituary2, \
     hard_copies_manifest2, death_notice_count, dn_newsletter_index, DNDetail
@@ -21,8 +22,8 @@ urlpatterns += patterns('',
     url(r'^dn_newsletter/(?P<day_count>\d{1,2})/$', dn_newsletter_index, name='dn_newsletter_index'),
     url(r'^obituaries/(?P<obituary_id>\d+)/$', manage_obituary2, name='manage_obituary2'),
     url(r'^obituaries/(?P<obituary_id>\d+)/print/$', print_obituary2, name='print_obituary2'),
-    url(r'^obituaries/$', manage_obituary2, name='add_obituary2'),
-    url(r'^funeral-home/$', fh_index2, name='death_notice_index2'),
+    url(r'^obituaries/$', redirect_to, { 'url': 'https://obits.gatehousemedia.com/adportal/oreug-obits/index.html', 'permanent': True }, name='add_obituary2'),
+    url(r'^funeral-home/$', redirect_to, { 'url': 'https://obits.gatehousemedia.com/adportal/oreug-obits/index.html', 'permanent':True }, name='death_notice_index2'),
     url(r'^logout/$', logout_view2, name='logout2'),
     (r'^deaths/print/$', deaths2, {'model': 'Death_notice'}),
     (r'^obits/print/$', deaths2, {'model': 'Obituary'}),
